@@ -1,0 +1,99 @@
+.ProductPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: fit-content;
+}
+.product_box {
+  height: 600px !important;
+}
+
+.left_side {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: flex-start;
+  position: absolute;
+  height: 100%;
+  width: 700px;
+}
+
+.right_side {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: flex-end;
+  position: absolute;
+  height: 100%;
+  width: 700px;
+}
+
+.left_trapeeze {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  transform: skew(10deg);
+  margin-left: -100px;
+}
+
+.right_trapeeze {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  transform: skew(10deg);
+  margin-right: -100px;
+}
+
+.border_trapeeze_left {
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  background-color: #d6a26f;
+  transform: skew(10deg);
+  margin-left: 600px;
+}
+
+.border_trapeeze_right {
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  background-color: #d6a26f;
+  transform: skew(10deg);
+  margin-right: 600px;
+}
+
+.text_holder {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 60px;
+}
+
+.Title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  margin-top: 40px;
+}
+
+.logo_image {
+  width: 320px;
+}
+
+.description_text {
+  text-align: center;
+  display: flex;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  width: 400px;
+  color: #f5eae0 !important;
+}

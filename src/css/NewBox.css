@@ -1,0 +1,157 @@
+.new_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 512px;
+  width: fit-content;
+  margin-top: 68px;
+  border-top: 6px solid #d6a26f;
+  border-bottom: 6px solid #d6a26f;
+  /* box-shadow: 0 0 24px rgba(0, 0, 0, 0.603); */
+}
+
+.Pack {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  /* transform: translateX(-100%); */
+}
+
+.imageWrap_left {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+}
+
+.imageWrap_right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  min-width: 100%;
+  width: 100%;
+}
+
+.text {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 200;
+
+  color: #d6a26f;
+}
+.background {
+  border-top-right-radius: 6px;
+  background-color: #a23337;
+}
+.abs {
+  position: absolute;
+  padding: 16px 32px 16px 32px;
+  max-width: 256px;
+  min-width: fit-content;
+  height: auto;
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.Arrow {
+  position: absolute;
+  padding: 8px 48px 8px 24px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  width: 64px;
+}
+
+.Arrow > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Arrow:hover {
+  background-color: #a23337;
+  /* filter: grayscale(100%); */
+}
+
+.prev {
+  transform: rotate(180deg);
+  left: 0px;
+}
+
+.next {
+  right: 0px;
+}
+
+.Arrow > img {
+  width: 100%;
+  height: 100%;
+}
+
+.dots {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.diamond {
+  width: 16px;
+  height: auto;
+  padding: 8px 8px 16px 8px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* .diamond:hover {
+  background-color: #a23337;
+} */
+
+.diamond > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.corner {
+  width: 80px;
+  position: absolute;
+  margin: 8px;
+}
+
+.TL {
+  top: 0px;
+  left: 0px;
+}
+
+.BL {
+  bottom: 0px;
+  left: 0px;
+  transform: scaleY(-1);
+}
+
+.TR {
+  right: 0px;
+  top: 0px;
+  transform: scaleX(-1);
+}
+
+.BR {
+  right: 0px;
+  bottom: 0px;
+  transform: scaleX(-1) scaleY(-1);
+}

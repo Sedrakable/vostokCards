@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63" height="52.5" viewBox="0 0 63 52.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d6a26f;
+      }
+    </style>
+  </defs>
+  <g id="Cart" transform="translate(-891.5 -339.25)">
+    <path id="Path_1331" data-name="Path 1331" class="cls-1" d="M948.5,342.25h-42l-3-3h-9l-3,6h9v33h3.75l-2.25,4.5h12l-2.25-4.5h16.5l-2.25,4.5h12l-2.25-4.5H938l3-6H906.5v-3h36l12-22.5v-4.5Zm-9,21h-33v-15H947Z"/>
+    <path id="Path_1332" data-name="Path 1332" class="cls-1" d="M930.5,384.25h-3l1.5,4.5,1.5-1.5,1.5,4.5,1.5-4.5,1.5,1.5,1.5-4.5h-6Z"/>
+    <path id="Path_1333" data-name="Path 1333" class="cls-1" d="M906.5,384.25h-3l1.5,4.5,1.5-1.5,1.5,4.5,1.5-4.5,1.5,1.5,1.5-4.5h-6Z"/>
+  </g>
+</svg>

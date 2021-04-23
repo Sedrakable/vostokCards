@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204" height="36" viewBox="0 0 204 36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d6a26f;
+      }
+    </style>
+  </defs>
+  <g id="Contact" transform="translate(-718 -342)">
+    <path id="Path_1321" data-name="Path 1321" class="cls-1" d="M742,378v-6H724V348h18v-6H718v36Z"/>
+    <path id="Path_1322" data-name="Path 1322" class="cls-1" d="M892,378v-6H874V348h18v-6H868v36Z"/>
+    <path id="Path_1323" data-name="Path 1323" class="cls-1" d="M796,342v19.5l-12-12V342h-6v36h6V358.5l12,12V378h6V342Z"/>
+    <path id="Path_1324" data-name="Path 1324" class="cls-1" d="M850,342l-12,22.5V378h6v-3h12v3h6V342Zm6,27H844v-3l9-18h3Z"/>
+    <path id="Path_1325" data-name="Path 1325" class="cls-1" d="M748,342v36h24V342Zm18,30H754V348h12Z"/>
+    <path id="Path_1326" data-name="Path 1326" class="cls-1" d="M808,342v6h9v30h6V348h9v-6Z"/>
+    <path id="Path_1327" data-name="Path 1327" class="cls-1" d="M898,342v6h9v30h6V348h9v-6Z"/>
+  </g>
+</svg>

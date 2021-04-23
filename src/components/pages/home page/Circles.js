@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import diamond from "../assets/illu/Diamond.svg";
-import diamondRed from "../assets/illu/Diamond Red.svg";
+import diamond from "../../../assets/illu/Diamond.svg";
+import diamondRed from "../../../assets/illu/Diamond Red.svg";
 
 const dots = [];
 let enume = -1;

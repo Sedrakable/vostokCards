@@ -1,0 +1,42 @@
+.center_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_columb {
+  flex-direction: column;
+}
+
+.pad_8 {
+  padding: 8px;
+}
+
+.pad_16 {
+  padding: 16px;
+}
+
+.mar_16 {
+  margin: 16px;
+}
+
+.text {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 200;
+  color: #d6a26f;
+  text-align: center;
+}
+
+.red_back {
+  background-color: #a23337;
+}
+
+.w_max {
+  width: 100%;
+}
+
+.border {
+  border: 6px solid #d6a26f;
+}

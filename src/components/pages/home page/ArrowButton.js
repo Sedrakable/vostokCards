@@ -1,5 +1,5 @@
 import React from "react";
-import arrow from "../assets/illu/Arrow.svg";
+import arrow from "../../../assets/illu/Arrow.svg";
 
 const ArrowButton = ({ name, onClick }) => {
   return (

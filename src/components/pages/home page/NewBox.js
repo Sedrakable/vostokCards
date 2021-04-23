@@ -3,12 +3,11 @@ import NewBoxImages from "./NewBoxImages";
 import ArrowButton from "./ArrowButton";
 import Circles from "./Circles";
 
-import image_1 from "../assets/photos/cards 1.jpg";
-import image_2 from "../assets/photos/cards 2.jpg";
-import image_3 from "../assets/photos/cards 3.jpg";
-import image_4 from "../assets/photos/cards 4.jpg";
-import Title from "../assets/illu/Title.svg";
-import Corner from "../assets/illu/Corner.svg";
+import image_1 from "../../../assets/photos/cards 1.jpg";
+import image_2 from "../../../assets/photos/cards 2.jpg";
+import image_3 from "../../../assets/photos/cards 3.jpg";
+import image_4 from "../../../assets/photos/cards 4.jpg";
+import Title from "../../../assets/illu/Title.svg";
 
 const items = [
   {

@@ -1,15 +1,15 @@
 import React from "react";
-import "../css/Navbar.css";
+import "../../css/Navbar.css";
 import TabButton from "./TabButton";
 
 //Images
-import News from "../assets/illu/News.svg";
-import Products from "../assets/illu/Products.svg";
-import About from "../assets/illu/About.svg";
-import Contact from "../assets/illu/Contact.svg";
-import Shop from "../assets/illu/Cart.svg";
-import Logo from "../assets/illu/Main Logo.svg";
-import BackLogo from "../assets/illu/Back Logo.svg";
+import News from "../../assets/illu/News.svg";
+import Products from "../../assets/illu/Products.svg";
+import About from "../../assets/illu/About.svg";
+import Contact from "../../assets/illu/Contact.svg";
+import Shop from "../../assets/illu/Cart.svg";
+import Logo from "../../assets/illu/Main Logo.svg";
+import BackLogo from "../../assets/illu/Back Logo.svg";
 
 const Navbar = () => {
   return (

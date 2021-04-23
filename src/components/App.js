@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import NewBox from "./NewBox";
-import Route from "./Route";
-import Products from "./Products";
-import Cart from "./Cart";
-import ProductPage from "./ProductPage";
+import Navbar from "./navbar/Navbar";
+import NewBox from "./pages/home page/NewBox";
+import Route from "./navbar/Route";
+import Products from "./pages/product page/Products";
+import ProductPage from "./pages/product page/ProductPage";
+import NewsPage from "./pages/news page/NewsPage";
 import "../css/NewBox.css";
+import "../css/Main.css";
 
 import image_1 from "../assets/photos/cards 1.jpg";
 import image_2 from "../assets/photos/cards 2.jpg";
@@ -63,6 +64,10 @@ const App = () => {
 
       <Route path="/products">
         <Products items={items} />
+      </Route>
+
+      <Route path="/news">
+        <NewsPage />
       </Route>
 
       {renderedLinks}

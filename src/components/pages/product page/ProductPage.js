@@ -1,9 +1,9 @@
 import React from "react";
-import "../css/ProductPage.css";
+import "../../../css/ProductPage.css";
 
 const ProductPage = ({ item }) => {
   return (
-    <div className="ProductPage">
+    <div className="page">
       <div className="new_box product_box">
         <div className="imageWrap_left">
           <div className="left_side ">

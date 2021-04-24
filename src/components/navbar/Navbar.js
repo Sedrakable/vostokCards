@@ -19,11 +19,11 @@ const Navbar = () => {
       </div>
       <div className="middle">
         <TabButton href="/news">
-          <img className={"TabButton"} src={News} />
+          <img className={"tab_button tab_hover"} src={News} />
         </TabButton>
 
         <TabButton href="/products">
-          <img className={"TabButton"} src={Products} />
+          <img className={"tab_button tab_hover"} src={Products} />
         </TabButton>
 
         <TabButton href="/">
@@ -34,11 +34,11 @@ const Navbar = () => {
         </TabButton>
 
         <TabButton href="/products">
-          <img className={"TabButton"} src={About} />
+          <img className={"tab_button tab_hover"} src={About} />
         </TabButton>
 
         <TabButton href="/products">
-          <img className={"TabButton"} src={Contact} />
+          <img className={"tab_button tab_hover"} src={Contact} />
         </TabButton>
       </div>
       <div className="right">

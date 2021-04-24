@@ -3,6 +3,7 @@ import Story from "./Story";
 import "../../../css/News.css";
 
 import img1 from "../../../assets/photos/playing_cards.jpg";
+import red_diamond from "../../../assets/illu/Diamond Red.svg";
 
 const items = [
   {
@@ -54,7 +55,7 @@ const NewsPage = () => {
       <h1 className="page_title">News</h1>
       <h1 className="pageDescription">Find out about past and current info</h1>
       <div className="news_container center_flex flex_columb">
-        <Story items={items} />
+        <Story items={items} diamond={red_diamond} />
       </div>
     </div>
   );

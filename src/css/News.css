@@ -9,7 +9,6 @@
 }
 
 .news_title {
-  color: #f5eae0 !important;
   font-weight: 600 !important;
   font-size: 40px !important;
 }
@@ -34,6 +33,16 @@
 .news_image > img {
   object-fit: cover;
   object-position: 50% 90%;
+  width: 100%;
+  height: 100%;
+}
+
+.news_diamond {
+  height: 40px;
+  width: auto;
+}
+
+.news_diamond > img {
   width: 100%;
   height: 100%;
 }

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
-const TabButton = ({ children, href, image }) => {
+const TabButton = ({ children, href }) => {
+  const [tabClass, setTabClass] = useState("");
+
   const onClick = (event) => {
     if (event.metaKey || event.ctrlKey) {
       return;
@@ -10,6 +12,7 @@ const TabButton = ({ children, href, image }) => {
 
     const navEvent = new PopStateEvent("popstate");
     window.dispatchEvent(navEvent);
+    // setTabClass("red_back");
   };
 
   return (

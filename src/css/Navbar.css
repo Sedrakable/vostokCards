@@ -51,10 +51,17 @@
   transition: 0.5s;
 }
 
-.TabButton {
+.tab_button {
   padding: 0px 16px;
   height: 24px;
   width: auto;
+  transition: 0.25s;
+}
+
+.tab_hover:hover {
+  height: 28px;
+  width: auto;
+  transition: 0.5s;
 }
 
 .ShopButton {

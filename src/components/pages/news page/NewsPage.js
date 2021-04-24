@@ -9,28 +9,42 @@ const items = [
     title: "Release date",
     date: "01/06/2021",
     story_1:
-      "So the cards are fianlly realseing and we are so hyped it. Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.",
+      "So the cards are fianlly realseing and we are so hyped it. \
+       Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.",
     image: img1,
     story_2:
-      "We gotg some picky blinder looking boiz, we got bikers gangs, we got some nigga mafakas and finally cool as russian comrads.",
+      "We gotg some picky blinder looking boiz, we got bikers gangs, \
+      we got some nigga mafakas and finally cool as russian comrads.",
   },
   {
-    title: "Release date",
-    date: "01/06/2021",
+    title: "Our first card even nigga",
+    date: "20/04/2021",
     story_1:
-      "So the cards are fianlly realseing and we are so hyped it. Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.",
+      "So the cards are fianlly realseing and we are so hyped it. \
+      Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.\
+      We gotg some picky blinder looking boiz, we got bikers gangs, \
+      we got some nigga mafakas and finally cool as russian comrads.",
     image: img1,
     story_2:
-      "We gotg some picky blinder looking boiz, we got bikers gangs, we got some nigga mafakas and finally cool as russian comrads.",
+      "We gotg some picky blinder looking boiz, we got bikers gangs, \
+      we got some nigga mafakas and finally cool as russian comrads.",
   },
   {
-    title: "Release date",
-    date: "01/06/2021",
+    title: "Ur moms release form this bed",
+    date: "01/01/2021",
     story_1:
-      "So the cards are fianlly realseing and we are so hyped it. Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.",
+      "So the cards are fianlly realseing and we are so hyped it.\
+       Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.",
     image: img1,
     story_2:
-      "We gotg some picky blinder looking boiz, we got bikers gangs, we got some nigga mafakas and finally cool as russian comrads.",
+      "We gotg some picky blinder looking boiz, we got bikers gangs, \
+      we got some nigga mafakas and finally cool as russian comrads. \
+      We gotg some picky blinder looking boiz, we got bikers gangs, \
+      we got some nigga mafakas and finally cool as russian comrads.\
+      We gotg some picky blinder looking boiz, we got bikers gangs, \
+      we got some nigga mafakas and finally cool as russian comrads.\
+      We gotg some picky blinder looking boiz, we got bikers gangs, \
+      we got some nigga mafakas and finally cool as russian comrads.",
   },
 ];
 

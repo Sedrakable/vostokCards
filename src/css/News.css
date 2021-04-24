@@ -1,9 +1,10 @@
 .news_container {
   width: 1000px;
-  background-color: #f5eae0;
 }
 
 .story {
+  background-color: #f5eae0;
+  margin-bottom: 64px;
   width: 100%;
 }
 

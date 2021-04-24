@@ -62,12 +62,12 @@ const App = () => {
         <NewBox />
       </Route>
 
-      <Route path="/products">
-        <Products items={items} />
-      </Route>
-
       <Route path="/news">
         <NewsPage />
+      </Route>
+
+      <Route path="/products">
+        <Products items={items} />
       </Route>
 
       {renderedLinks}

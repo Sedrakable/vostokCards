@@ -4,8 +4,8 @@ import ProductButton from "./ProductButton";
 const ProductsGrid = ({ items }) => {
   const renderItems = items.map((item) => {
     return (
-      <div key={item.name} className="Item">
-        <div className="image_wrapper">
+      <div key={item.name} className="Item black_back">
+        <div className="image_wrapper border">
           <img className="product_image" src={item.image} />
           <div className="text name toTop ">{item.name}</div>
           <ProductButton href={item.path} />
@@ -18,7 +18,9 @@ const ProductsGrid = ({ items }) => {
     );
   });
 
-  return <div className="ProductGrid">{renderItems}</div>;
+  return (
+    <div className="ProductGrid brown_back border_hori">{renderItems}</div>
+  );
 };
 
 export default ProductsGrid;

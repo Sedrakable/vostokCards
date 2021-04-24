@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  background-color: rgb(32, 24, 22);
+  overflow-x: hidden;
+}
+
 .center_flex {
   display: flex;
   justify-content: center;
@@ -33,10 +39,23 @@
   background-color: #a23337;
 }
 
+.black_back {
+  background-color: rgb(32, 24, 22);
+}
+
+.brown_back {
+  background-color: rgb(55, 41, 40);
+}
+
 .w_max {
   width: 100%;
 }
 
 .border {
-  border: 6px solid #d6a26f;
+  border: 4px solid #d6a26f;
+}
+
+.border_hori {
+  border-top: 4px solid #d6a26f;
+  border-bottom: 4px solid #d6a26f;
 }

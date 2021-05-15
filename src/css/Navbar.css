@@ -55,13 +55,13 @@
   padding: 0px 16px;
   height: 24px;
   width: auto;
-  transition: 0.25s;
+  transition: 0.2s;
 }
 
 .tab_hover:hover {
   height: 28px;
   width: auto;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .ShopButton {

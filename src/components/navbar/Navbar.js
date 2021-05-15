@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
         </TabButton>
 
-        <TabButton href="/products">
+        <TabButton href="/about">
           <img className={"tab_button tab_hover"} src={About} />
         </TabButton>
 

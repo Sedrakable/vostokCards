@@ -43,6 +43,10 @@ body {
   color: #a23337 !important;
 }
 
+.gold_text {
+  color: #a23337 !important;
+}
+
 .white_text {
   color: #f5eae0 !important;
 }
@@ -52,7 +56,7 @@ body {
 }
 
 .black_back {
-  background-color: rgb(32, 24, 22);
+  background-color: rgb(17, 13, 12);
 }
 
 .brown_back {

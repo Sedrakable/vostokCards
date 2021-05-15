@@ -5,6 +5,7 @@ import Route from "./navbar/Route";
 import Products from "./pages/product page/Products";
 import ProductPage from "./pages/product page/ProductPage";
 import NewsPage from "./pages/news page/NewsPage";
+import AboutPage from "./pages/about page/AboutPage";
 import "../css/NewBox.css";
 import "../css/Main.css";
 
@@ -68,6 +69,10 @@ const App = () => {
 
       <Route path="/products">
         <Products items={items} />
+      </Route>
+
+      <Route path="/about">
+        <AboutPage items={items} />
       </Route>
 
       {renderedLinks}

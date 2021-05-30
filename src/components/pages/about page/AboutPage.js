@@ -2,7 +2,7 @@ import React from "react";
 import "../../../css/About.css";
 
 import img1 from "../../../assets/photos/playing_cards.jpg";
-import red_diamond from "../../../assets/illu/Diamond Red.svg";
+import red_diamond from "../../../assets/illu/Diamond Hover.svg";
 
 const AboutPage = () => {
   return (

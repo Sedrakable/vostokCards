@@ -68,7 +68,7 @@ const NewBox = () => {
   };
 
   return (
-    <div className="new_box">
+    <div className="new_box border_hori">
       <div ref={myRef} style={myStyle} className="Pack">
         <NewBoxImages items={items} />
       </div>
@@ -76,8 +76,9 @@ const NewBox = () => {
       <ArrowButton name="prev" onClick={() => decreaseNum()} />
       <ArrowButton name="next" onClick={() => increaseNum()} />
 
-      <div className="Title">
-        <img className="logo_image" src={Title} />
+      <div className="new_box_title flex_columb abs center_flex">
+        <img className="logo_image pad_16  brown_back border" src={Title} />
+        <a className="text black_text red_back pad_16">See Product</a>
       </div>
 
       {maximum ? <Circles max={maximum} num={num} /> : null}

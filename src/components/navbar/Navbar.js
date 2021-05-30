@@ -13,7 +13,7 @@ import BackLogo from "../../assets/illu/Back Logo.svg";
 
 const Navbar = () => {
   return (
-    <div className="Navbar brown_back border_hori">
+    <div className="Navbar brown_back">
       <div className="left">
         <TabButton image={Shop} />
       </div>

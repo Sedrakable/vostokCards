@@ -5,7 +5,7 @@ const NewBoxImages = ({ items }) => {
     return (
       <div key={item.text} className="imageWrap_left">
         <img className="Image" src={item.image} />
-        <div className="text abs background">{item.text}</div>
+        <div className="text abs brown_back">{item.text}</div>
       </div>
     );
   });

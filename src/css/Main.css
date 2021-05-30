@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: rgb(32, 24, 22);
+  background-color: rgb(46, 46, 51);
   overflow-x: hidden;
 }
 
@@ -35,32 +35,36 @@ body {
   font-size: 32px;
   font-style: normal;
   font-weight: 200;
-  color: #d6a26f;
+  color: rgb(229, 181, 82);
   text-align: center;
 }
 
 .red_text {
-  color: #a23337 !important;
+  color: rgb(170, 170, 179) !important;
 }
 
 .gold_text {
-  color: #a23337 !important;
+  color: rgb(229, 181, 82) !important;
 }
 
 .white_text {
   color: #f5eae0 !important;
 }
 
+.black_text {
+  color: rgb(27, 27, 30) !important;
+}
+
 .red_back {
-  background-color: #a23337;
+  background-color: rgb(170, 170, 179);
 }
 
 .black_back {
-  background-color: rgb(17, 13, 12);
+  background-color: rgb(46, 46, 51);
 }
 
 .brown_back {
-  background-color: rgb(55, 41, 40);
+  background-color: rgb(27, 27, 30);
 }
 
 .w_max {
@@ -68,10 +72,10 @@ body {
 }
 
 .border {
-  border: 4px solid #d6a26f;
+  border: 2px solid rgb(229, 181, 82);
 }
 
 .border_hori {
-  border-top: 4px solid #d6a26f;
-  border-bottom: 4px solid #d6a26f;
+  border-top: 2px solid rgb(229, 181, 82);
+  border-bottom: 2px solid rgb(229, 181, 82);
 }

@@ -54,7 +54,7 @@
   position: absolute;
   width: 8px;
   height: 100%;
-  background-color: #d6a26f;
+  background-color: rgb(229, 181, 82);
   transform: skew(10deg);
   margin-left: 600px;
 }
@@ -63,7 +63,7 @@
   position: absolute;
   width: 8px;
   height: 100%;
-  background-color: #d6a26f;
+  background-color: rgb(229, 181, 82);
   transform: skew(-10deg);
   margin-right: 600px;
 }

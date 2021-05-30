@@ -3,7 +3,7 @@ import Story from "./Story";
 import "../../../css/News.css";
 
 import img1 from "../../../assets/photos/playing_cards.jpg";
-import red_diamond from "../../../assets/illu/Diamond Red.svg";
+import red_diamond from "../../../assets/illu/Diamond.svg";
 
 const items = [
   {

@@ -2,13 +2,79 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 48px;
   height: 64px;
 }
 
 .left {
-  visibility: hidden;
   flex-grow: 1;
+}
+
+.hamburger {
+  visibility: hidden;
+  width: 64px;
+  height: 64px;
+  z-index: 3;
+}
+
+.hamburger_menu {
+  position: absolute;
+  left: 0px;
+  width: 256px;
+  height: auto;
+  z-index: 3;
+  transition: 0.5s;
+  visibility: hidden;
+  transform: translate(-256px, -2px);
+  border-right: 2px solid rgb(229, 181, 82);
+  border-bottom: 2px solid rgb(229, 181, 82);
+  border-top: 2px solid rgb(229, 181, 82);
+}
+
+.hamburger_menu_top {
+}
+
+/* .hambuger_tabs {
+  padding: 32px 0px;
+} */
+
+.hambuger_tab {
+  text-decoration: none;
+  display: inline-block;
+  justify-content: start !important;
+  height: 40px !important;
+  border-bottom: 2px solid rgb(27, 27, 30);
+  border-left: 2px solid rgb(27, 27, 30);
+  border-right: 2px solid rgb(27, 27, 30);
+}
+
+.tab_diamond {
+  height: 16px;
+  padding-left: 8px;
+}
+
+.activeBurger {
+  visibility: visible !important;
+  transition: 0.5s;
+  transform: translate(0, -2px) !important ;
+}
+
+.exit_button {
+  width: 64px;
+  height: 64px;
+}
+
+.hamburger_bar {
+  width: 56px;
+  height: 8px;
+  margin: 4px 0px;
+}
+
+.show {
+  visibility: visible !important;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 .middle {
@@ -18,10 +84,11 @@
   flex-grow: 2;
 }
 
+.my_page {
+  padding-top: 48px;
+}
+
 .right {
-  display: flex;
-  justify-content: center;
-  align-content: center;
   flex-grow: 1;
 }
 
@@ -48,20 +115,18 @@
 
 .main_logo:hover {
   height: 160px;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .tab_button {
   padding: 0px 16px;
   height: 24px;
   width: auto;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 
 .tab_hover:hover {
   height: 28px;
-  width: auto;
-  transition: 0.2s;
 }
 
 .ShopButton {

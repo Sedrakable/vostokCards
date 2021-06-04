@@ -14,6 +14,7 @@ import image_2 from "../assets/photos/cards 2.jpg";
 import image_3 from "../assets/photos/cards 3.jpg";
 import image_4 from "../assets/photos/cards 4.jpg";
 import Title from "../assets/illu/Title.svg";
+import Background from "../assets/illu/Texture.svg";
 
 const items = [
   {
@@ -57,7 +58,19 @@ const App = () => {
   });
 
   return (
-    <div>
+    <div style={{}}>
+      <img
+        style={{
+          position: "absolute",
+          height: "100%",
+          width: "100%",
+
+          objectFit: "cover",
+          zIndex: "-1",
+          // verticalAlign: "top",
+        }}
+        src={Background}
+      ></img>
       <Navbar />
       <Route path="/">
         <NewBox />

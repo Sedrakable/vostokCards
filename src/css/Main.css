@@ -31,6 +31,7 @@ body {
 }
 
 .text {
+  text-decoration: none !important;
   font-family: "Josefin Sans", sans-serif;
   font-size: 32px;
   font-style: normal;

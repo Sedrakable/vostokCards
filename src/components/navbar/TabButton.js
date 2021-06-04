@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TabButton = ({ children, href }) => {
-  const [tabClass, setTabClass] = useState("");
-
+const TabButton = ({ addClass, children, href, parentCallback }) => {
   const onClick = (event) => {
     if (event.metaKey || event.ctrlKey) {
       return;
@@ -12,11 +10,13 @@ const TabButton = ({ children, href }) => {
 
     const navEvent = new PopStateEvent("popstate");
     window.dispatchEvent(navEvent);
-    // setTabClass("red_back");
+    if (parentCallback != null) {
+      parentCallback("");
+    }
   };
 
   return (
-    <a onClick={onClick} href={href}>
+    <a onClick={onClick} className={addClass} href={href}>
       {children}
     </a>
   );

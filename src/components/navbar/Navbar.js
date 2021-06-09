@@ -15,14 +15,13 @@ import Diamond from "../../assets/illu/Diamond.svg";
 
 const Navbar = () => {
   const getWidth = () =>
-    window.innerWidth ||
+    window.screen.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
   const [hamburgerMenuClass, setHamburgerMenuClass] = useState("");
   const [hamburgerButtonClass, setHamburgerButtonClass] = useState("");
   const [tabClass, setTabClass] = useState("");
-  const [width, setWidth] = useState(getWidth());
 
   const onClick = () => {
     setHamburgerMenuClass("activeBurger");
@@ -36,14 +35,12 @@ const Navbar = () => {
     setHamburgerMenuClass(x);
   };
   const burgerOrNo = () => {
-    setWidth(getWidth());
-    console.log(width);
-    if (width <= 1200) {
-      console.log("small");
+    console.log(getWidth());
+    if (getWidth() <= 1000) {
       setHamburgerButtonClass("show");
       setTabClass("hide");
     } else {
-      console.log("big");
+      onClickExit();
       setHamburgerButtonClass("");
       setTabClass("");
     }
@@ -103,16 +100,16 @@ const Navbar = () => {
           </TabButton>
         </div>
       </div>
-      <div className="Navbar brown_back">
+      <div className="Navbar">
         <div className="left ">
           <HamburgerButton onPress={onClick} addClass={hamburgerButtonClass} />
         </div>
         <div className="middle">
-          <TabButton addClass={tabClass} href="/news">
+          <TabButton addClass={`tab tab_silver ${tabClass}`} href="/news">
             <img className={"tab_button tab_hover "} src={News} />
           </TabButton>
 
-          <TabButton addClass={tabClass} href="/products">
+          <TabButton addClass={`tab tab_silver ${tabClass}`} href="/products">
             <img className={"tab_button tab_hover"} src={Products} />
           </TabButton>
 
@@ -123,11 +120,11 @@ const Navbar = () => {
             </div>
           </TabButton>
 
-          <TabButton addClass={tabClass} href="/about">
+          <TabButton addClass={`tab tab_gold ${tabClass}`} href="/about">
             <img className={"tab_button tab_hover"} src={About} />
           </TabButton>
 
-          <TabButton addClass={tabClass} href="/products">
+          <TabButton addClass={`tab tab_gold ${tabClass}`} href="/products">
             <img className={"tab_button tab_hover"} src={Contact} />
           </TabButton>
         </div>

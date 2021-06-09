@@ -8,6 +8,7 @@ import NewsPage from "./pages/news page/NewsPage";
 import AboutPage from "./pages/about page/AboutPage";
 import "../css/NewBox.css";
 import "../css/Main.css";
+import "../css/ScrollBar.css";
 
 import image_1 from "../assets/photos/cards 1.jpg";
 import image_2 from "../assets/photos/cards 2.jpg";
@@ -57,9 +58,8 @@ const App = () => {
     );
   });
 
-  return (
-    <div style={{}}>
-      <img
+  {
+    /* <img
         style={{
           position: "absolute",
           height: "100%",
@@ -70,7 +70,16 @@ const App = () => {
           // verticalAlign: "top",
         }}
         src={Background}
-      ></img>
+      ></img> */
+  }
+  return (
+    <div
+      style={{
+        overflowX: "hidden",
+      }}
+    >
+      <div className="background_image" />
+
       <Navbar />
       <Route path="/">
         <NewBox />

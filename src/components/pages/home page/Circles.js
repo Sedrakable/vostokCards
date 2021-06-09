@@ -45,7 +45,7 @@ const Circles = ({ max, num }) => {
   }, [num]);
 
   return (
-    <div ref={myRef} id="dots" className="dots">
+    <div ref={myRef} id="dots" className="dots ">
       {dots}
     </div>
   );

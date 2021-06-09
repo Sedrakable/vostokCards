@@ -1,12 +1,19 @@
 .Navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 64px;
+  background: radial-gradient(
+    circle 32px,
+    transparent,
+    transparent 94px,
+    rgb(27, 27, 30) 94px
+  );
 }
 
 .left {
-  flex-grow: 1;
+  width: auto;
+  justify-self: start;
 }
 
 .hamburger {
@@ -14,13 +21,20 @@
   width: 64px;
   height: 64px;
   z-index: 3;
+  margin-left: 8px;
+}
+
+.hamburger:hover {
+  background-color: rgb(46, 46, 51);
+  border-left: 2px solid rgb(170, 170, 179);
+  border-right: 2px solid rgb(170, 170, 179);
 }
 
 .hamburger_menu {
   position: absolute;
   left: 0px;
   width: 256px;
-  height: auto;
+  height: 100%;
   z-index: 3;
   transition: 0.5s;
   visibility: hidden;
@@ -32,10 +46,6 @@
 
 .hamburger_menu_top {
 }
-
-/* .hambuger_tabs {
-  padding: 32px 0px;
-} */
 
 .hambuger_tab {
   text-decoration: none;
@@ -61,12 +71,13 @@
 .exit_button {
   width: 64px;
   height: 64px;
+  margin-left: 32px;
 }
 
 .hamburger_bar {
-  width: 56px;
-  height: 8px;
-  margin: 4px 0px;
+  width: 54px;
+  height: 6px;
+  margin: 5px 0px;
 }
 
 .show {
@@ -74,14 +85,15 @@
 }
 
 .hide {
-  visibility: hidden;
+  display: none !important;
 }
 
 .middle {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-grow: 2;
+  height: 100%;
+  /* flex-grow: 2; */
 }
 
 .my_page {
@@ -89,7 +101,7 @@
 }
 
 .right {
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .logo_wrapper {
@@ -118,15 +130,31 @@
   transition: 0.4s;
 }
 
+.tab {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 8px;
+}
+
 .tab_button {
   padding: 0px 16px;
   height: 24px;
   width: auto;
-  transition: 0.1s;
 }
 
-.tab_hover:hover {
-  height: 28px;
+.tab:hover {
+  background-color: rgb(46, 46, 51);
+}
+
+.tab_gold:hover {
+  border-left: 2px solid rgb(229, 181, 82);
+  border-right: 2px solid rgb(229, 181, 82);
+}
+
+.tab_silver:hover {
+  border-left: 2px solid rgb(170, 170, 179);
+  border-right: 2px solid rgb(170, 170, 179);
 }
 
 .ShopButton {

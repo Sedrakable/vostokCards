@@ -78,7 +78,9 @@ const NewBox = () => {
 
       <div className="new_box_title flex_columb abs center_flex">
         <img className="logo_image pad_16  brown_back border" src={Title} />
-        <a className="text black_text red_back pad_16">See Product</a>
+        <a className="new_box_button text black_text gold_back pad_8">
+          See Product
+        </a>
       </div>
 
       {maximum ? <Circles max={maximum} num={num} /> : null}

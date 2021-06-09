@@ -2,8 +2,25 @@ body {
   margin: 0;
   background-color: rgb(46, 46, 51);
   overflow-x: hidden;
+  height: 100%;
 }
 
+html {
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+
+.background_image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent url("../assets/illu/Texture.svg") repeat center center
+    fixed;
+  background-size: cover;
+  z-index: -1;
+}
 .center_flex {
   display: flex;
   justify-content: center;
@@ -68,12 +85,24 @@ body {
   background-color: rgb(27, 27, 30);
 }
 
+.gold_back {
+  background-color: rgb(229, 181, 82);
+}
+
 .w_max {
   width: 100%;
 }
 
 .border {
   border: 2px solid rgb(229, 181, 82);
+}
+
+.border_black {
+  border: 2px solid rgb(27, 27, 30);
+}
+
+.border_silver {
+  border: 2px solid rgb(170, 170, 179);
 }
 
 .border_hori {

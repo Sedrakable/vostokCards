@@ -1,5 +1,7 @@
 .news_container {
-  width: 1000px;
+  margin: 32px;
+  max-width: 1000px;
+  min-width: 200px;
 }
 
 .story {
@@ -10,7 +12,7 @@
 
 .news_title {
   font-weight: 600 !important;
-  font-size: 40px !important;
+  font-size: 32px !important;
 }
 
 .news_date {
@@ -26,7 +28,7 @@
 }
 
 .news_image {
-  width: 960px;
+  width: calc(100% - 40px);
   height: 300px;
 }
 
@@ -39,7 +41,7 @@
 
 .news_diamond {
   height: 40px;
-  width: auto;
+  width: 40px;
 }
 
 .news_diamond > img {

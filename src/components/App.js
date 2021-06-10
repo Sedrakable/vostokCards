@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 import NewBox from "./pages/home page/NewBox";
-import Route from "./navbar/Route";
 import Products from "./pages/product page/Products";
 import ProductPage from "./pages/product page/ProductPage";
 import NewsPage from "./pages/news page/NewsPage";
@@ -50,54 +50,46 @@ const items = [
 ];
 
 const App = () => {
+  const MainPagee = () => {
+    return <NewBox />;
+  };
+
+  const NewsPagee = () => {
+    return <NewsPage />;
+  };
+
+  const ProductPagee = () => {
+    return <Products items={items} />;
+  };
+
+  const AboutPagee = () => {
+    return <AboutPage items={items} />;
+  };
+
+  const ProductsPages = (it) => {
+    return <ProductPage item={it} />;
+  };
+
   const renderedLinks = items.map((item) => {
     return (
-      <Route path={item.path}>
-        <ProductPage item={item} />
-      </Route>
+      <Route path={item.path} component={() => <ProductPage item={item} />} />
     );
   });
 
-  {
-    /* <img
-        style={{
-          position: "absolute",
-          height: "100%",
-          width: "100%",
-
-          objectFit: "cover",
-          zIndex: "-1",
-          // verticalAlign: "top",
-        }}
-        src={Background}
-      ></img> */
-  }
   return (
-    <div
-      style={{
-        overflowX: "hidden",
-      }}
-    >
+    <div className="whole_page">
       <div className="background_image" />
-
       <Navbar />
-      <Route path="/">
-        <NewBox />
-      </Route>
 
-      <Route path="/news">
-        <NewsPage />
-      </Route>
-
-      <Route path="/products">
-        <Products items={items} />
-      </Route>
-
-      <Route path="/about">
-        <AboutPage items={items} />
-      </Route>
-
-      {renderedLinks}
+      <BrowserRouter>
+        <div>
+          {renderedLinks}
+          <Route path="/" exact component={MainPagee} />
+          <Route path="/news" component={NewsPagee} />
+          <Route path="/about" component={AboutPagee} />
+          <Route path="/products" component={ProductPagee} />
+        </div>
+      </BrowserRouter>
     </div>
   );
 };

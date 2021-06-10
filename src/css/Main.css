@@ -12,6 +12,9 @@ html {
   height: 100%;
 }
 
+.whole_page {
+  overflow-x: hidden;
+}
 .background_image {
   position: absolute;
   height: 100%;

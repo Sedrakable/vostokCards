@@ -6,8 +6,8 @@ const TabButton = ({ addClass, children, href, parentCallback }) => {
       return;
     }
     event.preventDefault();
-    window.history.pushState({}, "", process.env.PUBLIC_URL + href);
-    console.log(process.env.PUBLIC_URL + href);
+    window.history.pushState({}, "", href);
+    console.log("/#" + href);
     const navEvent = new PopStateEvent("popstate");
     window.dispatchEvent(navEvent);
     if (parentCallback != null) {
@@ -16,11 +16,7 @@ const TabButton = ({ addClass, children, href, parentCallback }) => {
   };
 
   return (
-    <a
-      onClick={onClick}
-      className={addClass}
-      href={process.env.PUBLIC_URL + href}
-    >
+    <a onClick={onClick} className={addClass} href={href}>
       {children}
     </a>
   );

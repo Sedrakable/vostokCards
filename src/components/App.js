@@ -81,7 +81,7 @@ const App = () => {
       <div className="background_image" />
       <Navbar />
 
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           {renderedLinks}
           <Route path="/" exact component={MainPagee} />

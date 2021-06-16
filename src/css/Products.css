@@ -30,12 +30,14 @@
 }
 
 .image_wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: baseline;
   width: 320px;
   height: 320px;
   transition: 0.1s;
+  background-color: rgb(27, 27, 30);
 }
 
 .image_wrapper:hover {
@@ -67,11 +69,6 @@
   transition: 0.2s;
 }
 
-.image_wrapper:hover > .learn {
-  filter: opacity(1);
-  transition: 0.2s;
-}
-
 .name {
   position: absolute;
   margin-top: 168px;
@@ -80,15 +77,6 @@
   font-weight: bold;
   transition: 0.2s;
   text-align: center;
-}
-
-.learn {
-  text-decoration: none;
-  width: auto !important;
-  border-radius: 2px !important;
-  padding: 8px 32px !important;
-  margin-top: 280px !important;
-  filter: opacity(0);
 }
 
 .item_buttons {

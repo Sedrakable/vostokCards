@@ -10,17 +10,14 @@ import "../css/NewBox.css";
 import "../css/Main.css";
 import "../css/ScrollBar.css";
 
-import image_1 from "../assets/photos/cards 1.jpg";
-import image_2 from "../assets/photos/cards 2.jpg";
-import image_3 from "../assets/photos/cards 3.jpg";
-import image_4 from "../assets/photos/cards 4.jpg";
+import image_1 from "../assets/photos/AG_2.JPG";
 import Title from "../assets/illu/Title.svg";
 import Background from "../assets/illu/Texture.svg";
 
 const items = [
   {
     name: "Animal Gangdom",
-    price: 6.99,
+    price: 21.99,
     image: image_1,
     path: "/products/animal_gangdom",
     logo: (
@@ -28,24 +25,14 @@ const items = [
         <img className="logo_image" src={Title} />
       </div>
     ),
+    clickable: true,
   },
   {
-    name: "Greek Gods",
-    price: 19.99,
-    image: image_2,
-    path: "/products/greek_gods",
-  },
-  {
-    name: "Anchient Civs",
-    price: 8.99,
-    image: image_3,
-    path: "/products/anchient_civs",
-  },
-  {
-    name: "Anchient Civs 2",
-    price: 12.99,
-    image: image_4,
-    path: "/products/anchient_civs_2",
+    name: "Comming Soon",
+    price: "?",
+    image: Background,
+    path: "/products/CS",
+    clickable: false,
   },
 ];
 
@@ -78,10 +65,10 @@ const App = () => {
 
   return (
     <div className="whole_page">
-      <div className="background_image" />
+      {/* <div className="background_image" /> */}
       <Navbar />
 
-      <BrowserRouter basename={"/vostokCards"}>
+      <BrowserRouter>
         <div>
           {renderedLinks}
           <Route path="/" exact component={MainPagee} />

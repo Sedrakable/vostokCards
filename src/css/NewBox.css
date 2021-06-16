@@ -31,6 +31,12 @@
   /* transform: translateX(-100%); */
 }
 
+.logo_image {
+  padding: 16px 48px 16px 48px;
+  max-width: 320px;
+  min-width: 160px;
+  height: auto;
+}
 .imageWrap_left {
   position: relative;
   display: flex;
@@ -53,10 +59,6 @@
 
 .abs {
   position: absolute;
-  padding: 16px 48px 16px 48px;
-  max-width: 320px;
-  min-width: 160px;
-  height: auto;
 }
 
 .Image {

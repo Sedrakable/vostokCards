@@ -2,29 +2,30 @@ import React, { useState, useEffect, useRef } from "react";
 import NewBoxImages from "./NewBoxImages";
 import ArrowButton from "./ArrowButton";
 import Circles from "./Circles";
+import TabButton from "../../navbar/TabButton";
 
-import image_1 from "../../../assets/photos/cards 1.jpg";
-import image_2 from "../../../assets/photos/cards 2.jpg";
-import image_3 from "../../../assets/photos/cards 3.jpg";
-import image_4 from "../../../assets/photos/cards 4.jpg";
+import image_1 from "../../../assets/photos/AG_2.JPG";
+import image_2 from "../../../assets/photos/AG_3.JPG";
+import image_3 from "../../../assets/photos/AG_1.JPG";
+import image_4 from "../../../assets/photos/AG_4.JPG";
 import Title from "../../../assets/illu/Title.svg";
 
 const items = [
   {
     image: image_1,
-    text: "King Spades",
+    text: "I",
   },
   {
     image: image_2,
-    text: "All Cards",
+    text: "II",
   },
   {
     image: image_3,
-    text: "King Hearts",
+    text: "III",
   },
   {
     image: image_4,
-    text: "Card Box",
+    text: "IV",
   },
 ];
 
@@ -78,9 +79,12 @@ const NewBox = () => {
 
       <div className="new_box_title flex_columb abs center_flex">
         <img className="logo_image pad_16  brown_back border" src={Title} />
-        <a className="new_box_button text black_text gold_back pad_8">
+        <TabButton
+          addClass={"new_box_button text black_text gold_back pad_8"}
+          href="/products/animal_gangdom"
+        >
           See Product
-        </a>
+        </TabButton>
       </div>
 
       {maximum ? <Circles max={maximum} num={num} /> : null}

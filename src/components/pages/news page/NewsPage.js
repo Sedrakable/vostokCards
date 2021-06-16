@@ -2,50 +2,17 @@ import React from "react";
 import Story from "./Story";
 import "../../../css/News.css";
 
-import img1 from "../../../assets/photos/playing_cards.jpg";
+import news_1 from "../../../assets/photos/News_1.jpg";
 import red_diamond from "../../../assets/illu/Diamond.svg";
 
 const items = [
   {
-    title: "Release date",
-    date: "01/06/2021",
+    title: "Nearing the Launch",
+    date: "2021-06-15",
     story_1:
-      "So the cards are fianlly realseing and we are so hyped it. \
-       Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.",
-    image: img1,
-    story_2:
-      "We gotg some picky blinder looking boiz, we got bikers gangs, \
-      we got some nigga mafakas and finally cool as russian comrads.",
-  },
-  {
-    title: "Our first card even nigga",
-    date: "20/04/2021",
-    story_1:
-      "So the cards are fianlly realseing and we are so hyped it. \
-      Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.\
-      We gotg some picky blinder looking boiz, we got bikers gangs, \
-      we got some nigga mafakas and finally cool as russian comrads.",
-    image: img1,
-    story_2:
-      "We gotg some picky blinder looking boiz, we got bikers gangs, \
-      we got some nigga mafakas and finally cool as russian comrads.",
-  },
-  {
-    title: "Ur moms release form this bed",
-    date: "01/01/2021",
-    story_1:
-      "So the cards are fianlly realseing and we are so hyped it.\
-       Hopeffy all u slavic mafak love this shit and if u aint slavic ul become one. For mother Russia baby.",
-    image: img1,
-    story_2:
-      "We gotg some picky blinder looking boiz, we got bikers gangs, \
-      we got some nigga mafakas and finally cool as russian comrads. \
-      We gotg some picky blinder looking boiz, we got bikers gangs, \
-      we got some nigga mafakas and finally cool as russian comrads.\
-      We gotg some picky blinder looking boiz, we got bikers gangs, \
-      we got some nigga mafakas and finally cool as russian comrads.\
-      We gotg some picky blinder looking boiz, we got bikers gangs, \
-      we got some nigga mafakas and finally cool as russian comrads.",
+      "We are nearing the launch date of our Kickstarter! This is the first place where the deck Animal Gangdom will be available to purchase. We are in the process of taking and editing images that will represent the deck in the best light possible, figuratively and literally...",
+    image: news_1,
+    story_2: null,
   },
 ];
 

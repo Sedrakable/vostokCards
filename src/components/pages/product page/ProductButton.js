@@ -2,6 +2,9 @@ import React from "react";
 
 const ProductButton = ({ item }) => {
   const onClick = (event) => {
+    if (item.clickable === false) {
+      return;
+    }
     if (event.metaKey || event.ctrlKey) {
       return;
     }
@@ -13,10 +16,21 @@ const ProductButton = ({ item }) => {
   };
 
   return (
-    <a className="image_wrapper border" onClick={onClick} href={item.path}>
-      <img className="product_image" src={item.image} />
-      <div className="text name toTop red_back black_text">{item.name}</div>
-    </a>
+    <React.Fragment>
+      {item.clickable ? (
+        <a className="image_wrapper border" onClick={onClick} href={item.path}>
+          <img className="product_image" src={item.image} />
+          <div className="text name toTop gold_back black_text">
+            {item.name}
+          </div>
+        </a>
+      ) : (
+        <div className="image_wrapper border">
+          <img className="product_image" src={item.image} />
+          <div className="text name toTop red_back black_text">{item.name}</div>
+        </div>
+      )}
+    </React.Fragment>
   );
 };
 

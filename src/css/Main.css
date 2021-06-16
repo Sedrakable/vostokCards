@@ -1,12 +1,16 @@
 body {
   margin: 0;
-  background-color: rgb(46, 46, 51);
   overflow-x: hidden;
   height: 100%;
+  width: 100%;
+  background: rgb(27, 27, 30) url("../assets/illu/Texture.svg") repeat center
+    center fixed;
+  background-size: cover;
 }
 
 html {
   height: 100%;
+  overflow-y: hidden;
 }
 #root {
   height: 100%;
@@ -15,6 +19,7 @@ html {
 .whole_page {
   overflow-x: hidden;
 }
+
 .background_image {
   position: absolute;
   height: 100%;
@@ -74,6 +79,10 @@ html {
 
 .black_text {
   color: rgb(27, 27, 30) !important;
+}
+
+.white_back {
+  background-color: #f5eae0 !important;
 }
 
 .red_back {

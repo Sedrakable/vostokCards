@@ -5,10 +5,9 @@ import Circles from "./Circles";
 import TabButton from "../../navbar/TabButton";
 
 import image_1 from "../../../assets/photos/AG_2.JPG";
-import image_2 from "../../../assets/photos/AG_3.JPG";
-import image_3 from "../../../assets/photos/AG_1.JPG";
-import image_4 from "../../../assets/photos/AG_4.JPG";
-import Title from "../../../assets/illu/Title.svg";
+import image_2 from "../../../assets/photos/AG_3.jpg";
+import image_3 from "../../../assets/photos/AG_1.jpg";
+import image_4 from "../../../assets/photos/AG_4.jpg";
 
 const items = [
   {
@@ -29,7 +28,7 @@ const items = [
   },
 ];
 
-const NewBox = () => {
+const NewBox = ({ children }) => {
   const myRef = useRef();
 
   const [styles, setStyles] = useState(0);
@@ -77,16 +76,7 @@ const NewBox = () => {
       <ArrowButton name="prev" onClick={() => decreaseNum()} />
       <ArrowButton name="next" onClick={() => increaseNum()} />
 
-      <div className="new_box_title flex_columb abs center_flex">
-        <img className="logo_image pad_16  brown_back border" src={Title} />
-        <TabButton
-          addClass={"new_box_button text black_text gold_back pad_8"}
-          href="/products/animal_gangdom"
-        >
-          See Product
-        </TabButton>
-      </div>
-
+      {children}
       {maximum ? <Circles max={maximum} num={num} /> : null}
     </div>
   );

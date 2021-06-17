@@ -19,7 +19,7 @@ const ProductButton = ({ item }) => {
     <React.Fragment>
       {item.clickable ? (
         <a className="image_wrapper border" onClick={onClick} href={item.path}>
-          <img className="product_image" src={item.image} />
+          <img className="product_image" src={item.image[0]} />
           <div className="text name toTop gold_back black_text">
             {item.name}
           </div>

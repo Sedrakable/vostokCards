@@ -1,67 +1,49 @@
 import React from "react";
 import "../../../css/ProductPage.css";
+import ProductBox from "./ProductBox";
 
 const ProductPage = ({ item }) => {
+  const items = [
+    {
+      logo: item.logo,
+      side: "title",
+      image: item.image[0],
+      text: item.text[0],
+    },
+    {
+      logo: null,
+      side: "right",
+      image: item.image[1],
+      text: item.text[1],
+    },
+    {
+      logo: null,
+      side: "left",
+      image: item.image[2],
+      text: item.text[2],
+    },
+    {
+      logo: null,
+      side: "right",
+      image: item.image[3],
+      text: item.text[3],
+    },
+    {
+      logo: null,
+      side: "album",
+      image: null,
+      text: null,
+    },
+  ];
+
+  const renderItems = items.map((item) => {
+    return <ProductBox item={item}></ProductBox>;
+  });
+
   return (
     <div className="page">
-      <div className="new_box product_box">
-        <div className="imageWrap_left">
-          <div className="left_side ">
-            <div className="left_trapeeze"></div>
-            <div className="border_trapeeze_left"></div>
-            <div className="text_holder">
-              {item.logo}
-              <p className="description_text text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                vehicula suscipit auctor. Suspendisse potenti. Maecenas
-                vestibulum pellentesque metus et aliquam. Sed a malesuada nibh,
-                at congue enim. Donec luctus mauris finibus aliquet euismod.
-                Duis eu tempor felis. Fusce sagittis elit in ante posuere, eget
-                maximus quam tristique. Nunc augue mauris, eleifend vitae
-                molestie id, placerat quis arcu. Proin vitae finibus lorem,
-                vitae aliquam augue. Pellentesque vel posuere urna. Cras
-                molestie nisl vel odio bibendum ullamcorper. Proin varius turpis
-                est, eu egestas ligula tristique ac. Sed vitae velit aliquet,
-                scelerisque orci id, rhoncus enim. Aliquam at fermentum velit,
-                id fringilla mauris. Vestibulum varius commodo quam eget
-                eleifend. Mauris dictum suscipit enim ut dignissim. In ac dictum
-                mi.
-              </p>
-            </div>
-          </div>
-
-          <img className="Image " src={item.image} />
-        </div>
-      </div>
-      <div className="new_box product_box">
-        <div className="imageWrap_right">
-          <div className="right_side ">
-            <div className="right_trapeeze"></div>
-            <div className="border_trapeeze_right"></div>
-            <div className="text_holder">
-              {item.logo}
-              <p className="description_text text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                vehicula suscipit auctor. Suspendisse potenti. Maecenas
-                vestibulum pellentesque metus et aliquam. Sed a malesuada nibh,
-                at congue enim. Donec luctus mauris finibus aliquet euismod.
-                Duis eu tempor felis. Fusce sagittis elit in ante posuere, eget
-                maximus quam tristique. Nunc augue mauris, eleifend vitae
-                molestie id, placerat quis arcu. Proin vitae finibus lorem,
-                vitae aliquam augue. Pellentesque vel posuere urna. Cras
-                molestie nisl vel odio bibendum ullamcorper. Proin varius turpis
-                est, eu egestas ligula tristique ac. Sed vitae velit aliquet,
-                scelerisque orci id, rhoncus enim. Aliquam at fermentum velit,
-                id fringilla mauris. Vestibulum varius commodo quam eget
-                eleifend. Mauris dictum suscipit enim ut dignissim. In ac dictum
-                mi.
-              </p>
-            </div>
-          </div>
-
-          <img className="Image " src={item.image} />
-        </div>
-      </div>
+      <h1 className="page_title">{item.name}</h1>
+      {renderItems}
     </div>
   );
 };

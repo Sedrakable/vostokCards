@@ -100,10 +100,6 @@
   padding-top: 48px;
 }
 
-.right {
-  /* flex-grow: 1; */
-}
-
 .logo_wrapper {
   position: relative;
   display: flex;
@@ -126,8 +122,8 @@
 }
 
 .main_logo:hover {
-  height: 160px;
-  transition: 0.4s;
+  height: 150px;
+  transition: 0.2s;
 }
 
 .tab {

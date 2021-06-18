@@ -29,12 +29,18 @@ const items = [
 ];
 
 const NewBox = ({ children }) => {
+  const getWidth = () =>
+    window.screen.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
   const myRef = useRef();
 
   const [styles, setStyles] = useState(0);
   const [maximum, setMaximum] = useState(null);
   const [num, setNum] = useState(0);
   const [speed, setSpeed] = useState(1);
+  const [arrowY, setArrowY] = useState(0);
 
   const increaseNum = () => {
     num < maximum ? setNum(num + 1) : setNum(0);
@@ -67,14 +73,37 @@ const NewBox = ({ children }) => {
     transition: `transform ${speed}s`,
   };
 
+  const MoveArrows = () => {
+    if (getWidth() <= 600) {
+      console.log(arrowStyle);
+      setArrowY((600 - getWidth()) / 2);
+    }
+  };
+
+  window.addEventListener("resize", (event) => {
+    MoveArrows();
+  });
+
+  const arrowStyle = {
+    marginTop: `${arrowY}px`,
+  };
+
   return (
     <div className="new_box border_hori">
       <div ref={myRef} style={myStyle} className="Pack">
         <NewBoxImages items={items} />
       </div>
 
-      <ArrowButton name="prev" onClick={() => decreaseNum()} />
-      <ArrowButton name="next" onClick={() => increaseNum()} />
+      <ArrowButton
+        style={arrowStyle}
+        name="prev"
+        onClick={() => decreaseNum()}
+      />
+      <ArrowButton
+        style={arrowStyle}
+        name="next"
+        onClick={() => increaseNum()}
+      />
 
       {children}
       {maximum ? <Circles max={maximum} num={num} /> : null}

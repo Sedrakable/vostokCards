@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../css/Navbar.css";
 import TabButton from "./TabButton";
 import HamburgerButton from "./HamburgerButton";
+import ExitButton from "./ExitButton";
 
 //Images
 import News from "../../assets/illu/News.svg";
@@ -35,7 +36,6 @@ const Navbar = () => {
     setHamburgerMenuClass(x);
   };
   const burgerOrNo = () => {
-    console.log(getWidth());
     if (getWidth() <= 1000) {
       setHamburgerButtonClass("show");
       setTabClass("hide");
@@ -45,6 +45,7 @@ const Navbar = () => {
       setTabClass("");
     }
   };
+
   window.addEventListener("resize", (event) => {
     burgerOrNo();
   });
@@ -58,8 +59,9 @@ const Navbar = () => {
   return (
     <div className="my_page ">
       <div className={`hamburger_menu black_back  ${hamburgerMenuClass}`}>
-        <div className="brown_back">
-          <div className="exit_button red_back " onClick={onClickExit} />
+        <div className="brown_back hamburger_menu_top ">
+          <ExitButton onPress={onClickExit} />
+          <div className="ham_menu_text text title"> Menu</div>
         </div>
 
         <div className="hambuger_tabs">
@@ -69,7 +71,9 @@ const Navbar = () => {
             parentCallback={callback}
           >
             <img className={"tab_diamond"} src={Diamond} />
-            <h1 className={"tab_button tab_hover text red_text"}>News</h1>
+            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
+              News
+            </h1>
           </TabButton>
 
           <TabButton
@@ -78,7 +82,9 @@ const Navbar = () => {
             parentCallback={callback}
           >
             <img className={"tab_diamond"} src={Diamond} />
-            <h1 className={"tab_button tab_hover text red_text"}>Products</h1>
+            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
+              Products
+            </h1>
           </TabButton>
 
           <TabButton
@@ -87,7 +93,9 @@ const Navbar = () => {
             parentCallback={callback}
           >
             <img className={"tab_diamond"} src={Diamond} />
-            <h1 className={"tab_button tab_hover text red_text"}>About</h1>
+            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
+              About
+            </h1>
           </TabButton>
 
           <TabButton
@@ -96,7 +104,9 @@ const Navbar = () => {
             parentCallback={callback}
           >
             <img className={"tab_diamond"} src={Diamond} />
-            <h1 className={"tab_button tab_hover text red_text"}>Contact</h1>
+            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
+              Contact
+            </h1>
           </TabButton>
         </div>
       </div>

@@ -11,16 +11,10 @@
 }
 
 .new_box_title {
-  margin-bottom: 128px;
+  margin-bottom: 256px;
   margin-left: 15%;
   margin-right: 15%;
   justify-self: start !important;
-}
-
-.new_box_button {
-  padding-bottom: 4px !important;
-  margin-top: 16px;
-  width: 100%;
 }
 
 .Pack {
@@ -35,8 +29,9 @@
 .logo_image {
   padding: 16px 48px 16px 48px;
   max-width: 320px;
-  min-width: 160px;
+  min-width: 100px;
   height: auto;
+  width: 100%;
 }
 
 .abs {

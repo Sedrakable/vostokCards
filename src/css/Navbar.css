@@ -39,12 +39,16 @@
   transition: 0.5s;
   visibility: hidden;
   transform: translate(-256px, -2px);
-  border-right: 2px solid rgb(229, 181, 82);
-  border-bottom: 2px solid rgb(229, 181, 82);
-  border-top: 2px solid rgb(229, 181, 82);
+  border-right: 2px solid rgb(170, 170, 179);
+  border-bottom: 2px solid rgb(170, 170, 179);
+  border-top: 2px solid rgb(170, 170, 179);
 }
 
 .hamburger_menu_top {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  border-bottom: 2px solid rgb(170, 170, 179);
 }
 
 .hambuger_tab {
@@ -55,6 +59,10 @@
   border-bottom: 2px solid rgb(27, 27, 30);
   border-left: 2px solid rgb(27, 27, 30);
   border-right: 2px solid rgb(27, 27, 30);
+}
+
+.hambuger_tab:hover {
+  background-color: rgb(27, 27, 30);
 }
 
 .tab_diamond {
@@ -71,13 +79,40 @@
 .exit_button {
   width: 64px;
   height: 64px;
+  margin-left: 8px;
+}
+
+.exit_button:hover {
+  background-color: rgb(46, 46, 51);
+  border-left: 2px solid rgb(170, 170, 179);
+  border-right: 2px solid rgb(170, 170, 179);
+}
+
+.ham_menu_text {
   margin-left: 32px;
+  margin-top: 6px;
+  font-size: 42px !important;
+  font-weight: normal !important;
 }
 
 .hamburger_bar {
-  width: 54px;
-  height: 6px;
-  margin: 5px 0px;
+  width: 48px;
+  height: 4px;
+  margin: 4px 0px;
+}
+
+.exit_bar {
+  position: absolute;
+  width: 48px;
+  height: 4px;
+}
+
+.bar_1 {
+  transform: rotate(45deg);
+}
+
+.bar_2 {
+  transform: rotate(-45deg);
 }
 
 .show {
@@ -123,6 +158,11 @@
 
 .main_logo:hover {
   height: 150px;
+  transition: 0.2s;
+}
+
+.ham_tab:hover {
+  transform: translateX(16px) scale(1.1);
   transition: 0.2s;
 }
 

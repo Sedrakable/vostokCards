@@ -47,34 +47,20 @@ const items = [
   },
 ];
 
-const HomePageTitle = () => {
+const HomePageTitle = (t) => {
   return (
     <div className="new_box_title flex_columb abs center_flex">
-      <img className="logo_image pad_16  brown_back border" src={Title} />
-      <TabButton
-        addClass={"new_box_button text black_text gold_back pad_8"}
-        href="/products/animal_gangdom"
-      >
+      <img className="logo_image pad_16  brown_back border" src={t} />
+      <TabButton addClass={"button"} href="/products/animal_gangdom">
         See Product
       </TabButton>
     </div>
   );
 };
+
 const App = () => {
   const MainPagee = () => {
-    return (
-      <NewBox>
-        <div className="new_box_title flex_columb abs center_flex">
-          <img className="logo_image pad_16  brown_back border" src={Title} />
-          <TabButton
-            addClass={"new_box_button text black_text gold_back pad_8"}
-            href="/products/animal_gangdom"
-          >
-            See Product
-          </TabButton>
-        </div>
-      </NewBox>
-    );
+    return <NewBox>{HomePageTitle(Title)}</NewBox>;
   };
 
   const NewsPagee = () => {
@@ -101,7 +87,6 @@ const App = () => {
 
   return (
     <div className="whole_page">
-      {/* <div className="background_image" /> */}
       <Navbar />
 
       <BrowserRouter>

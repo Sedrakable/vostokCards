@@ -1,22 +1,9 @@
-/* .product_page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 64px;
-  width: fit-content;
-} */
 .product_box {
   margin-bottom: 32px !important;
   height: 600px !important;
+  width: 100%;
 }
 
-.kick_button {
-  padding: 8px 32px 4px 32px;
-  margin-top: 16px;
-  width: auto;
-}
 .imageWrap_left {
   position: relative;
   display: flex;
@@ -34,7 +21,8 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: baseline;
+
   height: 100%;
   min-width: 100%;
   width: 100%;
@@ -44,90 +32,99 @@
 }
 
 .left_side {
+  top: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: flex-start;
+  justify-content: start;
+  flex-direction: row;
   position: absolute;
   height: 100%;
-  width: 700px;
+  width: 50%;
+  max-width: 500px;
+  min-width: 280px;
 }
 
 .right_side {
   display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: flex-end;
+  justify-content: start;
+  flex-direction: row;
   position: absolute;
   height: 100%;
-  width: 700px;
+  width: 50%;
+  max-width: 500px;
+  min-width: 280px;
 }
 
 .left_trapeeze {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #0a0a0a;
-  transform: skew(10deg);
-  margin-left: -100px;
+  background-color: rgb(27, 27, 30);
 }
 
 .right_trapeeze {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #0a0a0a;
-  transform: skew(-10deg);
-  margin-right: -100px;
-}
-
-.border_trapeeze_left {
-  position: absolute;
-  width: 8px;
-  height: 100%;
-  background-color: rgb(229, 181, 82);
-  transform: skew(10deg);
-  margin-left: 600px;
-}
-
-.border_trapeeze_right {
-  position: absolute;
-  width: 8px;
-  height: 100%;
-  background-color: rgb(170, 170, 179);
-  transform: skew(-10deg);
-  margin-right: 600px;
+  background-color: rgb(27, 27, 30);
 }
 
 .text_holder {
-  position: absolute;
+  position: relative;
   display: flex;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 60px;
+  width: auto;
+  margin: 64px 5% 0px 5%;
 }
 
 .Title {
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
-  margin-top: 40px;
+  width: 100%;
 }
 
-.logo_image {
-  width: 100%;
-  height: 100%;
+.Title > img {
+  padding: 16px 0px !important;
 }
 
 .description_text {
-  text-align: center;
+  position: relative;
+  text-align: left !important;
   display: flex;
   font-size: 18px !important;
   font-weight: 700 !important;
-  width: 400px;
+  width: 100%;
   color: #f5eae0 !important;
+}
+
+.strip {
+  height: 100%;
+  width: 30px !important;
+  min-width: 30px;
+  z-index: 2;
+}
+
+.strip_left {
+  margin-right: 16px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(229, 181, 82) 0px,
+    rgb(229, 181, 82) 6px,
+    rgb(27, 27, 30) 6px,
+    rgb(27, 27, 30) 12px
+  );
+}
+
+.strip_right {
+  margin-left: 16px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(170, 170, 179) 0px,
+    rgb(170, 170, 179) 6px,
+    rgb(27, 27, 30) 6px,
+    rgb(27, 27, 30) 12px
+  );
 }

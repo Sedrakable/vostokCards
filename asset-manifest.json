@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d3fb4b6.chunk.css",
-    "main.js": "/static/js/main.2a4b2719.chunk.js",
-    "main.js.map": "/static/js/main.2a4b2719.chunk.js.map",
+    "main.css": "/static/css/main.fd4b2657.chunk.css",
+    "main.js": "/static/js/main.843d870e.chunk.js",
+    "main.js.map": "/static/js/main.843d870e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d4cc514f.js",
     "runtime-main.js.map": "/static/js/runtime-main.d4cc514f.js.map",
-    "static/js/2.e0f00346.chunk.js": "/static/js/2.e0f00346.chunk.js",
-    "static/js/2.e0f00346.chunk.js.map": "/static/js/2.e0f00346.chunk.js.map",
+    "static/js/2.2c23195c.chunk.js": "/static/js/2.2c23195c.chunk.js",
+    "static/js/2.2c23195c.chunk.js.map": "/static/js/2.2c23195c.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.0d3fb4b6.chunk.css.map": "/static/css/main.0d3fb4b6.chunk.css.map",
-    "static/js/2.e0f00346.chunk.js.LICENSE.txt": "/static/js/2.e0f00346.chunk.js.LICENSE.txt",
+    "static/css/main.fd4b2657.chunk.css.map": "/static/css/main.fd4b2657.chunk.css.map",
+    "static/js/2.2c23195c.chunk.js.LICENSE.txt": "/static/js/2.2c23195c.chunk.js.LICENSE.txt",
     "static/media/AG_1.5637d4a8.jpg": "/static/media/AG_1.5637d4a8.jpg",
     "static/media/AG_2.899f48e5.JPG": "/static/media/AG_2.899f48e5.JPG",
     "static/media/AG_3.4c9d1cd2.jpg": "/static/media/AG_3.4c9d1cd2.jpg",
@@ -17,21 +17,23 @@
     "static/media/About.1e78cfd9.svg": "/static/media/About.1e78cfd9.svg",
     "static/media/Arrow.5434f2fe.svg": "/static/media/Arrow.5434f2fe.svg",
     "static/media/Back Logo.1ae69598.svg": "/static/media/Back Logo.1ae69598.svg",
-    "static/media/Cart.35f19a05.svg": "/static/media/Cart.35f19a05.svg",
     "static/media/Contact.fa2eaefa.svg": "/static/media/Contact.fa2eaefa.svg",
     "static/media/Diamond Hover.a0b965f9.svg": "/static/media/Diamond Hover.a0b965f9.svg",
     "static/media/Diamond.c6fb9b24.svg": "/static/media/Diamond.c6fb9b24.svg",
+    "static/media/Insta.3a625457.svg": "/static/media/Insta.3a625457.svg",
+    "static/media/Kick.2cded2f3.svg": "/static/media/Kick.2cded2f3.svg",
     "static/media/Main Logo.bc3eb70d.svg": "/static/media/Main Logo.bc3eb70d.svg",
     "static/media/News.0956fdf7.svg": "/static/media/News.0956fdf7.svg",
     "static/media/News_1.31a884fe.jpg": "/static/media/News_1.31a884fe.jpg",
     "static/media/Products.ad98c6dc.svg": "/static/media/Products.ad98c6dc.svg",
     "static/media/Main.css": "/static/media/Texture.3cca7b9e.svg",
-    "static/media/Title.0fd51de2.svg": "/static/media/Title.0fd51de2.svg"
+    "static/media/Title.0fd51de2.svg": "/static/media/Title.0fd51de2.svg",
+    "static/media/mail.71d9f7ed.svg": "/static/media/mail.71d9f7ed.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d4cc514f.js",
-    "static/js/2.e0f00346.chunk.js",
-    "static/css/main.0d3fb4b6.chunk.css",
-    "static/js/main.2a4b2719.chunk.js"
+    "static/js/2.2c23195c.chunk.js",
+    "static/css/main.fd4b2657.chunk.css",
+    "static/js/main.843d870e.chunk.js"
   ]
 }

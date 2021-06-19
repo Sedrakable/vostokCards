@@ -1,24 +1,13 @@
-.page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 32px;
-  width: fit-content;
-  overflow: hidden;
-}
-
-.ProductGrid {
+.product_grid {
   display: flex;
   justify-content: center;
   align-items: baseline;
   flex-wrap: wrap;
-  margin: auto;
+  margin: 32px;
   width: 100%;
 }
 
-.Item {
+.item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,22 +91,4 @@
 
 .add2cart {
   width: 32px;
-}
-
-.page_title {
-  margin: 32px;
-  font-size: 48px;
-  font-weight: 400;
-  align-self: center;
-  font-family: "Josefin Sans", sans-serif;
-  color: rgb(229, 181, 82);
-}
-
-.pageDescription {
-  margin: 0px 32px 16px 32px;
-  font-size: 20px;
-  font-weight: 400;
-  align-self: center;
-  font-family: "Josefin Sans", sans-serif;
-  color: rgb(229, 181, 82);
 }

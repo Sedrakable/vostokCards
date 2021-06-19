@@ -9,7 +9,6 @@ import News from "../../assets/illu/News.svg";
 import Products from "../../assets/illu/Products.svg";
 import About from "../../assets/illu/About.svg";
 import Contact from "../../assets/illu/Contact.svg";
-import Shop from "../../assets/illu/Cart.svg";
 import Logo from "../../assets/illu/Main Logo.svg";
 import BackLogo from "../../assets/illu/Back Logo.svg";
 import Diamond from "../../assets/illu/Diamond.svg";
@@ -99,7 +98,7 @@ const Navbar = () => {
           </TabButton>
 
           <TabButton
-            href="/products"
+            href="/contact"
             addClass={addMenuClass}
             parentCallback={callback}
           >
@@ -134,7 +133,7 @@ const Navbar = () => {
             <img className={"tab_button tab_hover"} src={About} />
           </TabButton>
 
-          <TabButton addClass={`tab tab_gold ${tabClass}`} href="/products">
+          <TabButton addClass={`tab tab_gold ${tabClass}`} href="/contact">
             <img className={"tab_button tab_hover"} src={Contact} />
           </TabButton>
         </div>

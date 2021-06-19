@@ -1,4 +1,5 @@
 import React from "react";
+import TextBox from "../all page stuff/TextBox";
 
 const Story = ({ items, diamond }) => {
   const renderItems = items.map((item) => {
@@ -18,11 +19,11 @@ const Story = ({ items, diamond }) => {
           </div>
         </div>
 
-        <div className="text news_text pad_8">{item.story_1}</div>
+        <TextBox text={item.story_1} />
         <div className="news_image  border">
           <img src={item.image} />
         </div>
-        <div className=" text news_text pad_8">{item.story_2}</div>
+        <TextBox text={item.story_2} />
       </div>
     );
   });

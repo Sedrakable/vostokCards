@@ -1,14 +1,17 @@
 import React from "react";
 import ProductGrid from "./ProductGrid";
 import "../../../css/Products.css";
+import Header from "../all page stuff/Header";
+
+const header = {
+  title: "Products",
+  desc: "Amazing decks that push the bounderies of awesomeness",
+};
 
 const Products = ({ items }) => {
   return (
     <div className="page">
-      <h1 className="page_title">Products</h1>
-      <h1 className="pageDescription">
-        Amazing decks that push the bounderies of awesomeness
-      </h1>
+      <Header title={header.title} description={header.desc} />
       <ProductGrid items={items} />
     </div>
   );

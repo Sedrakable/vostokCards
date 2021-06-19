@@ -4,7 +4,7 @@ import ProductButton from "./ProductButton";
 const ProductsGrid = ({ items }) => {
   const renderItems = items.map((item) => {
     return (
-      <div key={item.name} className="Item black_back">
+      <div key={item.name} className="item black_back">
         <ProductButton item={item} />
 
         <div className="item_buttons">
@@ -14,7 +14,7 @@ const ProductsGrid = ({ items }) => {
     );
   });
 
-  return <div className="ProductGrid brown_back">{renderItems}</div>;
+  return <div className="product_grid brown_back">{renderItems}</div>;
 };
 
 export default ProductsGrid;

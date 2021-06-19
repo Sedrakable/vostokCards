@@ -1,5 +1,6 @@
 import React from "react";
 import Story from "./Story";
+import Header from "../all page stuff/Header";
 import "../../../css/News.css";
 
 import news_1 from "../../../assets/photos/News_1.jpg";
@@ -16,12 +17,16 @@ const items = [
   },
 ];
 
+const header = {
+  title: "News",
+  desc: "Past and Future updates",
+};
+
 const NewsPage = () => {
   return (
     <div className="page">
-      <h1 className="page_title">News</h1>
-      <h1 className="pageDescription">Find out about past and current info</h1>
-      <div className="news_container center_flex flex_columb">
+      <Header title={header.title} description={header.desc} />
+      <div className="container center_flex flex_columb">
         <Story items={items} diamond={red_diamond} />
       </div>
     </div>

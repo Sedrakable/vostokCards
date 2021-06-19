@@ -6,10 +6,12 @@ import Products from "./pages/product page/Products";
 import ProductPage from "./pages/product page/ProductPage";
 import NewsPage from "./pages/news page/NewsPage";
 import AboutPage from "./pages/about page/AboutPage";
+import ContactPage from "./pages/contact page/ContactPage";
 import TabButton from "./navbar/TabButton";
 import "../css/NewBox.css";
 import "../css/Main.css";
 import "../css/ScrollBar.css";
+import "../css/Header.css";
 
 import image_1 from "../assets/photos/AG_2.JPG";
 import image_2 from "../assets/photos/AG_1.jpg";
@@ -72,11 +74,11 @@ const App = () => {
   };
 
   const AboutPagee = () => {
-    return <AboutPage items={items} />;
+    return <AboutPage />;
   };
 
-  const ProductsPages = (it) => {
-    return <ProductPage item={it} />;
+  const ContactPagee = () => {
+    return <ContactPage />;
   };
 
   const renderedLinks = items.map((item) => {
@@ -96,6 +98,7 @@ const App = () => {
           <Route path="/news" component={NewsPagee} />
           <Route path="/about" component={AboutPagee} />
           <Route path="/products" component={ProductPagee} />
+          <Route path="/contact" component={ContactPagee} />
         </div>
       </BrowserRouter>
     </div>

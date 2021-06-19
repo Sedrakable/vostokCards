@@ -1,23 +1,32 @@
 import React from "react";
 import "../../../css/About.css";
+import Story from "../news page/Story";
+import Header from "../all page stuff/Header";
 
-import red_diamond from "../../../assets/illu/Diamond Hover.svg";
+import red_diamond from "../../../assets/illu/Diamond.svg";
+
+const items = [
+  {
+    title: "How it started",
+    date: null,
+    story_1:
+      "We are nearing the launch date of our Kickstarter! This is the first place where the deck Animal Gangdom will be available to purchase. We are in the process of taking and editing images that will represent the deck in the best light possible, figuratively and literally...",
+    image: null,
+    story_2: null,
+  },
+];
+
+const header = {
+  title: "About",
+  desc: "About the boiz",
+};
 
 const AboutPage = () => {
   return (
     <div className="page">
-      <h1 className="page_title">About</h1>
-      <h1 className="pageDescription">About the Boiz</h1>
-      <div className="about border white_back">
-        <div className="about_title title text pad_16 news_title">
-          How it started
-        </div>
-        <div className="text about_text pad_18">
-          We are two graphic designers from Montreal, Canada, with experience in
-          the video game industry, but a passion for playing cards. In the
-          middle of the pandemic, we decided to embrace our biggest project idea
-          yet and put our skills to the test!
-        </div>
+      <Header title={header.title} description={header.desc} />
+      <div className="container center_flex flex_columb">
+        <Story items={items} diamond={red_diamond} />
       </div>
     </div>
   );

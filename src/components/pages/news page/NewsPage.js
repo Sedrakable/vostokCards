@@ -27,7 +27,7 @@ const NewsPage = () => {
     <div className="page">
       <Header title={header.title} description={header.desc} />
       <div className="container center_flex flex_columb">
-        <Story items={items} diamond={red_diamond} />
+        <Story items={items} />
       </div>
     </div>
   );

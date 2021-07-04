@@ -18,6 +18,10 @@
   text-decoration: none;
 }
 
+.contact_item:hover {
+  cursor: pointer;
+}
+
 .contact_item > img {
   width: 100%;
   height: 64px;

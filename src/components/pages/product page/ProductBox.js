@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import "../../../css/ProductPage.css";
-import NewBox from "../home page/NewBox";
 
 const ProductBox = (item) => {
   const sideDecider = (item) => {
+    const mystyle = {
+      objectPosition: `50% ${item.item.transY}%`,
+    };
     if (item.item.side === "left") {
       return (
         <div className="product_box ">
           <div className="imageWrap_left">
             <div className="left_side ">
-              <div className="left_trapeeze"></div>
-
               <div className="text_holder">
-                {item.item.logo}
+                <div className="text pad_8 container_title gold_text">
+                  {item.item.title}
+                </div>
                 <p className="description_text text">{item.item.text}</p>
               </div>
               <div className="strip strip_left"></div>
             </div>
 
-            <img className="Image " src={item.item.image} />
+            <img style={mystyle} className="Image_page" src={item.item.image} />
           </div>
         </div>
       );
@@ -26,26 +28,24 @@ const ProductBox = (item) => {
       return (
         <div className="product_box ">
           <div className="imageWrap_right">
+            <img style={mystyle} className="Image_page" src={item.item.image} />
             <div className="right_side ">
-              <div className="right_trapeeze"></div>
               <div className="strip strip_right"></div>
               <div className="text_holder">
-                {item.item.logo}
+                <div className="text pad_8 container_title red_text">
+                  {item.item.title}
+                </div>
                 <p className="description_text text">{item.item.text}</p>
               </div>
             </div>
-
-            <img className="Image " src={item.item.image} />
           </div>
         </div>
       );
-    } else if (item.item.side === "title") {
+    } else {
       return (
         <div className="product_box ">
           <div className="imageWrap_left">
             <div className="left_side ">
-              <div className="left_trapeeze"></div>
-
               <div className="text_holder">
                 {item.item.logo}
                 <p className="description_text text">{item.item.text}</p>
@@ -59,15 +59,9 @@ const ProductBox = (item) => {
               <div className="strip strip_left"></div>
             </div>
 
-            <img className="Image " src={item.item.image} />
+            <img style={mystyle} className="Image_page" src={item.item.image} />
           </div>
         </div>
-      );
-    } else if (item.item.side === "album") {
-      return (
-        <React.Fragment>
-          <NewBox />
-        </React.Fragment>
       );
     }
   };

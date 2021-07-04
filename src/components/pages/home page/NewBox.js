@@ -4,31 +4,7 @@ import ArrowButton from "./ArrowButton";
 import Circles from "./Circles";
 import TabButton from "../../navbar/TabButton";
 
-import image_1 from "../../../assets/photos/AG_2.JPG";
-import image_2 from "../../../assets/photos/AG_3.jpg";
-import image_3 from "../../../assets/photos/AG_1.jpg";
-import image_4 from "../../../assets/photos/AG_4.jpg";
-
-const items = [
-  {
-    image: image_1,
-    text: "I",
-  },
-  {
-    image: image_2,
-    text: "II",
-  },
-  {
-    image: image_3,
-    text: "III",
-  },
-  {
-    image: image_4,
-    text: "IV",
-  },
-];
-
-const NewBox = ({ children }) => {
+const NewBox = ({ children, items }) => {
   const getWidth = () =>
     window.screen.innerWidth ||
     document.documentElement.clientWidth ||

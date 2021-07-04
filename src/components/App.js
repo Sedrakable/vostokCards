@@ -13,29 +13,25 @@ import "../css/Main.css";
 import "../css/ScrollBar.css";
 import "../css/Header.css";
 
-import image_1 from "../assets/photos/AG_2.JPG";
-import image_2 from "../assets/photos/AG_1.jpg";
+import image_1 from "../assets/photos/AG_1.jpg";
+import image_2 from "../assets/photos/AG_2.jpg";
 import image_3 from "../assets/photos/AG_3.jpg";
 import image_4 from "../assets/photos/AG_4.jpg";
+import image_5 from "../assets/photos/AG_5.jpg";
+import image_6 from "../assets/photos/AG_6.jpg";
+import image_7 from "../assets/photos/AG_7.jpg";
 import Title from "../assets/illu/Title.svg";
 import Background from "../assets/illu/Texture.svg";
 
-const AG_text = [
-  "Check out and support our Kickstarter. Earlybirds get 10% off!",
-  "Did you ever imagine a card where the jack of spades is in a tracksuit, has a ski mask on and not to mention is a wolf!? Well we certainly did… Every suit is associated with a different gang, from a different culture and a different animal kingdom. Every character has its own personality, while still keeping the traditional, simplistic look of a playing card. We wanted a product that could be used as a collectible, for cardistry, for magic and for playing games.",
-  "We have chosen to print our designs on 310g German black core cards. Thus, each card contains an inner layer which helps the card remain straight after being twisted and bent, as well as making sure that one cannot see through the card. A good core to a card is what a good spine is to a human.In addition, the cards have an air-cushion finish, which in principle, are extremely small indentations on the finish of the card that pass particles of air in between them, which eases the manipulation of the deck during magic tricks and shuffling, giving the feeling of an “air-cushion” in-between the cards. Overall, these materials contribute to excellent flexibility and durability, making this deck perfectly suited not only for playing games, but also for cardistry and magic.",
-  "The tuck box has a smooth black matte finish, with gold foil and embossing. From the front to the back, the sides and the opening flaps, the surface of the box is embroidered with intricate designs of the animal kingdom and the gang world. The gold foil and its reflections in different light conditions give the final touch contributing to the luxurious look of the deck, whereas the embossing gives a 3D feel when holding the box in your hands.",
-];
-const items = [
+const pageItems = [
   {
     name: "Animal Gangdom",
     price: 21.99,
-    image: [image_1, image_2, image_3, image_4],
-    text: AG_text,
+    image: image_1,
     path: "/products/animal_gangdom",
     logo: (
       <div className="Title">
-        <img className="logo_image" src={Title} />
+        <img className="logo_image_page" src={Title} />
       </div>
     ),
     clickable: true,
@@ -48,6 +44,8 @@ const items = [
     clickable: false,
   },
 ];
+
+const NewBoxItems = [image_1, image_2, image_3, image_4];
 
 const HomePageTitle = (t) => {
   return (
@@ -62,7 +60,7 @@ const HomePageTitle = (t) => {
 
 const App = () => {
   const MainPagee = () => {
-    return <NewBox>{HomePageTitle(Title)}</NewBox>;
+    return <NewBox items={NewBoxItems}>{HomePageTitle(Title)}</NewBox>;
   };
 
   const NewsPagee = () => {
@@ -70,7 +68,7 @@ const App = () => {
   };
 
   const ProductPagee = () => {
-    return <Products items={items} />;
+    return <Products items={pageItems} />;
   };
 
   const AboutPagee = () => {
@@ -81,7 +79,7 @@ const App = () => {
     return <ContactPage />;
   };
 
-  const renderedLinks = items.map((item) => {
+  const renderedLinks = pageItems.map((item) => {
     return (
       <Route path={item.path} component={() => <ProductPage item={item} />} />
     );

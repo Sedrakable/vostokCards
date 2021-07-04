@@ -13,7 +13,7 @@
 }
 
 .page_title {
-  margin: 16px;
+  margin: 32px;
   font-size: 48px;
   font-weight: 400;
   align-self: center;
@@ -37,6 +37,6 @@
   align-items: center;
   margin: auto;
   margin-top: 32px;
-  width: fit-content;
+  width: 100%;
   overflow: hidden;
 }

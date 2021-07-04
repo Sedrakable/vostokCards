@@ -1,7 +1,7 @@
 import React from "react";
 
 const TextBox = ({ text }) => {
-  return <div className="text news_text pad_8">{text}</div>;
+  return <span className="text container_text pad_8">{text}</span>;
 };
 
 export default TextBox;

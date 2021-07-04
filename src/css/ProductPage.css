@@ -1,6 +1,26 @@
+.pannel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  margin-bottom: 32px;
+  padding: 8px;
+  background-color: rgb(38, 38, 38);
+  border-top: 2px solid rgb(229, 181, 82);
+  border-bottom: 2px solid rgb(229, 181, 82);
+}
+
+.pannel > img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  max-height: 128px;
+}
+
 .product_box {
   margin-bottom: 32px !important;
-  height: 600px !important;
+  height: fit-content !important;
   width: 100%;
 }
 
@@ -8,9 +28,8 @@
   position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
-  height: 100%;
-  min-width: 100%;
+  flex-wrap: wrap;
+  height: fit-content;
   width: 100%;
 
   border-top: 2px solid rgb(229, 181, 82);
@@ -21,10 +40,8 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  align-items: baseline;
-
+  flex-wrap: wrap-reverse;
   height: 100%;
-  min-width: 100%;
   width: 100%;
 
   border-top: 2px solid rgb(170, 170, 179);
@@ -32,40 +49,45 @@
 }
 
 .left_side {
-  top: 0;
   display: flex;
-  justify-content: start;
+  flex: 1;
   flex-direction: row;
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  max-width: 500px;
-  min-width: 280px;
+  justify-content: space-between;
+  width: auto;
+  min-height: 600px;
+
+  min-width: 320px;
+  background-color: rgb(27, 27, 30);
 }
 
 .right_side {
   display: flex;
-  justify-content: start;
+  flex: 1;
   flex-direction: row;
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  max-width: 500px;
-  min-width: 280px;
-}
-
-.left_trapeeze {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  justify-content: space-between;
+  width: auto;
+  min-height: 600px;
+  min-width: 320px;
   background-color: rgb(27, 27, 30);
 }
 
-.right_trapeeze {
-  position: absolute;
+.Image_page {
+  display: flex;
+  flex: 2;
+  width: auto;
+  min-width: 400px;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.logo_image_page {
+  padding: 16px 48px 16px 48px;
+
+  min-width: 100px;
+  height: auto;
   width: 100%;
-  height: 100%;
-  background-color: rgb(27, 27, 30);
 }
 
 .text_holder {
@@ -75,7 +97,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   width: auto;
-  margin: 64px 5% 0px 5%;
+  margin: 16px 5% 0px 5%;
 }
 
 .Title {
@@ -94,9 +116,11 @@
   position: relative;
   text-align: left !important;
   display: flex;
-  font-size: 18px !important;
+  font-size: 20px !important;
   font-weight: 700 !important;
+  line-height: 32px;
   width: 100%;
+  margin: 0;
   color: #f5eae0 !important;
 }
 

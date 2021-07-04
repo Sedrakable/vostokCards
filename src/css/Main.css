@@ -1,6 +1,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  overflow-y: overlay;
   height: 100%;
   width: 100%;
   background: rgb(27, 27, 30) url("../assets/illu/Texture.svg") repeat center

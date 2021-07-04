@@ -50,7 +50,7 @@ const ProductBox = (item) => {
                 {item.item.logo}
                 <p className="description_text text">{item.item.text}</p>
                 <a
-                  className={"button text black_text gold_back"}
+                  className={"button text black_text gold_back page_button"}
                   href="https://www.kickstarter.com/profile/vostokcards"
                 >
                   Kickstarter

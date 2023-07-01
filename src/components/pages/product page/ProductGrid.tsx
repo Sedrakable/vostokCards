@@ -1,7 +1,8 @@
 import React from "react";
 import ProductButton from "./ProductButton";
+import { PageItemsType } from "../../App";
 
-const ProductsGrid = ({ items }) => {
+const ProductGrid: React.FC<{ items: PageItemsType[] }> = ({ items }) => {
   const renderItems = items.map((item) => {
     return (
       <div key={item.name} className="item black_back">
@@ -17,4 +18,4 @@ const ProductsGrid = ({ items }) => {
   return <div className="product_grid brown_back">{renderItems}</div>;
 };
 
-export default ProductsGrid;
+export default ProductGrid;

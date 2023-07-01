@@ -5,7 +5,6 @@ import ContactButton from "./ContactButton";
 import TopPannel from "../all page stuff/TopPannel";
 import "../../../css/Contact.css";
 
-import diamond from "../../../assets/illu/Diamond.svg";
 import kick from "../../../assets/illu/Kick.svg";
 import insta from "../../../assets/illu/Insta.svg";
 import mail from "../../../assets/illu/mail.svg";

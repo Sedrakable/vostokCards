@@ -1,19 +1,22 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ReactNode } from "react";
 import NewBoxImages from "./NewBoxImages";
 import ArrowButton from "./ArrowButton";
 import Circles from "./Circles";
 import TabButton from "../../navbar/TabButton";
 
-const NewBox = ({ children, items }) => {
+const NewBox: React.FC<{ children: ReactNode; items: string[] }> = ({
+  children,
+  items,
+}) => {
   const getWidth = () =>
-    window.screen.innerWidth ||
+    window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
-  const myRef = useRef();
+  const myRef = useRef(null);
 
   const [styles, setStyles] = useState(0);
-  const [maximum, setMaximum] = useState(null);
+  const [maximum, setMaximum] = useState<number>(0);
   const [num, setNum] = useState(0);
   const [speed, setSpeed] = useState(1);
   const [arrowY, setArrowY] = useState(0);
@@ -26,10 +29,10 @@ const NewBox = ({ children, items }) => {
     num > 0 ? setNum(num - 1) : setNum(maximum);
   };
 
-  useEffect(() => {
-    const max = myRef.current.children.length;
-    setMaximum(max - 1);
-  }, []);
+  // useEffect(() => {
+  //   const max = myRef?.current?.children.length;
+  //   setMaximum(max - 1);
+  // }, []);
 
   useEffect(() => {
     setStyles(-100 * num);

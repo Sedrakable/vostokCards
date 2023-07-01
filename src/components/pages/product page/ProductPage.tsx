@@ -1,24 +1,32 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "../../../css/ProductPage.css";
 import ProductBox from "./ProductBox";
 import ProductPannel from "./ProductPannel";
-import NewBox from "../home page/NewBox";
+import { PageItemsType } from "../../App";
 
-import pannel_box from "../../../assets/photos/Pannel_box.png";
-import pannel_cards from "../../../assets/photos/Pannel_cards.png";
+const pannel_box = "../../../assets/photos/Pannel_box.png";
+const pannel_cards = "../../../assets/photos/Pannel_cards.png";
 
-import image_main from "../../../assets/photos/AG_2.jpg";
-import image_into from "../../../assets/photos/AG_1.jpg";
-import image_box from "../../../assets/photos/AG_5.jpg";
-import image_card from "../../../assets/photos/AG_3.jpg";
-import image_concept from "../../../assets/photos/AG_4.jpg";
-import image_clubs from "../../../assets/photos/Clubs.jpg";
-import image_hearts from "../../../assets/photos/Hearts.jpg";
-import image_spades from "../../../assets/photos/Spades.jpg";
-import image_diamonds from "../../../assets/photos/Diamonds.jpg";
+const image_main = "../../../assets/photos/AG_2.jpg";
+const image_into = "../../../assets/photos/AG_1.jpg";
+const image_box = "../../../assets/photos/AG_5.jpg";
+const image_card = "../../../assets/photos/AG_3.jpg";
+const image_concept = "../../../assets/photos/AG_4.jpg";
+const image_clubs = "../../../assets/photos/Clubs.jpg";
+const image_hearts = "../../../assets/photos/Hearts.jpg";
+const image_spades = "../../../assets/photos/Spades.jpg";
+const image_diamonds = "../../../assets/photos/Diamonds.jpg";
 
-const ProductPage = ({ item }) => {
-  const items = [
+export interface ItemsType {
+  logo?: ReactNode;
+  side: string;
+  image: string;
+  text: string;
+  title?: string;
+  transY?: number;
+}
+const ProductPage: React.FC<{ item: PageItemsType }> = ({ item }) => {
+  const items: ItemsType[] = [
     {
       logo: item.logo,
       side: "title",
@@ -80,10 +88,6 @@ const ProductPage = ({ item }) => {
       text: "American gangsters, featuring jungle animals: Hyena, Cobra, Crocodile",
     },
   ];
-
-  const renderItems = items.map((item) => {
-    return <ProductBox item={item}></ProductBox>;
-  });
 
   return (
     <div className="page">

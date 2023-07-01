@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 import NewBox from "./pages/home page/NewBox";
@@ -13,17 +13,26 @@ import "../css/Main.css";
 import "../css/ScrollBar.css";
 import "../css/Header.css";
 
-import image_1 from "../assets/photos/AG_1.jpg";
-import image_2 from "../assets/photos/AG_2.jpg";
-import image_3 from "../assets/photos/AG_3.jpg";
-import image_4 from "../assets/photos/AG_4.jpg";
-import image_5 from "../assets/photos/AG_5.jpg";
-import image_6 from "../assets/photos/AG_6.jpg";
-import image_7 from "../assets/photos/AG_7.jpg";
-import Title from "../assets/illu/Title.svg";
+// import image_5 from "../assets/photos/AG_5.jpg";
+// import image_6 from "../assets/photos/AG_6.jpg";
+// import image_7 from "../assets/photos/AG_7.jpg";
+import { ReactComponent as Title } from "../assets/illu/Title.svg";
 import Background from "../assets/illu/Texture.svg";
+const image_1 = "../assets/photos/AG_1.jpg";
+const image_2 = "../assets/photos/AG_2.jpg";
+const image_3 = "../assets/photos/AG_3.jpg";
+const image_4 = "../assets/photos/AG_4.jpg";
 
-const pageItems = [
+export interface PageItemsType {
+  name: string;
+  price: number;
+  image: string;
+  path: string;
+  logo?: ReactNode;
+  clickable: boolean;
+}
+
+const pageItems: PageItemsType[] = [
   {
     name: "Animal Gangdom",
     price: 21.99,
@@ -31,14 +40,15 @@ const pageItems = [
     path: "/products/animal_gangdom",
     logo: (
       <div className="Title">
-        <img className="logo_image_page" src={Title} />
+        <Title />
+        {/* <img className="logo_image_page" src={Title} /> */}
       </div>
     ),
     clickable: true,
   },
   {
     name: "Comming Soon",
-    price: "?",
+    price: 0,
     image: Background,
     path: "/products/CS",
     clickable: false,
@@ -47,10 +57,14 @@ const pageItems = [
 
 const NewBoxItems = [image_1, image_2, image_3, image_4];
 
-const HomePageTitle = (t) => {
+const HomePageTitle = (t: any) => {
   return (
     <div className="new_box_title flex_columb abs center_flex">
-      <img className="logo_image pad_16  brown_back border" src={t} />
+      <img
+        className="logo_image pad_16  brown_back border"
+        src={t}
+        alt="have no clue"
+      />
       <TabButton addClass={"button"} href="/products/animal_gangdom">
         See Product
       </TabButton>
@@ -88,7 +102,7 @@ const App = () => {
   return (
     <div className="whole_page">
       <Navbar />
-
+      UNDER MAINTENANCE
       <BrowserRouter>
         <div>
           {renderedLinks}

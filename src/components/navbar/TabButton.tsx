@@ -1,7 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-const TabButton = ({ addClass, children, href, parentCallback }) => {
-  const onClick = (event) => {
+const TabButton: React.FC<{
+  addClass?: string;
+  children: ReactNode;
+  href: string;
+}> = ({ addClass, children, href }) => {
+  const onClick = (event: any) => {
     if (event.metaKey || event.ctrlKey) {
       return;
     }
@@ -10,9 +14,6 @@ const TabButton = ({ addClass, children, href, parentCallback }) => {
     console.log("/#" + href);
     const navEvent = new PopStateEvent("popstate");
     window.dispatchEvent(navEvent);
-    if (parentCallback != null) {
-      parentCallback("");
-    }
   };
 
   return (

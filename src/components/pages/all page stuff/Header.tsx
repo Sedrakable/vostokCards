@@ -1,6 +1,9 @@
 import React from "react";
 
-const Header = ({ title, description }) => {
+const Header: React.FC<{ title: string; description: string }> = ({
+  title,
+  description,
+}) => {
   return (
     <div className="header">
       <h1 className="page_title">{title}</h1>

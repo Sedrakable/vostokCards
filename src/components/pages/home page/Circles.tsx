@@ -2,20 +2,19 @@ import React, { useRef, useEffect, useState } from "react";
 import diamond from "../../../assets/illu/Diamond.svg";
 import diamondRed from "../../../assets/illu/Diamond Hover.svg";
 
-const dots = [];
 let enume = -1;
 
-const Circles = ({ max, num }) => {
-  const myRef = useRef();
-  const [dots, setDots] = useState([]);
+const Circles: React.FC<{ max: number; num: number }> = ({ max, num }) => {
+  const myRef = useRef(null);
+  const [dots, setDots] = useState<JSX.Element[]>([]);
   const [previusNum, setPreviusNum] = useState(num);
 
-  const createDot = (d) => {
+  const createDot = (d: string) => {
     enume++;
     return (
-      <a className="diamond">
-        <img id={`diamond_${enume}`} src={d} />
-      </a>
+      <div className="diamond">
+        <img id={`diamond_${enume}`} src={d} alt="alt" />
+      </div>
     );
   };
 
@@ -29,20 +28,18 @@ const Circles = ({ max, num }) => {
     }
   };
 
-  useEffect(() => {
-    createDots();
-  }, []);
+  createDots();
 
-  useEffect(() => {
-    var x = myRef.current.children[num];
-    var beforeX = myRef.current.children[previusNum];
+  // useEffect(() => {
+  //   const x = myRef?.current?.children[num];
+  //   const beforeX = myRef?.current?.children[previusNum];
 
-    if (x != null) {
-      beforeX.children[0].src = diamond;
-      x.children[0].src = diamondRed;
-    }
-    setPreviusNum(num);
-  }, [num]);
+  //   if (x != null) {
+  //     beforeX.children[0].src = diamond;
+  //     x.children[0].src = diamondRed;
+  //   }
+  //   setPreviusNum(num);
+  // }, [num]);
 
   return (
     <div ref={myRef} id="dots" className="dots ">

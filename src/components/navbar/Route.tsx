@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 
-const Route = ({ path, children }) => {
+const Route: React.FC<{ path: string; children: ReactNode }> = ({
+  path,
+  children,
+}) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {

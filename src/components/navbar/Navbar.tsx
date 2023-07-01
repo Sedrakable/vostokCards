@@ -5,17 +5,17 @@ import HamburgerButton from "./HamburgerButton";
 import ExitButton from "./ExitButton";
 
 //Images
-import News from "../../assets/illu/News.svg";
-import Products from "../../assets/illu/Products.svg";
-import About from "../../assets/illu/About.svg";
-import Contact from "../../assets/illu/Contact.svg";
-import Logo from "../../assets/illu/Main Logo.svg";
-import BackLogo from "../../assets/illu/Back Logo.svg";
-import Diamond from "../../assets/illu/Diamond.svg";
+import { ReactComponent as News } from "../../assets/illu/News.svg";
+import { ReactComponent as Products } from "../../assets/illu/Products.svg";
+import { ReactComponent as About } from "../../assets/illu/About.svg";
+import { ReactComponent as Contact } from "../../assets/illu/Contact.svg";
+import { ReactComponent as Logo } from "../../assets/illu/Main Logo.svg";
+import { ReactComponent as BackLogo } from "../../assets/illu/Back Logo.svg";
+import { ReactComponent as Diamond } from "../../assets/illu/Diamond.svg";
 
 const Navbar = () => {
   const getWidth = () =>
-    window.screen.innerWidth ||
+    window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
@@ -31,9 +31,6 @@ const Navbar = () => {
     setHamburgerMenuClass("");
   };
 
-  const callback = (x) => {
-    setHamburgerMenuClass(x);
-  };
   const burgerOrNo = () => {
     if (getWidth() <= 1000) {
       setHamburgerButtonClass("show");
@@ -64,45 +61,29 @@ const Navbar = () => {
         </div>
 
         <div className="hambuger_tabs">
-          <TabButton
-            href="/news"
-            addClass={addMenuClass}
-            parentCallback={callback}
-          >
-            <img className={"tab_diamond"} src={Diamond} />
+          <TabButton href="/news" addClass={addMenuClass}>
+            <Diamond />
             <h1 className={"tab_button ham_tab tab_hover text red_text"}>
               News
             </h1>
           </TabButton>
 
-          <TabButton
-            href="/products"
-            addClass={addMenuClass}
-            parentCallback={callback}
-          >
-            <img className={"tab_diamond"} src={Diamond} />
+          <TabButton href="/products" addClass={addMenuClass}>
+            <Diamond />
             <h1 className={"tab_button ham_tab tab_hover text red_text"}>
               Products
             </h1>
           </TabButton>
 
-          <TabButton
-            href="/about"
-            addClass={addMenuClass}
-            parentCallback={callback}
-          >
-            <img className={"tab_diamond"} src={Diamond} />
+          <TabButton href="/about" addClass={addMenuClass}>
+            <Diamond />
             <h1 className={"tab_button ham_tab tab_hover text red_text"}>
               About
             </h1>
           </TabButton>
 
-          <TabButton
-            href="/contact"
-            addClass={addMenuClass}
-            parentCallback={callback}
-          >
-            <img className={"tab_diamond"} src={Diamond} />
+          <TabButton href="/contact" addClass={addMenuClass}>
+            <Diamond />
             <h1 className={"tab_button ham_tab tab_hover text red_text"}>
               Contact
             </h1>
@@ -115,26 +96,26 @@ const Navbar = () => {
         </div>
         <div className="middle">
           <TabButton addClass={`tab tab_silver ${tabClass}`} href="/news">
-            <img className={"tab_button tab_hover "} src={News} />
+            <News />
           </TabButton>
 
           <TabButton addClass={`tab tab_silver ${tabClass}`} href="/products">
-            <img className={"tab_button tab_hover"} src={Products} />
+            <Products />
           </TabButton>
 
           <TabButton href="/">
             <div className="logo_wrapper">
-              <img className={"back_logo"} src={BackLogo} />
-              <img className={"main_logo"} src={Logo} />
+              <BackLogo />
+              <Logo />
             </div>
           </TabButton>
 
           <TabButton addClass={`tab tab_gold ${tabClass}`} href="/about">
-            <img className={"tab_button tab_hover"} src={About} />
+            <About />
           </TabButton>
 
           <TabButton addClass={`tab tab_gold ${tabClass}`} href="/contact">
-            <img className={"tab_button tab_hover"} src={Contact} />
+            <Contact />
           </TabButton>
         </div>
         <div className="right center_flex">

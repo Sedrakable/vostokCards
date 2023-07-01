@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NewBoxImages = ({ items }) => {
+const NewBoxImages: React.FC<{ items: string[] }> = ({ items }) => {
   const renderItems = items.map((item) => {
     return (
       <div className="imageWrap">

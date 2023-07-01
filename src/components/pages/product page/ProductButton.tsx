@@ -1,7 +1,8 @@
 import React from "react";
+import { PageItemsType } from "../../App";
 
-const ProductButton = ({ item }) => {
-  const onClick = (event) => {
+const ProductButton: React.FC<{ item: PageItemsType }> = ({ item }) => {
+  const onClick = (event: any) => {
     if (item.clickable === false) {
       return;
     }

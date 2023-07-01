@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ExitButton = ({ onPress, addClass }) => {
+const ExitButton: React.FC<{
+  onPress: React.MouseEventHandler<HTMLButtonElement>;
+  addClass?: string;
+}> = ({ onPress, addClass }) => {
   return (
-    <a
+    <button
       onClick={onPress}
       className={`exit_button center_flex flex_columb ${addClass}`}
     >
       <div className="exit_bar red_back bar_1"></div>
       <div className="exit_bar red_back bar_2"></div>
-    </a>
+    </button>
   );
 };
 

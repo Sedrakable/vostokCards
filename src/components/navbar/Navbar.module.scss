@@ -1,0 +1,220 @@
+@import "../../css/mixins.scss";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  background: radial-gradient(
+    circle 32px,
+    transparent,
+    transparent 94px,
+    rgb(27, 27, 30) 94px
+  );
+}
+
+.left {
+  width: auto;
+  justify-self: start;
+}
+
+.middle {
+  @include flex;
+
+  position: absolute;
+  gap: 2vw;
+  left: 0;
+  right: 0;
+  .logo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.hamburger {
+  visibility: hidden;
+  width: 64px;
+  height: 64px;
+  z-index: 3;
+  margin-left: 8px;
+}
+
+.hamburger:hover {
+  background-color: rgb(46, 46, 51);
+  border-left: 2px solid rgb(170, 170, 179);
+  border-right: 2px solid rgb(170, 170, 179);
+}
+
+.hamburger_menu {
+  position: absolute;
+  left: 0px;
+  width: 256px;
+  height: 100%;
+  z-index: 3;
+  transition: 0.5s;
+  visibility: hidden;
+  transform: translate(-256px, -2px);
+  border-right: 2px solid rgb(170, 170, 179);
+  border-bottom: 2px solid rgb(170, 170, 179);
+  border-top: 2px solid rgb(170, 170, 179);
+}
+
+.hamburger_menu_top {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  border-bottom: 2px solid rgb(170, 170, 179);
+}
+
+.hambuger_tab {
+  text-decoration: none;
+  display: inline-block;
+  justify-content: start !important;
+  height: 40px !important;
+  border-bottom: 2px solid rgb(27, 27, 30);
+  border-left: 2px solid rgb(27, 27, 30);
+  border-right: 2px solid rgb(27, 27, 30);
+}
+
+.hambuger_tab:hover {
+  background-color: rgb(27, 27, 30);
+}
+
+.tab_diamond {
+  height: 16px;
+  padding-left: 8px;
+}
+
+.activeBurger {
+  visibility: visible !important;
+  transition: 0.5s;
+  transform: translate(0, -2px) !important ;
+}
+
+.exit_button {
+  width: 64px;
+  height: 64px;
+  margin-left: 8px;
+}
+
+.exit_button:hover {
+  background-color: rgb(46, 46, 51);
+  border-left: 2px solid rgb(170, 170, 179);
+  border-right: 2px solid rgb(170, 170, 179);
+}
+
+.ham_menu_text {
+  margin-left: 32px;
+  margin-top: 6px;
+  font-size: 42px !important;
+  font-weight: normal !important;
+}
+
+.hamburger_bar {
+  width: 48px;
+  height: 4px;
+  margin: 4px 0px;
+}
+
+.exit_bar {
+  position: absolute;
+  width: 48px;
+  height: 4px;
+}
+
+.bar_1 {
+  transform: rotate(45deg);
+}
+
+.bar_2 {
+  transform: rotate(-45deg);
+}
+
+.show {
+  visibility: visible !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.my_page {
+  padding-top: 48px;
+}
+
+.logo_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 186px;
+  min-width: 100%;
+  width: 100%;
+}
+
+.back_logo {
+  height: 100%;
+}
+
+.main_logo {
+  position: absolute;
+  width: 100%;
+  height: 140px;
+  transition: 0.2s;
+}
+
+.main_logo:hover {
+  height: 150px;
+  transition: 0.2s;
+}
+
+.ham_tab:hover {
+  transform: translateX(16px) scale(1.1);
+  transition: 0.2s;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 8px;
+}
+
+.tab_button {
+  padding: 0px 16px;
+  height: 24px;
+  width: auto;
+}
+
+.tab:hover {
+  background-color: rgb(46, 46, 51);
+}
+
+.tab_gold:hover {
+  border-left: 2px solid rgb(229, 181, 82);
+  border-right: 2px solid rgb(229, 181, 82);
+}
+
+.tab_silver:hover {
+  border-left: 2px solid rgb(170, 170, 179);
+  border-right: 2px solid rgb(170, 170, 179);
+}
+
+.ShopButton {
+  height: 48px;
+  width: auto;
+  animation: hover 6s infinite;
+  animation-direction: normal;
+}
+
+@keyframes hover {
+  0% {
+    transform: translate(-4px, -34px);
+  }
+  50% {
+    transform: translate(4px, -34px);
+  }
+  100% {
+    transform: translate(-4px, -34px);
+  }
+}

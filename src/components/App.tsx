@@ -18,10 +18,10 @@ import "../css/Header.css";
 // import image_7 from "../assets/photos/AG_7.jpg";
 import { ReactComponent as Title } from "../assets/illu/Title.svg";
 import Background from "../assets/illu/Texture.svg";
-const image_1 = "../assets/photos/AG_1.jpg";
-const image_2 = "../assets/photos/AG_2.jpg";
-const image_3 = "../assets/photos/AG_3.jpg";
-const image_4 = "../assets/photos/AG_4.jpg";
+import image_1 from "../assets/photos/AG_1.jpg";
+import image_2 from "../assets/photos/AG_2.jpg";
+import image_3 from "../assets/photos/AG_3.jpg";
+import image_4 from "../assets/photos/AG_4.jpg";
 
 export interface PageItemsType {
   name: string;
@@ -36,12 +36,11 @@ const pageItems: PageItemsType[] = [
   {
     name: "Animal Gangdom",
     price: 21.99,
-    image: image_1,
+    image: image_1 as unknown as string,
     path: "/products/animal_gangdom",
     logo: (
       <div className="Title">
         <Title />
-        {/* <img className="logo_image_page" src={Title} /> */}
       </div>
     ),
     clickable: true,
@@ -55,26 +54,25 @@ const pageItems: PageItemsType[] = [
   },
 ];
 
-const NewBoxItems = [image_1, image_2, image_3, image_4];
+const NewBoxItems: string[] = [
+  image_1 as unknown as string,
+  image_2 as unknown as string,
+  image_3 as unknown as string,
+  image_4 as unknown as string,
+];
 
-const HomePageTitle = (t: any) => {
+const HomePageTitle = (children: ReactNode) => {
   return (
     <div className="new_box_title flex_columb abs center_flex">
-      <img
-        className="logo_image pad_16  brown_back border"
-        src={t}
-        alt="have no clue"
-      />
-      <TabButton addClass={"button"} href="/products/animal_gangdom">
-        See Product
-      </TabButton>
+      {children}
+      <TabButton href="/products/animal_gangdom">See Product</TabButton>
     </div>
   );
 };
 
 const App = () => {
   const MainPagee = () => {
-    return <NewBox items={NewBoxItems}>{HomePageTitle(Title)}</NewBox>;
+    return <NewBox items={NewBoxItems}>{HomePageTitle(<Title />)}</NewBox>;
   };
 
   const NewsPagee = () => {

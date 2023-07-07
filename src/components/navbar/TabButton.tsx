@@ -1,10 +1,11 @@
-import React, { ReactNode } from "react";
+import React from "react";
+import { Heading } from "../reuse/Heading";
+import { Link } from "../reuse/Link";
 
 const TabButton: React.FC<{
-  addClass?: string;
-  children: ReactNode;
+  children: string;
   href: string;
-}> = ({ addClass, children, href }) => {
+}> = ({ children, href }) => {
   const onClick = (event: any) => {
     if (event.metaKey || event.ctrlKey) {
       return;
@@ -17,9 +18,9 @@ const TabButton: React.FC<{
   };
 
   return (
-    <a onClick={onClick} className={addClass} href={href}>
-      {children}
-    </a>
+    <Link href={href}>
+      <Heading>{children}</Heading>
+    </Link>
   );
 };
 

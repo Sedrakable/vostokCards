@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import "../../css/Navbar.css";
+import styles from "./Navbar.module.scss";
 import TabButton from "./TabButton";
 import HamburgerButton from "./HamburgerButton";
 import ExitButton from "./ExitButton";
 
 //Images
-import { ReactComponent as News } from "../../assets/illu/News.svg";
-import { ReactComponent as Products } from "../../assets/illu/Products.svg";
-import { ReactComponent as About } from "../../assets/illu/About.svg";
-import { ReactComponent as Contact } from "../../assets/illu/Contact.svg";
-import { ReactComponent as Logo } from "../../assets/illu/Main Logo.svg";
+import logo from "../../assets/photos/Logo.png";
 import { ReactComponent as BackLogo } from "../../assets/illu/Back Logo.svg";
 import { ReactComponent as Diamond } from "../../assets/illu/Diamond.svg";
 
@@ -51,10 +47,9 @@ const Navbar = () => {
   });
 
   const addMenuClass = "hambuger_tab center_flex";
-
-  return (
-    <div className="my_page ">
-      <div className={`hamburger_menu black_back  ${hamburgerMenuClass}`}>
+  // eslint-disable-next-line no-lone-blocks
+  {
+    /* <div className={`hamburger_menu black_back  ${hamburgerMenuClass}`}>
         <div className="brown_back hamburger_menu_top ">
           <ExitButton onPress={onClickExit} />
           <div className="ham_menu_text text title"> Menu</div>
@@ -89,39 +84,27 @@ const Navbar = () => {
             </h1>
           </TabButton>
         </div>
+      </div> */
+  }
+  return (
+    <div className={styles.navbar}>
+      <div className={styles.left}>
+        <HamburgerButton onPress={onClick} addClass={hamburgerButtonClass} />
       </div>
-      <div className="Navbar">
-        <div className="left ">
-          <HamburgerButton onPress={onClick} addClass={hamburgerButtonClass} />
-        </div>
-        <div className="middle">
-          <TabButton addClass={`tab tab_silver ${tabClass}`} href="/news">
-            <News />
-          </TabButton>
+      <div className={styles.middle}>
+        <TabButton href="/news">News</TabButton>
+        <TabButton href="/products">Products</TabButton>
+        <img src={logo} alt="logo" className={styles.logo} />
+        {/* <div className="logo_wrapper">
+          <BackLogo />
+        </div> */}
 
-          <TabButton addClass={`tab tab_silver ${tabClass}`} href="/products">
-            <Products />
-          </TabButton>
-
-          <TabButton href="/">
-            <div className="logo_wrapper">
-              <BackLogo />
-              <Logo />
-            </div>
-          </TabButton>
-
-          <TabButton addClass={`tab tab_gold ${tabClass}`} href="/about">
-            <About />
-          </TabButton>
-
-          <TabButton addClass={`tab tab_gold ${tabClass}`} href="/contact">
-            <Contact />
-          </TabButton>
-        </div>
-        <div className="right center_flex">
-          <div className="hamburger red_back "></div>
-          {/* <TabButton href="/shop" className={"ShopButton"} image={Shop} /> */}
-        </div>
+        <TabButton href="/about">About</TabButton>
+        <TabButton href="/contact">Contact</TabButton>
+      </div>
+      <div className={styles.right}>
+        {/* <div className="hamburger red_back "></div> */}
+        {/* <TabButton href="/shop" className={"ShopButton"} image={Shop} /> */}
       </div>
     </div>
   );

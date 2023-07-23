@@ -5,7 +5,7 @@ const NewBoxImages: React.FC<{ items: string[] }> = ({ items }) => {
     return (
       <div className="imageWrap">
         <img className="Image" src={item} />
-        <div className="text abs brown_back pad_8">Animal Gangdom</div>
+        <div className="text abs brown_back pad-8">Animal Gangdom</div>
       </div>
     );
   });

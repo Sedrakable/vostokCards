@@ -1,3 +1,21 @@
+@import "./vars.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+
+@font-face {
+  font-family: "Vostok";
+  src: url("../assets/fonts/Vostok.otf") format("opentype");
+}
+
+@mixin fontHeader() {
+  font-family: "Vostok", sans-serif;
+  font-weight: normal;
+}
+
+@mixin fontParagraph() {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
 @mixin flex($x: center, $y: center) {
   display: flex;
   justify-content: $x;

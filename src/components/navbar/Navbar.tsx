@@ -1,113 +1,100 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.scss";
 import TabButton from "./TabButton";
-import HamburgerButton from "./HamburgerButton";
-import ExitButton from "./ExitButton";
+import { Icon } from "../reuse/Icon";
+import { useWindowResize } from "../../helpers/useWindowResize";
+import { IconButton } from "../reuse/IconButton";
+import { Line } from "../reuse/Line";
+import { EmailList } from "../pages/contact page/EmailList";
+import { FollowUs } from "../footer/FollowUs";
+import cn from "classnames";
+const logo = require("../../assets/photos/Logo_simple.png");
 
-//Images
-import logo from "../../assets/photos/Logo.png";
-import { ReactComponent as BackLogo } from "../../assets/illu/Back Logo.svg";
-import { ReactComponent as Diamond } from "../../assets/illu/Diamond.svg";
+export const tabTexts: string[] = ["news", "products", "about", "contact"];
 
-const Navbar = () => {
-  const getWidth = () =>
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth;
+export const Navbar = () => {
+  const { isMobile } = useWindowResize();
+  const [sidebar, setSidebar] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
-  const [hamburgerMenuClass, setHamburgerMenuClass] = useState("");
-  const [hamburgerButtonClass, setHamburgerButtonClass] = useState("");
-  const [tabClass, setTabClass] = useState("");
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = navRef?.current?.clientHeight!;
+      const isScrolled = window.scrollY > offset;
+      setScrolled(isScrolled);
+    };
+    // Add scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
 
-  const onClick = () => {
-    setHamburgerMenuClass("activeBurger");
-  };
+    // Clean up the scroll event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [navRef]);
 
-  const onClickExit = () => {
-    setHamburgerMenuClass("");
-  };
+  const logoComp = <img src={logo} alt="logo" className={styles.logo} />;
 
-  const burgerOrNo = () => {
-    if (getWidth() <= 1000) {
-      setHamburgerButtonClass("show");
-      setTabClass("hide");
-    } else {
-      onClickExit();
-      setHamburgerButtonClass("");
-      setTabClass("");
-    }
-  };
+  const tabs = (isMobile: boolean = false) =>
+    tabTexts.map((tabText) => {
+      return (
+        <>
+          <div className={styles.tabWrapper}>
+            <TabButton className={styles.tab} href={`/${tabText}`}>
+              {tabText}
+            </TabButton>
+            {isMobile && <Icon icon="arrow" size="extra-small" color="white" />}
+          </div>
+          {isMobile && <Line color="black" />}
+        </>
+      );
+    });
 
-  window.addEventListener("resize", (event) => {
-    burgerOrNo();
-  });
-
-  window.addEventListener("load", (event) => {
-    burgerOrNo();
-  });
-
-  const addMenuClass = "hambuger_tab center_flex";
-  // eslint-disable-next-line no-lone-blocks
-  {
-    /* <div className={`hamburger_menu black_back  ${hamburgerMenuClass}`}>
-        <div className="brown_back hamburger_menu_top ">
-          <ExitButton onPress={onClickExit} />
-          <div className="ham_menu_text text title"> Menu</div>
-        </div>
-
-        <div className="hambuger_tabs">
-          <TabButton href="/news" addClass={addMenuClass}>
-            <Diamond />
-            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
-              News
-            </h1>
-          </TabButton>
-
-          <TabButton href="/products" addClass={addMenuClass}>
-            <Diamond />
-            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
-              Products
-            </h1>
-          </TabButton>
-
-          <TabButton href="/about" addClass={addMenuClass}>
-            <Diamond />
-            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
-              About
-            </h1>
-          </TabButton>
-
-          <TabButton href="/contact" addClass={addMenuClass}>
-            <Diamond />
-            <h1 className={"tab_button ham_tab tab_hover text red_text"}>
-              Contact
-            </h1>
-          </TabButton>
-        </div>
-      </div> */
-  }
   return (
-    <div className={styles.navbar}>
-      <div className={styles.left}>
-        <HamburgerButton onPress={onClick} addClass={hamburgerButtonClass} />
+    <div className={styles.menu}>
+      <div
+        className={cn(styles.navbar, { [styles.scrolled]: scrolled })}
+        ref={navRef}
+      >
+        {isMobile ? (
+          <>
+            <div className={styles.left}>
+              <IconButton
+                onClick={() => setSidebar(true)}
+                iconProps={{ icon: "burger", color: "gold", size: "small" }}
+              />
+            </div>
+            <div className={styles.middle}>{logoComp}</div>
+          </>
+        ) : (
+          <div className={styles.middle}>
+            {tabs()}
+            {logoComp}
+          </div>
+        )}
       </div>
-      <div className={styles.middle}>
-        <TabButton href="/news">News</TabButton>
-        <TabButton href="/products">Products</TabButton>
-        <img src={logo} alt="logo" className={styles.logo} />
-        {/* <div className="logo_wrapper">
-          <BackLogo />
-        </div> */}
+      {isMobile && (
+        <div className={cn(styles.sidebar, { [styles.isOpen]: sidebar })}>
+          <div className={styles.tab}>
+            <IconButton
+              onClick={() => setSidebar(false)}
+              iconProps={{ icon: "close", color: "gold", size: "small" }}
+            />
+          </div>
 
-        <TabButton href="/about">About</TabButton>
-        <TabButton href="/contact">Contact</TabButton>
-      </div>
-      <div className={styles.right}>
-        {/* <div className="hamburger red_back "></div> */}
-        {/* <TabButton href="/shop" className={"ShopButton"} image={Shop} /> */}
-      </div>
+          <div className={styles.tabs}>
+            <>
+              {tabs(isMobile)}
+              <div className={styles.emailList}>
+                <EmailList />
+              </div>
+              <div className={styles.followUs}>
+                <FollowUs />
+              </div>
+            </>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
-export default Navbar;

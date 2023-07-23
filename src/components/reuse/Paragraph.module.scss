@@ -1,0 +1,44 @@
+@import "../../css/mixins.scss";
+
+@mixin sizing($size) {
+  font-size: var(--paragraph-p#{$size});
+  line-height: var(--paragraph-line-p#{$size});
+}
+
+@mixin level($desk, $lap, $tab, $mob) {
+  @include sizing($mob);
+
+  @media (min-width: $tablet) {
+    @include sizing($tab);
+  }
+
+  @media (min-width: $laptop) {
+    @include sizing($lap);
+  }
+
+  @media (min-width: $desktop) {
+    @include sizing($desk);
+  }
+}
+
+.level1 {
+  @include level(1, 1, 1, 2);
+}
+
+.level2 {
+  @include level(2, 2, 2, 2);
+}
+
+.paragraph {
+  @include fontParagraph;
+}
+
+.clickable {
+  &:hover {
+    color: var(--gold) !important;
+  }
+}
+
+p {
+  margin: 0;
+}

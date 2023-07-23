@@ -1,12 +1,21 @@
-import React, { ReactNode } from "react";
+import React, {
+  PropsWithChildren,
+  AnchorHTMLAttributes,
+  ReactNode,
+} from "react";
 import styles from "./Link.module.scss";
+import cn from "classnames";
 
-export const Link: React.FC<{
+export interface LinkProps {
   children: string | ReactNode;
   href: string;
-}> = ({ children, href }) => {
+  className?: string;
+}
+export const Link: React.FC<PropsWithChildren<
+  LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
+>> = ({ children, href, className, ...props }) => {
   return (
-    <a className={styles.link} href={href}>
+    <a className={cn(styles.link, className)} href={href} {...props}>
       {children}
     </a>
   );

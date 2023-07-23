@@ -1,0 +1,72 @@
+@import "../../../css/mixins.scss";
+
+.wrapper {
+  @include flex;
+
+  width: 100%;
+
+  .content {
+    @include flexColumn(flex-start);
+
+    width: 100%;
+    gap: var(--pad-1);
+  }
+}
+
+.form {
+  @include flexColumn;
+
+  gap: var(--pad-3);
+  padding-top: var(--pad-4);
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+}
+
+input {
+  @include fontParagraph();
+
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: var(--pad-1) solid var(--gold);
+  height: var(--button-height);
+  padding: 0 var(--pad-3);
+  font-size: var(--paragraph-p2);
+  line-height: var(--paragraph-line-p2);
+
+  &:focus-visible {
+    outline: none;
+    border: var(--pad-1) solid var(--gold);
+  }
+}
+
+textarea {
+  @include fontParagraph();
+
+  width: 100%;
+  min-height: var(--pad-9);
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid var(--gold);
+  padding: var(--pad-1);
+  margin: 0;
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid var(--gold);
+  }
+}
+
+::-webkit-resizer {
+  $size: 8px;
+  background: none;
+  width: 0;
+  height: 0;
+  border-bottom: $size solid var(--gold);
+  border-right: $size solid var(--gold);
+  border-left: $size solid transparent;
+  border-top: $size solid transparent;
+}

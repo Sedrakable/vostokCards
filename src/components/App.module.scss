@@ -1,0 +1,8 @@
+@import "../css/mixins.scss";
+
+.wholePage {
+  @include flexColumn(flex-start);
+
+  overflow-x: hidden;
+  position: relative;
+}

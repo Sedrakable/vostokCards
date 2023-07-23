@@ -1,16 +1,14 @@
 import React, { ReactNode } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Navbar from "./navbar/Navbar";
-import NewBox from "./pages/home page/NewBox";
+import { Navbar } from "./navbar/Navbar";
 import Products from "./pages/product page/Products";
 import ProductPage from "./pages/product page/ProductPage";
 import NewsPage from "./pages/news page/NewsPage";
 import AboutPage from "./pages/about page/AboutPage";
 import ContactPage from "./pages/contact page/ContactPage";
-import TabButton from "./navbar/TabButton";
-import "../css/NewBox.css";
+import styles from "./App.module.scss";
 import "../css/Main.css";
-import "../css/ScrollBar.css";
+import "../css/ScrollBar.scss";
 import "../css/Header.css";
 
 // import image_5 from "../assets/photos/AG_5.jpg";
@@ -18,10 +16,14 @@ import "../css/Header.css";
 // import image_7 from "../assets/photos/AG_7.jpg";
 import { ReactComponent as Title } from "../assets/illu/Title.svg";
 import Background from "../assets/illu/Texture.svg";
-import image_1 from "../assets/photos/AG_1.jpg";
-import image_2 from "../assets/photos/AG_2.jpg";
-import image_3 from "../assets/photos/AG_3.jpg";
-import image_4 from "../assets/photos/AG_4.jpg";
+
+import { EmailList } from "./pages/contact page/EmailList";
+import { ImageProps, Splider } from "./pages/home page/Splider";
+import Footer from "./footer/Footer";
+const image_1 = require("../assets/photos/AG_1.jpg");
+const image_2 = require("../assets/photos/AG_2.jpg");
+const image_3 = require("../assets/photos/AG_3.jpg");
+const image_4 = require("../assets/photos/AG_4.jpg");
 
 export interface PageItemsType {
   name: string;
@@ -36,7 +38,7 @@ const pageItems: PageItemsType[] = [
   {
     name: "Animal Gangdom",
     price: 21.99,
-    image: image_1 as unknown as string,
+    image: (image_1 as unknown) as string,
     path: "/products/animal_gangdom",
     logo: (
       <div className="Title">
@@ -54,25 +56,15 @@ const pageItems: PageItemsType[] = [
   },
 ];
 
-const NewBoxItems: string[] = [
-  image_1 as unknown as string,
-  image_2 as unknown as string,
-  image_3 as unknown as string,
-  image_4 as unknown as string,
+const mainPageSliderImages: ImageProps[] = [
+  { src: image_1, alt: "image 1" },
+  { src: image_2, alt: "image 2" },
+  { src: image_3, alt: "image 3" },
+  { src: image_4, alt: "image 4" },
 ];
-
-const HomePageTitle = (children: ReactNode) => {
-  return (
-    <div className="new_box_title flex_columb abs center_flex">
-      {children}
-      <TabButton href="/products/animal_gangdom">See Product</TabButton>
-    </div>
-  );
-};
-
 const App = () => {
   const MainPagee = () => {
-    return <NewBox items={NewBoxItems}>{HomePageTitle(<Title />)}</NewBox>;
+    return <Splider images={mainPageSliderImages} />;
   };
 
   const NewsPagee = () => {
@@ -98,9 +90,9 @@ const App = () => {
   });
 
   return (
-    <div className="whole_page">
+    <div className={styles.wholePage}>
       <Navbar />
-      UNDER MAINTENANCE
+
       <BrowserRouter>
         <div>
           {renderedLinks}
@@ -111,6 +103,8 @@ const App = () => {
           <Route path="/contact" component={ContactPagee} />
         </div>
       </BrowserRouter>
+
+      <Footer />
     </div>
   );
 };

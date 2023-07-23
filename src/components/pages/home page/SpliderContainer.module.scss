@@ -1,0 +1,63 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  --container-padding: var(--pad-6);
+  @media (min-width: $tablet) {
+    --container-padding: var(--pad-9);
+  }
+
+  @media (min-width: $laptop) {
+    --container-padding: var(--pad-10);
+  }
+
+  @media (min-width: $desktop) {
+    --container-padding: var(--pad-10);
+  }
+}
+
+.wrapper {
+  @include vars;
+  @include flex(flex-start);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(var(--black-rgb), 0.7);
+
+  @media (min-width: $laptop) {
+    background: linear-gradient(
+      90deg,
+      rgba(var(--black-rgb), 0.8) 0%,
+      rgba(var(--black-rgb), 0.4) 30%,
+      rgba(var(--black-rgb), 0) 75%
+    );
+  }
+
+  .container {
+    @include flexColumn(flex-start, flex-end);
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: var(--container-padding);
+    box-sizing: border-box;
+    gap: var(--pad-3);
+
+    @media (min-width: $tablet) {
+      justify-content: center;
+    }
+
+    @media (min-width: $laptop) {
+      width: 40%;
+      justify-content: center;
+      padding-right: 0;
+    }
+    .text {
+      @include flexColumn(flex-start);
+
+      gap: var(--pad-1);
+    }
+  }
+}

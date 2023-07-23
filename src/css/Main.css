@@ -1,24 +1,17 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  overflow-y: overlay;
-  height: 100%;
   width: 100%;
-  background: rgb(27, 27, 30) url("../assets/illu/Texture.svg") repeat center
+  background: var(--black) url("../assets/illu/Texture.svg") repeat center
     center fixed;
   background-size: cover;
 }
 
 html {
   height: 100%;
-  overflow-y: hidden;
 }
 #root {
   height: 100%;
-}
-
-.whole_page {
-  overflow-x: hidden;
 }
 
 .background_image {
@@ -44,11 +37,11 @@ html {
   flex-direction: column;
 }
 
-.pad_8 {
+.pad-8 {
   padding: 8px;
 }
 
-.pad_16 {
+.pad-16 {
   padding: 16px;
 }
 
@@ -121,25 +114,4 @@ html {
 .border_hori {
   border-top: 2px solid rgb(229, 181, 82);
   border-bottom: 2px solid rgb(229, 181, 82);
-}
-
-.button {
-  position: relative;
-  display: flex;
-
-  text-decoration: none !important;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: bold;
-
-  padding: 8px 24px 4px 24px;
-  margin-top: 16px;
-  border: 2px solid rgb(46, 46, 51);
-  color: rgb(27, 27, 30) !important;
-  background-color: rgb(229, 181, 82);
-}
-
-.button:hover {
-  background-color: rgb(170, 170, 179) !important;
 }

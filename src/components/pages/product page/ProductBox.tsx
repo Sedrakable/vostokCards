@@ -12,7 +12,7 @@ const ProductBox: React.FC<{ item: ItemsType }> = ({ item }) => {
         <div className="imageWrap_left">
           <div className="left_side ">
             <div className="text_holder">
-              <div className="text pad_8 container_title gold_text">
+              <div className="text pad-8 container_title gold_text">
                 {item.title}
               </div>
               <p className="description_text text">{item.text}</p>
@@ -32,7 +32,7 @@ const ProductBox: React.FC<{ item: ItemsType }> = ({ item }) => {
           <div className="right_side ">
             <div className="strip strip_right"></div>
             <div className="text_holder">
-              <div className="text pad_8 container_title red_text">
+              <div className="text pad-8 container_title red_text">
                 {item.title}
               </div>
               <p className="description_text text">{item.text}</p>

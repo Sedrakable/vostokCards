@@ -1,0 +1,35 @@
+@import "../../css/mixins.scss";
+
+@mixin vars() {
+  --top-gap: var(--pad-6);
+  --container-gap: var(--pad-5);
+  @media (min-width: $tablet) {
+    --top-gap: var(--pad-6);
+  }
+
+  @media (min-width: $laptop) {
+    --top-gap: var(--pad-7);
+  }
+
+  @media (min-width: $desktop) {
+    --top-gap: var(--pad-9);
+    --container-gap: var(--pad-6);
+  }
+}
+
+.contact {
+  @include flexColumn;
+
+  // align-self: cent;
+  gap: var(--pad-2);
+
+  .icons {
+    @include flex;
+
+    gap: var(--pad-4);
+  }
+  @media (min-width: $tablet) {
+    align-self: flex-start;
+    align-items: flex-end;
+  }
+}

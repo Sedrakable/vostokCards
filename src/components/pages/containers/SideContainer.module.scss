@@ -1,0 +1,81 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  @media (min-width: $tablet) {
+  }
+
+  @media (min-width: $laptop) {
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+@mixin blurEffect {
+  &::before {
+    content: "";
+    @include absoluteFill;
+    opacity: 1;
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.wrapper {
+  @include vars;
+  @include flex;
+  @include absoluteMiddle;
+
+  @include blurEffect;
+
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  .container {
+    @include flexColumn(flex-start, center);
+
+    height: 100%;
+    width: var(--screen_width_small);
+    padding-right: 0;
+    box-sizing: border-box;
+    gap: var(--pad-3);
+
+    .text {
+      @include flexColumn(flex-start);
+
+      gap: var(--pad-1);
+      z-index: 1;
+    }
+  }
+
+  @media (min-width: $laptop) {
+    &::before {
+      right: 30%;
+      backdrop-filter: blur(100px);
+      mask: linear-gradient(90deg, black, transparent);
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .container {
+      padding-right: calc(var(--screen_width_small) / 2);
+    }
+  }
+}
+
+.right {
+  @media (min-width: $laptop) {
+    &::before {
+      right: 0;
+      left: 30%;
+      mask: linear-gradient(90deg, transparent, black);
+    }
+    .container {
+      align-items: flex-end;
+      padding-left: calc(var(--screen_width_large) / 2);
+      padding-right: 0;
+      .text {
+        align-items: flex-end;
+      }
+    }
+  }
+}

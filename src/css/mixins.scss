@@ -28,3 +28,18 @@
   justify-content: $y;
   align-items: $x;
 }
+
+@mixin absoluteFill() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin absoluteMiddle() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

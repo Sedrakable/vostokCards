@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../css/About.css";
 import TopPannel, { TopPannelProps } from "../all page stuff/TopPannel";
-import Header from "../all page stuff/Header";
+import Header from "../../reuse/Header";
 import TextBox from "../all page stuff/TextBox";
 
 const the_boiz = "../../../assets/photos/Boiz.jpg";
@@ -23,7 +23,11 @@ const header = {
 const AboutPage = () => {
   return (
     <div className="page">
-      <Header title={header.title} description={header.desc} />
+      <Header
+        title={header.title}
+        description={header.desc}
+        image={{ src: the_boiz, alt: "" }}
+      />
       <div className="container center_flex flex_columb">
         <div className="center_flex flex_columb story">
           <TopPannel item={item} />

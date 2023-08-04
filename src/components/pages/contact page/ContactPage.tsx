@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextBox from "../all page stuff/TextBox";
-import Header from "../all page stuff/Header";
+import Header from "../../reuse/Header";
 import ContactButton from "./ContactButton";
 import TopPannel from "../all page stuff/TopPannel";
 import "../../../css/Contact.css";
@@ -34,7 +34,7 @@ const ContactPage = () => {
 
   return (
     <div className="page">
-      <Header title={header.title} description={header.desc} />
+      {/* <Header title={header.title} description={header.desc} image={null}/> */}
       <div className="container center_flex flex_columb">
         <div className="center_flex flex_columb story">
           <TopPannel item={items} />

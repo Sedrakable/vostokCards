@@ -26,6 +26,9 @@
     @include level($i, $i + 1, $i + 1, $i + 1);
   }
 
+  .level1 {
+    @include level(1, 2, 2, 3);
+  }
   .level2 {
     @include level(2, 3, 3, 4);
   }

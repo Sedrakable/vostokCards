@@ -3,14 +3,17 @@
 @mixin vars() {
   --navbar-height: var(--navbar-height-small);
   --logo-size: 75px;
+  --tabWrapper-padding: var(--pad-4);
   @media (min-width: $tablet) {
     --navbar-height: var(--navbar-height-big);
     --logo-size: 90px;
+    --tabWrapper-padding: var(--pad-3);
   }
 
   @media (min-width: $laptop) {
     --navbar-height: var(--navbar-height-small);
     --logo-size: 75px;
+    --tabWrapper-padding: var(--pad-4);
   }
 
   @media (min-width: $desktop) {
@@ -65,11 +68,13 @@
     background: var(--black);
   }
   .logo {
-    height: calc(var(--logo-size) / 2) !important;
+    img {
+      height: calc(var(--logo-size) / 2) !important;
+    }
   }
 }
 
-.left {
+.burger {
   @include flex;
 
   position: absolute;
@@ -80,30 +85,27 @@
   @include flex;
 
   position: relative;
-
-  $tabsCount: 4;
-  $logoOrder: 3;
-
-  @for $i from 1 through $tabsCount {
-    $tabOrder: $i;
-
-    @if $i >= $logoOrder {
-      $tabOrder: $i + 1;
-    }
-
-    .tabWrapper:nth-child(#{$i}) {
-      order: $tabOrder;
-    }
+  .left,
+  .right {
+    @include flex;
+    position: absolute;
   }
-
+  .left {
+    right: 100%;
+  }
+  .right {
+    left: 100%;
+  }
   .logo {
-    height: var(--logo-size);
-    padding: 0 24px;
-    order: 3;
-    transition: 200ms;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.2);
+    img {
+      height: var(--logo-size);
+      padding: 0 var(--tabWrapper-padding);
+
+      transition: 200ms;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }
@@ -111,7 +113,7 @@
 .tabWrapper {
   @include flex(flex-start);
 
-  padding: 0 var(--pad-4);
+  padding: 0 var(--tabWrapper-padding);
 }
 
 .sidebar {

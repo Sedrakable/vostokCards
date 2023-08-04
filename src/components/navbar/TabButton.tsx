@@ -3,25 +3,19 @@ import { Heading } from "../reuse/Heading";
 import { Link } from "../reuse/Link";
 import styles from "./TabButton.module.scss";
 import cn from "classnames";
+import { onClickNavigate } from "../../helpers/useNavigation";
 
 const TabButton: React.FC<{
   children: string;
-  href: string;
+  path: string;
   className?: string;
-}> = ({ children, href, className }) => {
-  // const onClick = (event: any) => {
-  //   if (event.metaKey || event.ctrlKey) {
-  //     return;
-  //   }
-  //   event.preventDefault();
-  //   window.history.pushState({}, "", href);
-  //   console.log("/#" + href);
-  //   const navEvent = new PopStateEvent("popstate");
-  //   window.dispatchEvent(navEvent);
-  // };
-
+}> = ({ children, path, className }) => {
   return (
-    <Link href={href} className={cn(styles.tabButton, className)}>
+    <Link
+      href={path}
+      onClick={(e) => onClickNavigate(e, path)}
+      className={cn(styles.tabButton, className)}
+    >
       <Heading level="4" as="h4" color="gold" clickable>
         {children}
       </Heading>

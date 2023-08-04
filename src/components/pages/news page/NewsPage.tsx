@@ -1,6 +1,6 @@
 import React from "react";
 import Story from "./Story";
-import Header from "../all page stuff/Header";
+import Header from "../../reuse/Header";
 import "../../../css/News.css";
 
 import { TopPannelProps } from "../all page stuff/TopPannel";
@@ -20,7 +20,11 @@ const header = {
 const NewsPage = () => {
   return (
     <div className="page">
-      <Header title={header.title} description={header.desc} />
+      <Header
+        title={header.title}
+        description={header.desc}
+        image={{ src: news_1, alt: "" }}
+      />
       <div className="container center_flex flex_columb">
         <Story items={items} />
       </div>

@@ -8,9 +8,16 @@ import { Line } from "../reuse/Line";
 import { EmailList } from "../pages/contact page/EmailList";
 import { FollowUs } from "../footer/FollowUs";
 import cn from "classnames";
+import { Link } from "../reuse/Link";
+import { onClickNavigate } from "../../helpers/useNavigation";
 const logo = require("../../assets/photos/Logo_simple.png");
 
-export const tabTexts: string[] = ["news", "products", "about", "contact"];
+export const tabTexts: string[] = [
+  "collections",
+  "products",
+  "about",
+  "contact",
+];
 
 export const Navbar = () => {
   const { isMobile } = useWindowResize();
@@ -33,22 +40,29 @@ export const Navbar = () => {
     };
   }, [navRef]);
 
-  const logoComp = <img src={logo} alt="logo" className={styles.logo} />;
+  const logoComp = (
+    <Link
+      onClick={(e) => onClickNavigate(e, "/")}
+      href={"/"}
+      className={styles.logo}
+    >
+      <img src={logo} alt="logo" />
+    </Link>
+  );
 
-  const tabs = (isMobile: boolean = false) =>
-    tabTexts.map((tabText) => {
-      return (
-        <>
-          <div className={styles.tabWrapper}>
-            <TabButton className={styles.tab} href={`/${tabText}`}>
-              {tabText}
-            </TabButton>
-            {isMobile && <Icon icon="arrow" size="extra-small" color="white" />}
-          </div>
-          {isMobile && <Line color="black" />}
-        </>
-      );
-    });
+  const tab = (text: string, isMobile: boolean = false) => {
+    return (
+      <>
+        <div className={styles.tabWrapper}>
+          <TabButton className={styles.tab} path={`/${text}`}>
+            {text}
+          </TabButton>
+          {isMobile && <Icon icon="arrow" size="extra-small" color="white" />}
+        </div>
+        {isMobile && <Line color="black" />}
+      </>
+    );
+  };
 
   return (
     <div className={styles.menu}>
@@ -58,7 +72,7 @@ export const Navbar = () => {
       >
         {isMobile ? (
           <>
-            <div className={styles.left}>
+            <div className={styles.burger}>
               <IconButton
                 onClick={() => setSidebar(true)}
                 iconProps={{ icon: "burger", color: "gold", size: "small" }}
@@ -68,8 +82,15 @@ export const Navbar = () => {
           </>
         ) : (
           <div className={styles.middle}>
-            {tabs()}
+            <div className={styles.left}>
+              {tab(tabTexts[0], false)}
+              {tab(tabTexts[1], false)}
+            </div>
             {logoComp}
+            <div className={styles.right}>
+              {tab(tabTexts[2], false)}
+              {tab(tabTexts[3], false)}
+            </div>
           </div>
         )}
       </div>
@@ -84,7 +105,9 @@ export const Navbar = () => {
 
           <div className={styles.tabs}>
             <>
-              {tabs(isMobile)}
+              {tabTexts.map((text: string) => {
+                return tab(text, isMobile);
+              })}
               <div className={styles.emailList}>
                 <EmailList />
               </div>

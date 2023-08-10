@@ -14,9 +14,10 @@ export interface LinkProps {
 export const Link: React.FC<PropsWithChildren<
   LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
 >> = ({ children, href, className, ...props }) => {
-  return (
-    <a className={cn(styles.link, className)} href={href} {...props}>
-      {children}
-    </a>
+  const as = props?.onClick ? "button" : "a";
+  return React.createElement(
+    as,
+    { className: cn(styles.link, className), href, ...props },
+    children
   );
 };

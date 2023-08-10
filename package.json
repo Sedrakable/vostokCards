@@ -15,8 +15,10 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "classnames": "^2.3.2",
+    "framer-motion": "^10.15.1",
     "gh-pages": "^3.0.0",
     "is-svg": "^5.0.0",
+    "jotai": "^2.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scripts": "^5.0.1",
@@ -56,10 +58,12 @@
     "@types/node-sass": "^4.11.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/react-modal": "^3.16.0",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.43.0",
+    "react-modal": "^3.16.1",
     "typescript": "^5.1.6"
   }
 }

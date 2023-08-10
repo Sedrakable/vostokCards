@@ -1,3 +1,4 @@
+@import-normalise;
 @import "./vars.scss";
 
 :root {
@@ -56,13 +57,13 @@
   --button-width: 100%;
   --button-padding: var(--pad-6);
 
-  --screen_width_large: calc(100% - var(--pad-6));
-  --screen_width_small: calc(100% - var(--pad-8));
+  --screen_width_large: calc(100vw - var(--pad-6));
+  --screen_width_small: calc(100vw - var(--pad-8));
 
   @media (min-width: $tablet) {
     --button-width: fit-content;
-    --screen_width_large: calc(100% - var(--pad-8));
-    --screen_width_small: calc(100% - var(--pad-11));
+    --screen_width_large: calc(100vw - var(--pad-8));
+    --screen_width_small: calc(100vw - var(--pad-11));
   }
 
   @media (min-width: $laptop) {

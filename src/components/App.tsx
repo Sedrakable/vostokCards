@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Navbar } from "./navbar/Navbar";
-import { ProductsPage } from "./pages/Item/ProductsPage";
+import { Modal, modalData } from "./reuse/Modal";
+import { useAtom } from "jotai";
 import {
   CollectionPage,
   CollectionType,
@@ -11,7 +12,7 @@ import AboutPage from "./pages/about page/AboutPage";
 import ContactPage from "./pages/contact page/ContactPage";
 import styles from "./App.module.scss";
 import "../css/Main.css";
-import "../css/ScrollBar.scss";
+import "../css/scrollBar.scss";
 
 // import image_5 from "../assets/photos/AG_5.jpg";
 // import image_6 from "../assets/photos/AG_6.jpg";
@@ -29,10 +30,12 @@ import { ItemGridProps } from "./pages/Item/ItemGrid";
 import { ItemProps } from "./pages/Item/Item";
 
 const App = () => {
+  const [modalOpen] = useAtom(modalData);
+
   const mainPage = () => {
     return (
       <>
-        <Splider spliders={homepageSpliderData} />
+        <Splider slides={homepageSpliderData} />
         <DisplayContainer {...displayData} />
       </>
     );
@@ -53,12 +56,13 @@ const App = () => {
 
   const items: ItemProps[] = collectionItems.map(
     (item: CollectionType): ItemProps => {
+      const { name, thumbnailImage, description, path, columns } = item;
       return {
-        name: item?.name,
-        image: item?.thumbnailImage,
-        description: item?.description,
-        columns: item?.columns,
-        path: item?.path,
+        name,
+        thumbnailImage,
+        description,
+        columns,
+        path,
         price: 0,
       };
     }
@@ -70,7 +74,7 @@ const App = () => {
   return (
     <div className={styles.wholePage}>
       <Navbar />
-
+      {modalOpen && <Modal {...modalOpen} />}
       <BrowserRouter>
         <div>
           {renderedLinks}

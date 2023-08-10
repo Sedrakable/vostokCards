@@ -65,7 +65,7 @@ export const Heading: React.FC<HeadingProps> = ({
   const CustomHeading = as as keyof JSX.IntrinsicElements;
 
   const finalString = upperCase
-    ? children.toUpperCase()
+    ? children?.toUpperCase()
     : capitalise
     ? capitalizeString(children)
     : children;

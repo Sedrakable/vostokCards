@@ -18,7 +18,8 @@ export interface ImageProps {
 export interface ProductType {
   name: string;
   description: string;
-  image: ImageProps;
-  path: string;
-  price: number;
+  thumbnailImage: ImageProps;
+  images?: ImageProps[];
+  path?: string;
+  price?: number;
 }

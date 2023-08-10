@@ -1,7 +1,6 @@
 @import "../../../css/mixins.scss";
 
 @mixin vars() {
-  --wrapper-size: 320px;
   @media (min-width: $tablet) {
   }
 
@@ -17,11 +16,22 @@
   @include vars;
 
   position: relative;
-  height: var(--wrapper-size);
-  min-width: var(--wrapper-size);
-  //   aspect-ratio: 16/9;
+  width: 100%;
+  height: 100%;
   transition: 0.1s;
   overflow: hidden;
+  grid-row: span 1;
+  aspect-ratio: 1;
+
+  &.doubleSpan {
+    grid-column: span 1;
+
+    @media (min-width: $tablet) {
+      grid-column: span 2;
+      aspect-ratio: unset;
+    }
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -54,11 +64,19 @@
       gap: var(--pad-1);
       width: 100%;
       height: 100%;
+      p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
     }
     .price {
+      position: absolute;
+      top: 0;
+      right: 0;
       padding: var(--pad-1) var(--pad-3);
       background: var(--gold-dark);
-      border-radius: 2px;
     }
   }
 
@@ -70,7 +88,8 @@
       filter: brightness(1);
     }
     .name {
-      margin-top: calc(var(--wrapper-size));
+      margin-top: 50%;
+      margin-right: 50%;
       transition: 200ms;
       opacity: 0;
     }

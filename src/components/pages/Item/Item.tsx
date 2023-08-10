@@ -3,27 +3,27 @@ import styles from "./Item.module.scss";
 import { Link } from "../../reuse/Link";
 import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
-import { useWindowResize } from "../../../helpers/useWindowResize";
 import { onClickNavigate } from "../../../helpers/useNavigation";
 import { ProductType } from "../content/data.types";
+import cn from "classnames";
 
 export interface ItemProps extends ProductType {
   columns?: 1 | 2;
+  onClick?: () => void;
 }
 
 export const Item: React.FC<ItemProps> = ({
   name,
   description,
-  image,
+  thumbnailImage,
   path,
   price,
   columns = 1,
+  onClick,
 }) => {
-  const { isMobile } = useWindowResize();
-
-  const productComp = (
-    <div className={styles.wrapper}>
-      <img {...image} alt={name} />
+  const itemContent = (
+    <>
+      <img {...thumbnailImage} alt={name} />
       <div className={styles.name}>
         <Heading as="h3" level="3" textAlign="center">
           {name}
@@ -36,7 +36,7 @@ export const Item: React.FC<ItemProps> = ({
           </Heading>
           <Paragraph level="2">{description}</Paragraph>
         </div>
-        {price > 0 && (
+        {price && price > 0 && (
           <div className={styles.price}>
             <Heading as="h4" level="3" color="white" capitalise>
               {`${price}$`}
@@ -44,22 +44,25 @@ export const Item: React.FC<ItemProps> = ({
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 
-  return (
-    <>
-      {path ? (
-        <Link
-          onClick={(e) => onClickNavigate(e, path)}
-          href={path}
-          style={{ gridColumn: `span ${isMobile ? 1 : columns}` }}
-        >
-          {productComp}
-        </Link>
-      ) : (
-        productComp
-      )}
-    </>
+  const onClickFunction = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick();
+    } else if (path) {
+      return onClickNavigate(e, path);
+    }
+  };
+  return path ? (
+    <Link
+      onClick={(e) => onClickFunction(e)}
+      href={!onClick ? path : ""}
+      className={cn(styles.wrapper, { [styles.doubleSpan]: columns === 2 })}
+    >
+      {itemContent}
+    </Link>
+  ) : (
+    <div className={styles.wrapper}>{itemContent}</div>
   );
 };

@@ -29,7 +29,7 @@ export const ItemGrid: React.FC<ItemGridProps> = ({
         })}
         {commingSoon && (
           <Item
-            image={{ src: comingSoonImage, alt: "" }}
+            thumbnailImage={{ src: comingSoonImage, alt: "" }}
             description=""
             name="Coming Soon"
             path=""

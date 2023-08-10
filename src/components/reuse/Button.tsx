@@ -7,23 +7,28 @@ import { onClickNavigate } from "../../helpers/useNavigation";
 export interface ButtonProps {
   children: string;
   variant: "primary" | "secondary";
+  onClick?: () => void;
   path?: string;
+  disabled?: boolean;
 }
 export const Button: FC<PropsWithChildren<
   ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
->> = ({ children, variant, path, ...props }) => {
+>> = ({ children, variant, path, disabled, ...props }) => {
   const onClick = (e: React.MouseEvent) => {
     if (path) {
       return onClickNavigate(e, path);
     }
 
-    return props.onClick;
+    if (props?.onClick) {
+      props.onClick();
+    }
   };
   return (
     <button
       className={cn(styles.button, styles[variant])}
       {...props}
       onClick={onClick}
+      disabled={disabled}
     >
       <Heading
         level="4"

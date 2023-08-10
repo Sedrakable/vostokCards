@@ -11,21 +11,10 @@
   }
 }
 
-@mixin blurEffect {
-  &::before {
-    content: "";
-    @include absoluteFill;
-    opacity: 1;
-    backdrop-filter: blur(1px);
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-}
-
 .wrapper {
   @include vars;
   @include flex;
   @include absoluteMiddle;
-
   @include blurEffect;
 
   width: 100%;

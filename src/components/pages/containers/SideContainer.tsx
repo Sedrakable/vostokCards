@@ -4,6 +4,7 @@ import cn from "classnames";
 import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
 import { Button } from "../../reuse/Button";
+import { Link } from "../../reuse/Link";
 
 export interface SideContainerProps {
   title: string;
@@ -12,6 +13,7 @@ export interface SideContainerProps {
   ctas?: {
     text: string;
     path: string;
+    link?: boolean;
   };
   side?: "left" | "right";
 }
@@ -46,9 +48,16 @@ export const SideContainer: React.FC<SideContainerProps> = ({
             </Paragraph>
           )}
         </div>
-        <Button variant="primary" path={ctas?.path}>
-          {ctas?.text!}
-        </Button>
+        {ctas &&
+          (ctas?.link ? (
+            <Link href={ctas?.path} target="_blank">
+              <Button variant="primary">{ctas?.text!}</Button>
+            </Link>
+          ) : (
+            <Button variant="primary" path={ctas?.path}>
+              {ctas?.text!}
+            </Button>
+          ))}
       </div>
     </div>
   );

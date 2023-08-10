@@ -6,25 +6,25 @@ import {
   SplideTrack,
 } from "@splidejs/react-splide";
 import styles from "./Splider.module.scss";
-// Default theme
-import "@splidejs/react-splide/css";
-
-// or other themes
 import "@splidejs/react-splide/css/skyblue";
-import "@splidejs/react-splide/css/sea-green";
 
-// or only core styles
-import "@splidejs/react-splide/css/core";
 import { SideContainer, SideContainerProps } from "./SideContainer";
 import { ImageProps } from "../content/data.types";
+import cn from "classnames";
 
 export interface SpliderProps {
   image: ImageProps;
-  content: SideContainerProps;
+  content?: SideContainerProps;
 }
 
-export const Splider: React.FC<{ spliders: SpliderProps[] }> = ({
-  spliders,
+export interface SpliderContainerProps {
+  slides: SpliderProps[];
+  small?: boolean;
+}
+
+export const Splider: React.FC<SpliderContainerProps> = ({
+  slides,
+  small = false,
 }) => {
   const mainRef = useRef<Splide>(null);
   const thumbsRef = useRef<Splide>(null);
@@ -51,11 +51,11 @@ export const Splider: React.FC<{ spliders: SpliderProps[] }> = ({
   }, []);
 
   const renderSlides = (text: boolean) => {
-    return spliders.map((splider: SpliderProps) => {
+    return slides.map((splider: SpliderProps) => {
       return (
         <SplideSlide key={splider.image.src}>
           <img src={splider.image.src} alt={splider.image.alt} />
-          {text && (
+          {text && splider?.content && (
             //NEEDS TO BE REPLACED BY ALTUAL CONTENT
             <SideContainer {...splider.content} />
           )}
@@ -66,8 +66,8 @@ export const Splider: React.FC<{ spliders: SpliderProps[] }> = ({
 
   const mainOptions: Options = {
     type: "loop",
-    autoplay: true,
-    pagination: false,
+    autoplay: !small,
+    pagination: small,
     pauseOnHover: true,
     resetProgress: false,
     interval: 5000,
@@ -78,8 +78,6 @@ export const Splider: React.FC<{ spliders: SpliderProps[] }> = ({
     rewind: true,
     gap: "1rem",
     pagination: false,
-    fixedWidth: 110,
-    fixedHeight: 70,
     cover: true,
     focus: "center",
     isNavigation: true,
@@ -87,7 +85,7 @@ export const Splider: React.FC<{ spliders: SpliderProps[] }> = ({
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={cn(styles.wrapper, { [styles.small]: small })}>
       <Splide
         className={styles.container}
         options={mainOptions}
@@ -97,15 +95,24 @@ export const Splider: React.FC<{ spliders: SpliderProps[] }> = ({
         <SplideTrack>{renderSlides(true)}</SplideTrack>
       </Splide>
 
-      <div className={styles.progressBar}>
-        <div
-          className={styles.progress}
-          style={{ width: `${splideProgress * 100}%` }}
-        />
-      </div>
-      <Splide className={styles.thumbs} options={thumbsOptions} ref={thumbsRef}>
-        {renderSlides(false)}
-      </Splide>
+      {!small && (
+        <>
+          <div className={styles.progressBar}>
+            <div
+              className={styles.progress}
+              style={{ width: `${splideProgress * 100}%` }}
+            />
+          </div>
+
+          <Splide
+            className={styles.thumbs}
+            options={thumbsOptions}
+            ref={thumbsRef}
+          >
+            {renderSlides(false)}
+          </Splide>
+        </>
+      )}
     </div>
   );
 };

@@ -23,7 +23,12 @@
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--pad-5);
   width: var(--screen_width_large);
-  padding-bottom: var(--pad-6);
+  padding: var(--pad-6) 0 var(--pad-8) 0;
+
+  grid-auto-rows: calc(
+    (var(--screen_width_large) - ((var(--grid-columns) - 1) * var(--pad-5))) /
+      var(--grid-columns)
+  );
 }
 
 .title {
@@ -31,5 +36,5 @@
 
   margin: 0 auto;
   width: fit-content;
-  padding: var(--pad-6);
+  padding-top: var(--pad-6);
 }

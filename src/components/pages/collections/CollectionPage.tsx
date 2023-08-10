@@ -10,6 +10,9 @@ import {
 } from "../containers/DisplayContainer";
 import { ItemGrid } from "../Item/ItemGrid";
 import { ImageProps, ProductType } from "../content/data.types";
+import { ItemProps } from "../Item/Item";
+import { modalData } from "../../reuse/Modal";
+import { useAtom } from "jotai";
 
 export interface CollectionType {
   name: string;
@@ -19,13 +22,16 @@ export interface CollectionType {
   path: string;
   items: ProductType[];
   descriptionPannel: DescriptionPannelProps;
-  spliderData: SpliderProps[];
-  displayContainers: DisplayContainerProps[];
+  infoContainers: {
+    spliderData: SpliderProps[];
+    displayContainer: DisplayContainerProps;
+  }[];
 }
 
 export const CollectionPage: React.FC<{ collection: CollectionType }> = ({
   collection,
 }) => {
+  const [, setModalOpen] = useAtom(modalData);
   // const items: ItemsType[] = [
   //   {
   //     side: "title",
@@ -95,20 +101,38 @@ export const CollectionPage: React.FC<{ collection: CollectionType }> = ({
   //   },
   // ];
 
+  const items: ItemProps[] = collection.items.map((item) => {
+    return {
+      onClick: () =>
+        setModalOpen({
+          handleClose: () => setModalOpen(null),
+          title: item?.name,
+          description: item?.description,
+          spliderData: item?.images
+            ? item?.images!.map((image) => {
+                return {
+                  image,
+                };
+              })
+            : [{ image: item.thumbnailImage }],
+        }),
+      ...item,
+    };
+  });
   return (
     <div>
       <DescriptionPannel {...collection.descriptionPannel} />
 
-      <ItemGrid
-        items={collection.items}
-        commingSoon={false}
-        title={collection.name}
-      />
-      {collection.displayContainers.map((container: DisplayContainerProps) => {
-        return <DisplayContainer {...container} />;
-      })}
+      <ItemGrid items={items} commingSoon={false} title={collection.name} />
 
-      <Splider spliders={collection.spliderData} />
+      {collection.infoContainers.map((info) => {
+        return (
+          <>
+            <DisplayContainer {...info.displayContainer} />
+            <Splider slides={info.spliderData} />
+          </>
+        );
+      })}
 
       {/* <Splider /> */}
     </div>

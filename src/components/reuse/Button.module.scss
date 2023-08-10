@@ -5,6 +5,19 @@
 
   height: var(--button-height);
   min-height: var(--button-height);
+
+  &:disabled {
+    cursor: not-allowed;
+    &::before {
+      background: var(--grey);
+    }
+    &:hover {
+      &::before {
+        background: var(--grey);
+      }
+      box-shadow: none;
+    }
+  }
 }
 
 @keyframes moveGradient {

@@ -1,10 +1,13 @@
 @import "../../../css/mixins.scss";
 
 @mixin vars() {
+  --text-lines: 3;
   @media (min-width: $tablet) {
+    --text-lines: 5;
   }
 
   @media (min-width: $laptop) {
+    --text-lines: 6;
   }
 
   @media (min-width: $desktop) {
@@ -35,6 +38,9 @@
 
       gap: var(--pad-1);
       z-index: 1;
+      .description {
+        @include paragraphMaxLines(var(--text-lines));
+      }
     }
   }
 

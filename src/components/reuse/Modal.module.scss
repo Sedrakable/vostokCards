@@ -27,10 +27,7 @@
 
       width: 100%;
       p {
-        overflow-y: auto;
-        display: -webkit-box;
-        -webkit-line-clamp: 8;
-        -webkit-box-orient: vertical;
+        @include paragraphMaxLines(8, auto);
       }
       gap: var(--pad-3);
       flex: 1;

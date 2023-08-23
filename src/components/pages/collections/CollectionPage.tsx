@@ -11,8 +11,6 @@ import {
 import { ItemGrid } from "../Item/ItemGrid";
 import { ImageProps, ProductType } from "../content/data.types";
 import { ItemProps } from "../Item/Item";
-import { modalData } from "../../reuse/Modal";
-import { useAtom } from "jotai";
 
 export interface CollectionType {
   name: string;
@@ -31,7 +29,6 @@ export interface CollectionType {
 export const CollectionPage: React.FC<{ collection: CollectionType }> = ({
   collection,
 }) => {
-  const [, setModalOpen] = useAtom(modalData);
   // const items: ItemsType[] = [
   //   {
   //     side: "title",
@@ -101,29 +98,35 @@ export const CollectionPage: React.FC<{ collection: CollectionType }> = ({
   //   },
   // ];
 
-  const items: ItemProps[] = collection.items.map((item) => {
-    return {
-      onClick: () =>
-        setModalOpen({
-          handleClose: () => setModalOpen(null),
-          title: item?.name,
-          description: item?.description,
-          spliderData: item?.images
-            ? item?.images!.map((image) => {
-                return {
-                  image,
-                };
-              })
-            : [{ image: item.thumbnailImage }],
-        }),
-      ...item,
-    };
-  });
+  // const items: ItemProps[] = collection.items.map((item) => {
+  //   return {
+  //     onClick: () =>
+  //       setModalOpen({
+  //         handleClose: () => setModalOpen(null),
+  //         title: item?.name,
+  //         description: item?.description,
+  //         spliderData: item?.images
+  //           ? item?.images!.map((image) => {
+  //               return {
+  //                 image,
+  //               };
+  //             })
+  //           : [{ image: item.thumbnailImage }],
+  //       }),
+  //     ...item,
+  //   };
+  // });
+
   return (
     <div>
       <DescriptionPannel {...collection.descriptionPannel} />
 
-      <ItemGrid items={items} commingSoon={false} title={collection.name} />
+      <ItemGrid
+        items={collection.items}
+        commingSoon={false}
+        title={collection.name}
+        openModalOnClick
+      />
 
       {collection.infoContainers.map((info) => {
         return (

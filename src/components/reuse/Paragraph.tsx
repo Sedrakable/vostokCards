@@ -20,6 +20,7 @@ export interface ParagraphProps {
   weight?: "weak" | "regular";
   capitalise?: boolean;
   clickable?: boolean;
+  className?: string;
 }
 
 const fontWeights = {
@@ -35,13 +36,19 @@ export const Paragraph: React.FC<ParagraphProps> = ({
   color = "white",
   capitalise,
   clickable,
+  className,
 }) => {
   return (
     <p
-      className={cn(styles.paragraph, styles[`level${level}`], {
-        [styles.gradient]: color.includes("grad"),
-        [styles.clickable]: clickable,
-      })}
+      className={cn(
+        styles.paragraph,
+        styles[`level${level}`],
+        {
+          [styles.gradient]: color.includes("grad"),
+          [styles.clickable]: clickable,
+        },
+        className
+      )}
       style={{
         color: `var(--${color})`,
         textAlign,

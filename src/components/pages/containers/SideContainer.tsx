@@ -43,7 +43,7 @@ export const SideContainer: React.FC<SideContainerProps> = ({
             </Paragraph>
           )}
           {description && (
-            <Paragraph level="2" color="white">
+            <Paragraph level="2" color="white" className={styles.description}>
               {description}
             </Paragraph>
           )}

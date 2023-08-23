@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar } from "./navbar/Navbar";
 import { Modal, modalData } from "./reuse/Modal";
 import { useAtom } from "jotai";
@@ -12,7 +12,7 @@ import AboutPage from "./pages/about page/AboutPage";
 import ContactPage from "./pages/contact page/ContactPage";
 import styles from "./App.module.scss";
 import "../css/Main.css";
-import "../css/scrollBar.scss";
+import "../css/ScrollBar.scss";
 
 // import image_5 from "../assets/photos/AG_5.jpg";
 // import image_6 from "../assets/photos/AG_6.jpg";
@@ -28,6 +28,7 @@ import {
 import { CollectionsPage } from "./pages/collections/CollectionsPage";
 import { ItemGridProps } from "./pages/Item/ItemGrid";
 import { ItemProps } from "./pages/Item/Item";
+import { ProductsPage } from "./pages/Item/ProductsPage";
 
 const App = () => {
   const [modalOpen] = useAtom(modalData);
@@ -41,22 +42,26 @@ const App = () => {
     );
   };
 
-  const aboutPage = () => {
-    return <AboutPage />;
-  };
+  const renderedLinks: React.ReactElement[] = collectionItems.map(
+    (collection) => {
+      return (
+        <Route
+          path={collection.path}
+          element={<CollectionPage collection={collection} />}
+        />
+      );
+    }
+  );
 
-  const renderedLinks = collectionItems.map((collection) => {
-    return (
-      <Route
-        path={collection.path}
-        component={() => <CollectionPage collection={collection} />}
-      />
-    );
-  });
+  const PG: ItemGridProps[] = collectionItems.map(
+    (collection: CollectionType): ItemGridProps => {
+      return { title: collection.name, items: collection.items };
+    }
+  );
 
-  const items: ItemProps[] = collectionItems.map(
-    (item: CollectionType): ItemProps => {
-      const { name, thumbnailImage, description, path, columns } = item;
+  const CI: ItemProps[] = collectionItems.map(
+    (collection: CollectionType): ItemProps => {
+      const { name, thumbnailImage, description, path, columns } = collection;
       return {
         name,
         thumbnailImage,
@@ -67,8 +72,8 @@ const App = () => {
       };
     }
   );
-  const collection: ItemGridProps = {
-    items: items,
+  const collections: ItemGridProps = {
+    items: CI,
     commingSoon: true,
   };
   return (
@@ -76,16 +81,20 @@ const App = () => {
       <Navbar />
       {modalOpen && <Modal {...modalOpen} />}
       <BrowserRouter>
-        <div>
+        <Routes>
           {renderedLinks}
-          <Route path="/" exact component={mainPage} />
+          <Route path="/" element={mainPage()} />
+          <Route
+            path="/products"
+            element={<ProductsPage productGrids={PG} />}
+          />
           <Route
             path="/collections"
-            component={() => <CollectionsPage collections={collection} />}
+            element={<CollectionsPage collections={collections} />}
           />
-          <Route path="/about" component={aboutPage} />
-          <Route path="/contact" component={() => <ContactPage />} />
-        </div>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </BrowserRouter>
 
       <Footer />

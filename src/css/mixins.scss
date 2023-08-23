@@ -53,3 +53,10 @@
     background-color: rgba(0, 0, 0, 0.6);
   }
 }
+
+@mixin paragraphMaxLines($n, $overflow: hidden) {
+  overflow-y: $overflow;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}

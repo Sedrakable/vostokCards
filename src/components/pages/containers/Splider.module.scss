@@ -41,12 +41,14 @@
         height: calc(var(--thumbnail-height) * 0.75) !important;
       }
     }
-    button {
-      &:hover {
-        background: var(--gold-light);
-      }
-      &:global(.is-active) {
-        background: var(--gold);
+    ul:global(.splide__pagination) {
+      button {
+        &:hover {
+          background: var(--gold-light);
+        }
+        &:global(.is-active) {
+          background: var(--gold);
+        }
       }
     }
   }
@@ -75,29 +77,6 @@
     svg {
       fill: var(--white);
     }
-
-    // ul {
-    //   li {
-    //     &:global(.splide__slide) {
-    //       &:after {
-    //         @include absoluteFill;
-
-    //         content: "";
-    //         z-index: 0;
-    //         background: rgba(var(--black-rgb), 0.7);
-
-    //         @media (min-width: $laptop) {
-    //           background: linear-gradient(
-    //             90deg,
-    //             rgba(var(--black-rgb), 0.8) 0%,
-    //             rgba(var(--black-rgb), 0.4) 30%,
-    //             rgba(var(--black-rgb), 0) 75%
-    //           );
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
   }
 
   .progressBar {

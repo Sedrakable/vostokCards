@@ -1,7 +1,7 @@
 {
   "name": "vostok-cards",
   "version": "0.1.0",
-  "homepage": "https://vostokcards.com",
+  "homepage": "https://www.vostokcards.com",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

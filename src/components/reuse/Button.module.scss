@@ -1,0 +1,77 @@
+@import "../../css/mixins.scss";
+
+.button {
+  @include flex;
+
+  height: var(--button-height);
+  min-height: var(--button-height);
+}
+
+@keyframes moveGradient {
+  0% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
+
+.primary {
+  position: relative;
+  overflow: hidden;
+  padding: 0 var(--button-padding);
+  min-width: var(--button-width);
+  transition: 100ms;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: var(--gold-dark);
+    background-clip: content-box;
+    animation: moveGradient 3s linear infinite;
+  }
+  &:hover {
+    &::before {
+      background: linear-gradient(
+        100deg,
+        var(--gold-dark) 0%,
+        var(--gold-dark) 42.5%,
+        var(--gold) 47.5%,
+        var(--gold-light) 50%,
+        var(--gold) 52.5%,
+        var(--gold-dark) 57.5%,
+        var(--gold-dark) 100%
+      );
+    }
+    box-shadow: 0 0 8px rgba(var(--gold-light-rgb), 0.75);
+  }
+}
+
+.primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: not-allowed;
+  &::before {
+    background: var(--grey);
+    animation: none;
+  }
+  &:hover {
+    &::before {
+      background: var(--grey);
+    }
+    box-shadow: none;
+  }
+}

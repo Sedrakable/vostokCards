@@ -1,0 +1,98 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  @media (min-width: $tablet) {
+  }
+
+  @media (min-width: $laptop) {
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+.wrapper {
+  @include flex;
+  @include vars;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 0.1s;
+  overflow: hidden;
+  grid-row: span 1;
+  aspect-ratio: 1;
+
+  &.doubleSpan {
+    grid-column: span 1;
+
+    @media (min-width: $tablet) {
+      grid-column: span 2;
+      aspect-ratio: unset;
+    }
+  }
+
+  .imgWrapper {
+    filter: brightness(0.5);
+    transition: 0.1s;
+  }
+
+  .name {
+    @include flex;
+
+    position: absolute;
+    width: 100%;
+    transition: 200ms;
+  }
+  .hoverContainer {
+    @include flex(center, flex-end);
+
+    opacity: 0;
+    position: absolute;
+    padding: var(--pad-4);
+    gap: var(--pad-2);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    transition: 200ms;
+    background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+    .hoverName {
+      @include flexColumn(flex-start, flex-end);
+
+      gap: var(--pad-1);
+      width: 100%;
+      height: 100%;
+      p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+    .price {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: var(--pad-1) var(--pad-3);
+      background: var(--gold-dark);
+    }
+  }
+
+  &:hover {
+    transition: 200ms;
+    /* cursor: pointer; */
+    .imgWrapper {
+      scale: 1.05;
+      filter: brightness(1);
+    }
+    .name {
+      margin-top: 50%;
+      margin-right: 50%;
+      transition: 200ms;
+      opacity: 0;
+    }
+    .hoverContainer {
+      opacity: 1;
+    }
+  }
+}

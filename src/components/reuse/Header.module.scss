@@ -1,0 +1,36 @@
+@import "../../css/mixins.scss";
+
+.header {
+  @include flex;
+
+  position: relative;
+  aspect-ratio: 1;
+  width: 100vw;
+  padding: var(--pad-10) 0;
+  box-sizing: border-box;
+  max-height: 50vh;
+  border-bottom: 2px solid var(--gold);
+  @media (min-width: $laptop) {
+    max-height: 40vh;
+  }
+
+  img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &::after {
+    @include absoluteFill;
+
+    content: "";
+    background: rgba(var(--black-rgb), 0.7);
+  }
+
+  .container {
+    @include flexColumn(flex-start);
+
+    width: var(--screen-width-large);
+    z-index: 1;
+  }
+}

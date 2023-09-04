@@ -1,0 +1,28 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  @media (min-width: $tablet) {
+  }
+
+  @media (min-width: $laptop) {
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+.wrapper {
+  @include vars;
+  @include flex;
+
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../css/mixins.scss";
+
+@keyframes moveGradient {
+  0% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
+
+.button {
+  svg {
+    position: relative;
+    overflow: hidden;
+    transition: 200ms;
+  }
+
+  &:hover {
+    filter: drop-shadow(0 0 4px rgba(var(--gold-light-rgb), 0.5));
+    scale: 1.1;
+
+    svg,
+    path,
+    polygon {
+      fill: var(--gold-light) !important;
+    }
+  }
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}

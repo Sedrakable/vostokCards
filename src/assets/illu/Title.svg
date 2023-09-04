@@ -1,15 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="483" height="220.019" viewBox="0 0 483 220.019">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #b19a47;
-        stroke: #4c4028;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 3px;
-      }
-    </style>
-  </defs>
+
   <g id="Title" transform="translate(1.5 1.5)">
     <g id="Gangdom" transform="translate(0 116.981)">
       <path id="Path_1375" data-name="Path 1375" class="cls-1" d="M753.917,438.463l-.051-.019v.019h-10v100h10v-20h40v7.055a14.473,14.473,0,0,1-8,12.945h18v-30A74.028,74.028,0,0,0,753.917,438.463Zm-.051,70V449.12a64.017,64.017,0,0,1,40,59.343Z" transform="translate(-673.866 -438.444)"/>

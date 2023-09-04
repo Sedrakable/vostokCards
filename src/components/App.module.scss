@@ -1,0 +1,14 @@
+@import "../css/mixins.scss";
+
+.wholePage {
+  @include flexColumn(flex-start, flex-start);
+
+  overflow-x: hidden;
+  position: relative;
+  .homePage {
+    @include flexColumn(flex-start, flex-start);
+
+    width: 100%;
+    gap: var(--pad-6);
+  }
+}

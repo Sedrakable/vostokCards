@@ -1,0 +1,17 @@
+@import "../../../css/mixins.scss";
+
+.page {
+  background-color: rgba(var(--black-rgb), 50%);
+  .title {
+    padding: var(--pad-4);
+    background: var(--gold-grad);
+  }
+  .grid {
+    @include flexColumn;
+
+    gap: var(--pad-6);
+    width: var(--screen-width-large);
+    margin: var(--pad-6) auto;
+    margin-bottom: var(--pad-8);
+  }
+}

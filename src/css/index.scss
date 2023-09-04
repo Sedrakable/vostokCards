@@ -1,0 +1,105 @@
+@import-normalise;
+@import "./vars.scss";
+
+:root {
+  --tablet: 640px;
+  --laptop: 1200px;
+  --desktop: 1680px;
+
+  --white: #ffffff;
+  --black: #0a0b12;
+  --grey: rgb(46, 46, 51);
+  --silver: #aaaab3;
+  --black-rgb: 10, 11, 18;
+  --gold-dark: #e5b552;
+  --gold: #f5c86c;
+  --gold-light: #ffe3aa;
+  --gold-light-rgb: 255, 227, 170;
+  --gold-grad: linear-gradient(
+    100deg,
+    var(--gold-dark) 0%,
+    var(--gold) 15%,
+    var(--gold-light) 20%,
+    var(--gold) 25%,
+    var(--gold-dark) 40%,
+    var(--gold) 100%
+  );
+  --pad-1: 5px;
+  --pad-2: 10px;
+  --pad-3: 15px;
+  --pad-4: 20px;
+  --pad-5: 30px;
+  --pad-6: 45px;
+  --pad-7: 60px;
+  --pad-8: 90px;
+  --pad-9: 120px;
+  --pad-10: 180px;
+  --pad-11: 240px;
+
+  --heading-h1: 72px;
+  --heading-h2: 64px;
+  --heading-h3: 48px;
+  --heading-h4: 32px;
+  --heading-h5: 24px;
+  --heading-h6: 16px;
+
+  --paragraph-p1: 22px;
+  --paragraph-p2: 16px;
+  --paragraph-line-p1: 26px;
+  --paragraph-line-p2: 20px;
+
+  --navbar-height-small: 50px;
+  --navbar-height-big: 60px;
+
+  --screen-width-small: 600px;
+
+  --button-height: 50px;
+  --button-width: 100%;
+  --button-padding: var(--pad-6);
+
+  --screen-width-large: calc(100vw - var(--pad-6));
+  --screen-width-small: calc(100vw - var(--pad-8));
+
+  @media (min-width: $tablet) {
+    --button-width: fit-content;
+    --screen-width-large: calc(100vw - var(--pad-8));
+    --screen-width-small: calc(100vw - var(--pad-11));
+  }
+
+  @media (min-width: $laptop) {
+    --screen-width-large: calc(var(--laptop) - var(--pad-11));
+    --screen-width-small: var(--screen-width-large);
+  }
+
+  @media (min-width: $desktop) {
+    --button-height: 70px;
+    --button-padding: var(--pad-7);
+    --screen-width-large: calc(var(--desktop) - var(--pad-11));
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.splide__track {
+  height: 100%;
+  width: 100%;
+
+  .splide__list {
+    height: 100%;
+    li {
+      width: 100%;
+      img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

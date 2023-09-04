@@ -1,0 +1,96 @@
+@import "../../css/mixins.scss";
+
+@mixin vars() {
+  --top-gap: var(--pad-6);
+  --container-gap: var(--pad-5);
+  @media (min-width: $tablet) {
+    --top-gap: var(--pad-6);
+  }
+
+  @media (min-width: $laptop) {
+    --top-gap: var(--pad-7);
+  }
+
+  @media (min-width: $desktop) {
+    --top-gap: var(--pad-9);
+    --container-gap: var(--pad-6);
+  }
+}
+
+.footer {
+  @include flex;
+  @include vars;
+
+  width: 100%;
+  background: var(--black);
+  padding: var(--pad-5) 0;
+  .container {
+    @include flexColumn;
+
+    width: var(--screen-width-large);
+    gap: var(--container-gap);
+    padding-bottom: var(--container-gap);
+    margin: 0 auto;
+    .top {
+      @include flexColumn(center, center);
+
+      flex-wrap: wrap;
+      position: relative;
+      height: 100%;
+      min-height: 100%;
+      width: 100%;
+      gap: var(--top-gap);
+
+      .emailList {
+        flex: 1;
+        width: 100%;
+        min-width: 100%;
+      }
+
+      .links {
+        @include flexColumn(center, space-between);
+
+        flex-direction: row;
+        gap: var(--pad-2);
+        column-gap: var(--pad-4);
+      }
+
+      .contact {
+        @include flexColumn;
+
+        // align-self: cent;
+        gap: var(--pad-2);
+
+        .icons {
+          @include flex;
+
+          gap: var(--pad-4);
+        }
+      }
+
+      @media (min-width: $tablet) {
+        justify-content: center;
+        flex-direction: row;
+
+        .emailList {
+          min-width: 100%;
+        }
+
+        .contact {
+          align-self: flex-start;
+        }
+      }
+
+      @media (min-width: $laptop) {
+        align-items: flex-start;
+        .emailList {
+          min-width: unset;
+        }
+
+        .links {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

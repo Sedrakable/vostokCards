@@ -1,0 +1,62 @@
+@import "./vars.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+
+@font-face {
+  font-family: "Vostok";
+  src: url("../assets/fonts/Vostok.otf") format("opentype");
+}
+
+@mixin fontHeader() {
+  font-family: "Vostok", sans-serif;
+  font-weight: normal;
+}
+
+@mixin fontParagraph() {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+@mixin flex($x: center, $y: center) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+}
+
+@mixin flexColumn($x: center, $y: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $y;
+  align-items: $x;
+}
+
+@mixin absoluteFill() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin absoluteMiddle() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin blurEffect($blur: 1px) {
+  &::before {
+    content: "";
+    @include absoluteFill;
+    opacity: 1;
+    backdrop-filter: blur($blur);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@mixin paragraphMaxLines($n, $overflow: hidden) {
+  overflow-y: $overflow;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}

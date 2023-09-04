@@ -1,0 +1,6 @@
+@import "../../../css/mixins.scss";
+
+.page {
+  @include flexColumn;
+  width: 100vw;
+}

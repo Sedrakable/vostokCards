@@ -1,0 +1,7 @@
+@import "../../../css/mixins.scss";
+
+.content {
+  width: clamp(50%, 700px, 90%);
+  margin: var(--pad-6) auto;
+  margin-bottom: var(--pad-8);
+}

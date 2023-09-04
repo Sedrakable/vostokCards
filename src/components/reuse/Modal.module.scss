@@ -1,0 +1,49 @@
+@import "../../css/mixins.scss";
+
+.modal {
+  @include flexColumn(flex-start, center);
+
+  width: clamp(50%, 700px, 90%);
+  padding: var(--pad-4);
+  gap: var(--pad-4);
+  background: var(--black);
+
+  box-shadow: 0 0 20px rgba(var(--gold-light-rgb), 0.5);
+  height: fit-content;
+  .left {
+    width: 100%;
+  }
+  .right {
+    @include flexColumn(center, space-between);
+
+    width: 100%;
+    position: relative;
+    gap: var(--pad-4);
+    height: 100%;
+    .text {
+      @include flexColumn(flex-start, flex-start);
+
+      width: 100%;
+      p {
+        @include paragraphMaxLines(8, auto);
+      }
+      gap: var(--pad-3);
+      flex: 1;
+    }
+    .ctas {
+      @include flexColumn(flex-start);
+
+      width: 100%;
+      gap: var(--pad-3);
+      .buttons {
+        @include flex;
+        gap: var(--pad-3);
+      }
+    }
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

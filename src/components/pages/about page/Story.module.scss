@@ -1,0 +1,40 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  --grid: 1;
+  @media (min-width: $tablet) {
+    --grid: 2;
+  }
+
+  @media (min-width: $laptop) {
+    --grid: 3;
+  }
+
+  @media (min-width: $desktop) {
+  }
+}
+
+.wrapper {
+  @include vars;
+
+  display: grid;
+  grid-template-columns: repeat(var(--grid), 1fr);
+  gap: var(--pad-6);
+  width: 100%;
+
+  .imgWrapper {
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+
+  .text {
+    @include flexColumn(flex-start);
+
+    gap: var(--pad-2);
+    grid-column: span calc(var(--grid) - 1);
+  }
+}

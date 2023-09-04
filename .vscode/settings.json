@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": "svipas.prettier-plus",
+  "files.associations": {
+    "*.xml": "html",
+    "*.svg": "html"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "svipas.prettier-plus"
+  }
+}

@@ -1,0 +1,77 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  --ratio: 1;
+  --text-container-pad: var(--pad-4);
+  @media (min-width: $tablet) {
+    --text-container-pad: var(--pad-5);
+    --ratio: 1.5;
+  }
+
+  @media (min-width: $laptop) {
+    --ratio: 2;
+  }
+
+  @media (min-width: $desktop) {
+    --text-container-pad: var(--pad-6);
+  }
+}
+
+.wrapper {
+  @include vars;
+  @include flex;
+
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  // height: calc(100vw / var(--ratio));
+  overflow: hidden;
+  border-top: 2px solid var(--gold-light);
+  border-bottom: 2px solid var(--gold-light);
+
+  .parallax {
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: cover;
+      // object-position: center;
+      min-height: 100%;
+      width: 100%;
+    }
+  }
+  &:has(.text) {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 50%;
+      background: linear-gradient(rgba(var(--black-rgb), 1), transparent);
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+
+  &::after {
+    @include absoluteFill;
+
+    $distance: 80px;
+    content: "";
+    box-shadow: inset 0px 0px $distance var(--gold);
+    left: -$distance;
+    right: -$distance;
+    z-index: 1;
+  }
+
+  .text {
+    @include flexColumn;
+
+    position: absolute;
+    padding: var(--text-container-pad);
+    gap: var(--pad-1);
+    width: var(--screen-width-small);
+    top: 0;
+
+    z-index: 1;
+  }
+}

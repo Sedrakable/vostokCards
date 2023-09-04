@@ -1,0 +1,74 @@
+@import "../../css/mixins.scss";
+
+@mixin sizing($size) {
+  font-size: var(--heading-h#{$size});
+  line-height: var(--heading-h#{$size});
+}
+
+@mixin level($desk, $lap, $tab, $mob) {
+  @include sizing($mob);
+
+  @media (min-width: $tablet) {
+    @include sizing($tab);
+  }
+
+  @media (min-width: $laptop) {
+    @include sizing($lap);
+  }
+
+  @media (min-width: $desktop) {
+    @include sizing($desk);
+  }
+}
+
+@for $i from 1 through 6 {
+  .level#{$i} {
+    @include level($i, $i + 1, $i + 1, $i + 1);
+  }
+
+  .level1 {
+    @include level(1, 2, 2, 3);
+  }
+  .level2 {
+    @include level(2, 3, 3, 4);
+  }
+}
+
+.heading {
+  @include fontHeader;
+
+  &.clickable {
+    &:hover {
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200%;
+      animation: moveGradient 3s linear infinite;
+      text-shadow: 0 0 10px rgba(var(--gold-light-rgb), 0.5);
+    }
+  }
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: -100% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient {
+  background: var(--gold-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}

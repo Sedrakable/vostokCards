@@ -1,0 +1,45 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  --grid-columns: 1;
+  @media (min-width: $tablet) {
+    --grid-columns: 2;
+  }
+
+  @media (min-width: $laptop) {
+    --grid-columns: 3;
+  }
+
+  @media (min-width: $desktop) {
+    --grid-columns: 4;
+  }
+}
+
+.gridWrapper {
+  @include flexColumn;
+  width: 100%;
+}
+
+.productGrid {
+  @include vars;
+
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--pad-5);
+  width: var(--screen-width-large);
+  padding: var(--pad-6) 0 var(--pad-8) 0;
+
+  grid-auto-rows: calc(
+    (var(--screen-width-large) - ((var(--grid-columns) - 1) * var(--pad-5))) /
+      var(--grid-columns)
+  );
+}
+
+.title {
+  @include flex;
+
+  margin: 0 auto;
+  width: fit-content;
+  padding-top: var(--pad-6);
+}

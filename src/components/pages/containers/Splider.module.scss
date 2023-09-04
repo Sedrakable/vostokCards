@@ -1,0 +1,124 @@
+@import "../../../css/mixins.scss";
+
+@mixin vars() {
+  --thumbnail-height: 60px;
+  --wrapper-padding-bottom: var(--pad-5);
+  --ratio: 1;
+  @media (min-width: $tablet) {
+    --thumbnail-height: 90px;
+    --wrapper-padding-bottom: var(--pad-6);
+    --ratio: 4/3;
+  }
+
+  @media (min-width: $laptop) {
+    --thumbnail-height: 120px;
+    --wrapper-padding-bottom: var(--pad-7);
+    --ratio: 16/9;
+  }
+
+  @media (min-width: $desktop) {
+    --thumbnail-height: 200px;
+    --wrapper-padding-bottom: var(--pad-8);
+  }
+}
+
+.wrapper {
+  @include vars;
+  @include flexColumn;
+
+  width: 100%;
+  max-width: 100vw;
+  padding-bottom: var(--wrapper-padding-bottom);
+
+  &.small {
+    padding-bottom: 0;
+    .container {
+      width: 100%;
+      aspect-ratio: 3/2;
+
+      // height: fit-content;
+      // width: 100%;
+      button:global(.splide__arrow) {
+        margin: 0;
+      }
+    }
+    .thumbs {
+      li {
+        aspect-ratio: 1;
+        height: calc(var(--thumbnail-height) * 0.75) !important;
+      }
+    }
+    ul:global(.splide__pagination) {
+      button {
+        &:hover {
+          background: var(--gold-light);
+        }
+        &:global(.is-active) {
+          background: var(--gold);
+        }
+      }
+    }
+  }
+  .container {
+    position: relative;
+    padding: 0;
+
+    width: 100%;
+    aspect-ratio: var(--ratio);
+    button {
+      &:global(.splide__arrow) {
+        display: none;
+        margin: 0 var(--pad-5);
+        opacity: 0.7;
+        &:hover {
+          opacity: 1;
+          svg {
+            fill: var(--gold);
+          }
+        }
+        @media (min-width: $tablet) {
+          display: flex;
+        }
+      }
+    }
+    svg {
+      fill: var(--white);
+    }
+  }
+
+  .progressBar {
+    @include flex(flex-start);
+
+    width: 100%;
+    height: var(--pad-1);
+    background-color: var(--black);
+    .progress {
+      height: 100%;
+      background: var(--gold);
+    }
+  }
+
+  .thumbs {
+    padding: var(--pad-3) var(--pad-5);
+    width: 100%;
+    box-sizing: border-box;
+    li {
+      height: var(--thumbnail-height) !important;
+      width: auto !important;
+      aspect-ratio: 16/9;
+      border: 0px solid var(--gold) !important;
+      opacity: 0.5 !important;
+      border-radius: 0 !important;
+      transition: 200ms;
+      &:hover {
+        opacity: 1 !important;
+      }
+      &:global(.is-active) {
+        /* Your custom styles for the active thumbnail */
+        border-bottom: var(--pad-1) solid var(--gold) !important;
+
+        opacity: 1 !important;
+      }
+    }
+  }
+}

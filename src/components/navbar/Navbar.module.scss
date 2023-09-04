@@ -1,0 +1,188 @@
+@import "../../css/mixins.scss";
+
+@mixin vars() {
+  --navbar-height: var(--navbar-height-small);
+  --logo-size: 75px;
+  --tabWrapper-padding: var(--pad-4);
+  @media (min-width: $tablet) {
+    --navbar-height: var(--navbar-height-big);
+    --logo-size: 90px;
+    --tabWrapper-padding: var(--pad-3);
+  }
+
+  @media (min-width: $laptop) {
+    --navbar-height: var(--navbar-height-small);
+    --logo-size: 75px;
+    --tabWrapper-padding: var(--pad-4);
+  }
+
+  @media (min-width: $desktop) {
+    --navbar-height: var(--navbar-height-big);
+    --logo-size: 90px;
+  }
+}
+
+.menu {
+  @include vars;
+
+  width: 100%;
+}
+
+.navbar {
+  @include flex;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: var(--pad-5) 0;
+  z-index: 2;
+  transition: 500ms;
+
+  &::before {
+    position: absolute;
+    background: radial-gradient(
+      circle at center,
+      transparent var(--pad-5),
+      rgba(var(--black-rgb), 0.9) calc(var(--logo-size) - var(--pad-2))
+    );
+    content: "";
+    width: 100%;
+    height: var(--navbar-height);
+  }
+}
+
+.scrolled {
+  padding: 0;
+  height: var(--navbar-height-big);
+  &::before {
+    height: var(--navbar-height-big);
+  }
+  @media (min-width: $tablet) {
+    height: var(--navbar-height);
+    &::before {
+      height: var(--navbar-height);
+    }
+  }
+  &::before {
+    background: var(--black);
+  }
+  .logo {
+    img {
+      height: calc(var(--logo-size) / 2) !important;
+      width: calc(var(--logo-size) / 2) !important;
+    }
+  }
+}
+
+.burger {
+  @include flex;
+
+  position: absolute;
+  left: var(--pad-3);
+}
+
+.middle {
+  @include flex;
+
+  position: relative;
+  .left,
+  .right {
+    @include flex;
+    position: absolute;
+  }
+  .left {
+    right: 100%;
+  }
+  .right {
+    left: 100%;
+  }
+  .logo {
+    img {
+      height: var(--logo-size);
+      width: var(--logo-size);
+      padding: 0 var(--tabWrapper-padding);
+
+      transition: 200ms;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.tabWrapper {
+  @include flex(flex-start);
+
+  padding: 0 var(--tabWrapper-padding);
+}
+
+.sidebar {
+  @include flexColumn(flex-start, flex-start);
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  top: 0;
+  bottom: 0;
+  background: var(--black);
+  z-index: 3;
+  transition: transform 200ms ease;
+
+  &.isOpen {
+    transform: translateX(0);
+  }
+
+  .tabs {
+    @include flexColumn(flex-start, flex-start);
+
+    background-color: var(--grey);
+    width: 100%;
+    height: 100%;
+    flex: 1;
+
+    .tabWrapper {
+      gap: var(--pad-3);
+
+      transition: 500ms;
+      box-sizing: border-box;
+      width: 100%;
+      &:hover {
+        gap: var(--pad-4);
+      }
+      .tab {
+        height: 50px;
+        padding: 0;
+      }
+    }
+
+    .emailList,
+    .followUs {
+      @include flexColumn(center, flex-start);
+
+      width: 100%;
+      padding: var(--pad-4);
+      padding-bottom: var(--pad-5);
+      box-sizing: border-box;
+      background-color: var(--black);
+    }
+
+    .followUs {
+      background-color: var(--grey);
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      flex: 1;
+      background-color: var(--black);
+    }
+  }
+  .tab {
+    @include flex;
+    padding: 0 var(--pad-3);
+    height: var(--navbar-height-big);
+  }
+}

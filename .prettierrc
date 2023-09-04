@@ -1,0 +1,31 @@
+{
+  "plugins": ["prettier-plugin-svg"],
+  "overrides": [
+    {
+      "files": "*.svg",
+      "options": {
+        "parser": "html",
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": false,
+        "quoteProps": "as-needed",
+        "jsxSingleQuote": false,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "arrowParens": "avoid",
+        "insertPragma": false,
+        "requirePragma": false,
+        "proseWrap": "preserve",
+        "htmlWhitespaceSensitivity": "css",
+        "vueIndentScriptAndStyle": false,
+        "endOfLine": "auto",
+        "embeddedLanguageFormatting": "auto"
+      }
+    }
+  ]
+}
+
+

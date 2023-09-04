@@ -3,7 +3,12 @@
 .wholePage {
   @include flexColumn(flex-start, flex-start);
 
-  height: 100%;
   overflow-x: hidden;
   position: relative;
+  .homePage {
+    @include flexColumn(flex-start, flex-start);
+
+    width: 100%;
+    gap: var(--pad-6);
+  }
 }

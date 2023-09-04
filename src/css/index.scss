@@ -51,30 +51,30 @@
   --navbar-height-small: 50px;
   --navbar-height-big: 60px;
 
-  --screen_width_small: 600px;
+  --screen-width-small: 600px;
 
   --button-height: 50px;
   --button-width: 100%;
   --button-padding: var(--pad-6);
 
-  --screen_width_large: calc(100vw - var(--pad-6));
-  --screen_width_small: calc(100vw - var(--pad-8));
+  --screen-width-large: calc(100vw - var(--pad-6));
+  --screen-width-small: calc(100vw - var(--pad-8));
 
   @media (min-width: $tablet) {
     --button-width: fit-content;
-    --screen_width_large: calc(100vw - var(--pad-8));
-    --screen_width_small: calc(100vw - var(--pad-11));
+    --screen-width-large: calc(100vw - var(--pad-8));
+    --screen-width-small: calc(100vw - var(--pad-11));
   }
 
   @media (min-width: $laptop) {
-    --screen_width_large: calc(var(--laptop) - var(--pad-11));
-    --screen_width_small: var(--screen_width_large);
+    --screen-width-large: calc(var(--laptop) - var(--pad-11));
+    --screen-width-small: var(--screen-width-large);
   }
 
   @media (min-width: $desktop) {
     --button-height: 70px;
     --button-padding: var(--pad-7);
-    --screen_width_large: calc(var(--desktop) - var(--pad-11));
+    --screen-width-large: calc(var(--desktop) - var(--pad-11));
   }
 }
 

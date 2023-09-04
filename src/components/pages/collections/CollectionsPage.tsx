@@ -3,6 +3,7 @@ import { ItemGrid, ItemGridProps } from "../Item/ItemGrid";
 import styles from "./CollectionsPage.module.scss";
 import Header, { HeaderProps } from "../../reuse/Header";
 import { getRandomItemFromArray } from "../../../helpers/functions";
+import { ItemProps } from "../Item/Item";
 
 export const CollectionsPage: React.FC<{
   collections: ItemGridProps;
@@ -11,7 +12,8 @@ export const CollectionsPage: React.FC<{
   const header: HeaderProps = {
     title: "Collections",
     description: "Amazing decks that push the bounderies of awesomeness",
-    image: getRandomItemFromArray(collections.items).image,
+    image: (getRandomItemFromArray(collections.items) as ItemProps)
+      .thumbnailImage,
   };
 
   return (

@@ -25,14 +25,19 @@
   z-index: 1;
 
   .container {
-    @include flexColumn(flex-start, center);
+    @include flexColumn(flex-start, flex-end);
 
     height: 100%;
-    width: var(--screen_width_small);
+    width: var(--screen-width-small);
     padding-right: 0;
+    padding-bottom: var(--pad-7);
     box-sizing: border-box;
     gap: var(--pad-3);
 
+    @media (min-width: $tablet) {
+      padding-bottom: 0;
+      justify-content: center;
+    }
     .text {
       @include flexColumn(flex-start);
 
@@ -52,7 +57,7 @@
       background-color: rgba(0, 0, 0, 0.7);
     }
     .container {
-      padding-right: calc(var(--screen_width_small) / 2);
+      padding-right: calc(var(--screen-width-small) / 2);
     }
   }
 }
@@ -66,7 +71,7 @@
     }
     .container {
       align-items: flex-end;
-      padding-left: calc(var(--screen_width_large) / 2);
+      padding-left: calc(var(--screen-width-large) / 2);
       padding-right: 0;
       .text {
         align-items: flex-end;

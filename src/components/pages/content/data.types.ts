@@ -1,3 +1,5 @@
+import { ImageProps } from "../../reuse/Image";
+
 export type CollectionNames =
   | "Steampunk Dynasty"
   | "Animal Gangdom"
@@ -10,16 +12,17 @@ export type ProductNames =
   | "S.D Crimson"
   | "Animal Gangdom";
 
-export interface ImageProps {
-  src: string;
-  alt: string;
+export interface CTAsType {
+  amazon?: string;
+  etsy?: string;
 }
-
 export interface ProductType {
   name: string;
   description: string;
   thumbnailImage: ImageProps;
+  columns?: 1 | 2;
   images?: ImageProps[];
   path?: string;
   price?: number;
+  ctas?: CTAsType;
 }

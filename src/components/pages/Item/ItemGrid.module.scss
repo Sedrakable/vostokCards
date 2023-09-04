@@ -15,6 +15,11 @@
   }
 }
 
+.gridWrapper {
+  @include flexColumn;
+  width: 100%;
+}
+
 .productGrid {
   @include vars;
 
@@ -22,11 +27,11 @@
   margin: 0 auto;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--pad-5);
-  width: var(--screen_width_large);
+  width: var(--screen-width-large);
   padding: var(--pad-6) 0 var(--pad-8) 0;
 
   grid-auto-rows: calc(
-    (var(--screen_width_large) - ((var(--grid-columns) - 1) * var(--pad-5))) /
+    (var(--screen-width-large) - ((var(--grid-columns) - 1) * var(--pad-5))) /
       var(--grid-columns)
   );
 }

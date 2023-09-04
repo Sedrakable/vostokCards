@@ -1,0 +1,81 @@
+@import "../../../css/mixins.scss";
+
+.wrapper {
+  @include flex;
+
+  width: 100%;
+
+  .content {
+    @include flexColumn(flex-start);
+
+    width: 100%;
+    gap: var(--pad-1);
+  }
+}
+
+.form {
+  @include flexColumn(flex-start);
+
+  gap: var(--pad-3);
+  padding-top: var(--pad-4);
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+
+  .info {
+    @include flexColumn;
+
+    width: 100%;
+    gap: var(--pad-3);
+    @media (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &.contactForm {
+    @media (min-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+}
+
+input,
+textarea {
+  @include fontParagraph();
+
+  font-size: var(--paragraph-p2);
+  line-height: var(--paragraph-line-p2);
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--gold);
+  padding: var(--pad-3);
+  margin: 0;
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid var(--gold);
+  }
+}
+input {
+  height: var(--button-height);
+}
+
+textarea {
+  min-height: var(--pad-9);
+  overflow-y: hidden;
+  resize: vertical;
+}
+
+::-webkit-resizer {
+  $size: 8px;
+  background: none;
+  width: 0;
+  height: 0;
+  border-bottom: $size solid var(--gold);
+  border-right: $size solid var(--gold);
+  border-left: $size solid transparent;
+  border-top: $size solid transparent;
+}

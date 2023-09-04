@@ -1,4 +1,5 @@
-import { useEffect, useState, ReactNode } from "react";
+import React, { useEffect, useState, ReactNode } from "react";
+import { ScrollRestoration } from "react-router-dom";
 
 const Route: React.FC<{ path: string; children: ReactNode }> = ({
   path,
@@ -18,7 +19,17 @@ const Route: React.FC<{ path: string; children: ReactNode }> = ({
     };
   }, []);
 
-  return currentPath === path ? children : null;
+  return currentPath === path ? (
+    <>
+      {children}
+      <ScrollRestoration
+        getKey={(location, matches) => {
+          // default behavior
+          return location.key;
+        }}
+      />
+    </>
+  ) : null;
 };
 
 export default Route;

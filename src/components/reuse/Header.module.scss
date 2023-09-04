@@ -30,7 +30,7 @@
   .container {
     @include flexColumn(flex-start);
 
-    width: var(--screen_width_large);
+    width: var(--screen-width-large);
     z-index: 1;
   }
 }

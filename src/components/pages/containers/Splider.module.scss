@@ -3,14 +3,17 @@
 @mixin vars() {
   --thumbnail-height: 60px;
   --wrapper-padding-bottom: var(--pad-5);
+  --ratio: 1;
   @media (min-width: $tablet) {
     --thumbnail-height: 90px;
     --wrapper-padding-bottom: var(--pad-6);
+    --ratio: 4/3;
   }
 
   @media (min-width: $laptop) {
     --thumbnail-height: 120px;
     --wrapper-padding-bottom: var(--pad-7);
+    --ratio: 16/9;
   }
 
   @media (min-width: $desktop) {
@@ -30,7 +33,11 @@
   &.small {
     padding-bottom: 0;
     .container {
-      aspect-ratio: 1;
+      width: 100%;
+      aspect-ratio: 3/2;
+
+      // height: fit-content;
+      // width: 100%;
       button:global(.splide__arrow) {
         margin: 0;
       }
@@ -57,7 +64,7 @@
     padding: 0;
 
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: var(--ratio);
     button {
       &:global(.splide__arrow) {
         display: none;

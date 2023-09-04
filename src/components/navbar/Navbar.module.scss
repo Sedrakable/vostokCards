@@ -70,6 +70,7 @@
   .logo {
     img {
       height: calc(var(--logo-size) / 2) !important;
+      width: calc(var(--logo-size) / 2) !important;
     }
   }
 }
@@ -99,6 +100,7 @@
   .logo {
     img {
       height: var(--logo-size);
+      width: var(--logo-size);
       padding: 0 var(--tabWrapper-padding);
 
       transition: 200ms;

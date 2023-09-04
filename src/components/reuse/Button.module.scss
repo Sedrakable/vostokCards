@@ -5,19 +5,6 @@
 
   height: var(--button-height);
   min-height: var(--button-height);
-
-  &:disabled {
-    cursor: not-allowed;
-    &::before {
-      background: var(--grey);
-    }
-    &:hover {
-      &::before {
-        background: var(--grey);
-      }
-      box-shadow: none;
-    }
-  }
 }
 
 @keyframes moveGradient {
@@ -73,4 +60,18 @@ button {
   border: 0;
   padding: 0;
   cursor: pointer;
+}
+
+:disabled {
+  cursor: not-allowed;
+  &::before {
+    background: var(--grey);
+    animation: none;
+  }
+  &:hover {
+    &::before {
+      background: var(--grey);
+    }
+    box-shadow: none;
+  }
 }

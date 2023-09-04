@@ -5,11 +5,12 @@ import { Icon } from "../reuse/Icon";
 import { useWindowResize } from "../../helpers/useWindowResize";
 import { IconButton } from "../reuse/IconButton";
 import { Line } from "../reuse/Line";
-import { EmailList } from "../pages/contact page/EmailList";
+import { Form } from "../pages/contact page/Form";
 import { FollowUs } from "../footer/FollowUs";
 import cn from "classnames";
 import { Link } from "../reuse/Link";
 import { onClickNavigate } from "../../helpers/useNavigation";
+import { Image } from "../reuse/Image";
 const logo = require("../../assets/photos/Logo_simple.png");
 
 export const tabTexts: string[] = [
@@ -26,15 +27,13 @@ export const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (e: Event) => {
       const offset = navRef?.current?.clientHeight!;
       const isScrolled = window.scrollY > offset;
       setScrolled(isScrolled);
     };
-    // Add scroll event listener when the component mounts
-    window.addEventListener("scroll", handleScroll);
 
-    // Clean up the scroll event listener when the component unmounts
+    window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -46,7 +45,7 @@ export const Navbar = () => {
       href={"/"}
       className={styles.logo}
     >
-      <img src={logo} alt="logo" />
+      <Image src={logo} alt="logo" />
     </Link>
   );
 
@@ -109,7 +108,7 @@ export const Navbar = () => {
                 return tab(text, isMobile);
               })}
               <div className={styles.emailList}>
-                <EmailList />
+                <Form />
               </div>
               <div className={styles.followUs}>
                 <FollowUs />

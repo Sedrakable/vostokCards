@@ -9,7 +9,7 @@ import styles from "./Splider.module.scss";
 import "@splidejs/react-splide/css/skyblue";
 
 import { SideContainer, SideContainerProps } from "./SideContainer";
-import { ImageProps } from "../content/data.types";
+import { Image, ImageProps } from "../../reuse/Image";
 import cn from "classnames";
 
 export interface SpliderProps {
@@ -33,7 +33,6 @@ export const Splider: React.FC<SpliderContainerProps> = ({
   useEffect(() => {
     if (mainRef.current && thumbsRef.current && thumbsRef.current.splide) {
       mainRef.current.sync(thumbsRef.current.splide);
-      console.log(mainRef.current.splide);
     }
   }, []);
 
@@ -51,10 +50,10 @@ export const Splider: React.FC<SpliderContainerProps> = ({
   }, []);
 
   const renderSlides = (text: boolean) => {
-    return slides.map((splider: SpliderProps) => {
+    return slides.map((splider: SpliderProps, key) => {
       return (
-        <SplideSlide key={splider.image.src}>
-          <img src={splider.image.src} alt={splider.image.alt} />
+        <SplideSlide key={key}>
+          <Image {...splider.image} fit={text && splider.image.fit} />
           {text && splider?.content && (
             //NEEDS TO BE REPLACED BY ALTUAL CONTENT
             <SideContainer {...splider.content} />
@@ -71,6 +70,7 @@ export const Splider: React.FC<SpliderContainerProps> = ({
     pauseOnHover: true,
     resetProgress: false,
     interval: 5000,
+    arrows: slides.length > 1,
   };
 
   const thumbsOptions: Options = {

@@ -5,7 +5,7 @@ import { Heading } from "../../reuse/Heading";
 import { modalData } from "../../reuse/Modal";
 import { useAtom } from "jotai";
 
-const comingSoonImage = require("../../../assets/photos/Sedrak.jpg");
+const comingSoonImage = require("../../../assets/photos/ComingSoon.jpg");
 
 export interface ItemGridProps {
   items: ItemProps[];
@@ -36,6 +36,7 @@ export const ItemGrid: React.FC<ItemGridProps> = ({
                   };
                 })
               : [{ image: item.thumbnailImage }],
+            ctas: item?.ctas,
           }),
         ...item,
       };
@@ -46,7 +47,7 @@ export const ItemGrid: React.FC<ItemGridProps> = ({
     ? itemsOnClickOpenModal(items)
     : items;
   return (
-    <>
+    <div className={styles.gridWrapper}>
       {title && (
         <div className={styles.title}>
           <Heading as="h2" level="2" textAlign="center" color="gold-grad">
@@ -68,6 +69,6 @@ export const ItemGrid: React.FC<ItemGridProps> = ({
           />
         )}
       </div>
-    </>
+    </div>
   );
 };

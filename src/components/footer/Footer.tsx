@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import { EmailList } from "../pages/contact page/EmailList";
+import { Form } from "../pages/contact page/Form";
 import { Paragraph } from "../reuse/Paragraph";
 
 import { Link } from "../reuse/Link";
@@ -14,12 +14,12 @@ const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.emailList}>
-            <EmailList />
+            <Form />
           </div>
           <div className={styles.links}>
-            {tabTexts.map((tabText) => {
+            {tabTexts.map((tabText, key) => {
               return (
-                <Link href={`/${tabText}`}>
+                <Link href={`/${tabText}`} key={key}>
                   <Paragraph level="1" weight="regular" capitalise clickable>
                     {tabText}
                   </Paragraph>

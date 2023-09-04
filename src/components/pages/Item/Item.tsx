@@ -5,10 +5,10 @@ import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
 import { onClickNavigate } from "../../../helpers/useNavigation";
 import { ProductType } from "../content/data.types";
+import { Image } from "../../reuse/Image";
 import cn from "classnames";
 
 export interface ItemProps extends ProductType {
-  columns?: 1 | 2;
   onClick?: () => void;
 }
 
@@ -23,7 +23,7 @@ export const Item: React.FC<ItemProps> = ({
 }) => {
   const itemContent = (
     <>
-      <img {...thumbnailImage} alt={name} />
+      <Image {...thumbnailImage} alt={name} className={styles.imgWrapper} />
       <div className={styles.name}>
         <Heading as="h3" level="3" textAlign="center">
           {name}
@@ -34,7 +34,9 @@ export const Item: React.FC<ItemProps> = ({
           <Heading as="h4" level="4" color="gold">
             {name}
           </Heading>
-          <Paragraph level="2">{description}</Paragraph>
+          <Paragraph level="2" textAlign="left">
+            {description}
+          </Paragraph>
         </div>
         {price && price > 0 && (
           <div className={styles.price}>
@@ -54,10 +56,10 @@ export const Item: React.FC<ItemProps> = ({
       return onClickNavigate(e, path);
     }
   };
-  return path ? (
+  return path || onClick ? (
     <Link
       onClick={(e) => onClickFunction(e)}
-      href={!onClick ? path : ""}
+      href=""
       className={cn(styles.wrapper, { [styles.doubleSpan]: columns === 2 })}
     >
       {itemContent}

@@ -5,6 +5,7 @@
   --text-container-pad: var(--pad-4);
   @media (min-width: $tablet) {
     --text-container-pad: var(--pad-5);
+    --ratio: 1.5;
   }
 
   @media (min-width: $laptop) {
@@ -23,27 +24,34 @@
   position: relative;
   width: 100%;
   aspect-ratio: var(--ratio);
+  // height: calc(100vw / var(--ratio));
   overflow: hidden;
   border-top: 2px solid var(--gold-light);
   border-bottom: 2px solid var(--gold-light);
 
-  img {
-    object-fit: cover;
-    object-position: center;
-    aspect-ratio: calc(var(--ratio) - 0.2);
+  .parallax {
+    height: 100%;
     width: 100%;
+    img {
+      object-fit: cover;
+      // object-position: center;
+      min-height: 100%;
+      width: 100%;
+    }
+  }
+  &:has(.text) {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 50%;
+      background: linear-gradient(rgba(var(--black-rgb), 1), transparent);
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    height: 50%;
-    background: linear-gradient(rgba(var(--black-rgb), 1), transparent);
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-  }
   &::after {
     @include absoluteFill;
 
@@ -61,9 +69,9 @@
     position: absolute;
     padding: var(--text-container-pad);
     gap: var(--pad-1);
+    width: var(--screen-width-small);
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
+
+    z-index: 1;
   }
 }

@@ -27,7 +27,7 @@
   .container {
     @include flexColumn;
 
-    width: var(--screen_width_large);
+    width: var(--screen-width-large);
     gap: var(--container-gap);
     padding-bottom: var(--container-gap);
     margin: 0 auto;

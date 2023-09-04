@@ -9,16 +9,14 @@ import { Paragraph } from "./Paragraph";
 import { IconButton } from "./IconButton";
 import { Button } from "./Button";
 import { Link } from "./Link";
+import { CTAsType } from "../pages/content/data.types";
 
 export interface ModalProps {
   handleClose: () => void;
   spliderData: SpliderProps[];
   title: string;
   description: string;
-  ctas?: {
-    amazon: string;
-    etsy: string;
-  };
+  ctas?: CTAsType;
 }
 
 export const modalData = atom<ModalProps | null>(null);
@@ -84,7 +82,7 @@ export const Modal: React.FC<ModalProps> = ({
           </div>
           <div className={styles.ctas}>
             <Paragraph level="2" textAlign="center" weight="regular">
-              Coming soon on:
+              Coming soon to:
             </Paragraph>
             <div className={styles.buttons}>
               {linkedButton("Amazon", ctas?.amazon!)}

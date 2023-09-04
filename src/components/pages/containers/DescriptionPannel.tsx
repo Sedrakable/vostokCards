@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./DescriptionPannel.module.scss";
 import { SideContainerProps, SideContainer } from "./SideContainer";
-import { ImageProps } from "../content/data.types";
+import { ImageProps, Image } from "../../reuse/Image";
 
 export interface DescriptionPannelProps {
   image: ImageProps;
@@ -13,7 +13,7 @@ export const DescriptionPannel: React.FC<DescriptionPannelProps> = ({
 }) => {
   return (
     <div className={styles.wrapper}>
-      <img src={image?.src} alt={image?.alt} />
+      <Image src={image?.src} alt={image?.alt} />
       <SideContainer {...content} />
     </div>
   );

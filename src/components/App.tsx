@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar } from "./navbar/Navbar";
 import { Modal, modalData } from "./reuse/Modal";
@@ -7,16 +7,12 @@ import {
   CollectionPage,
   CollectionType,
 } from "./pages/collections/CollectionPage";
-import NewsPage from "./pages/news page/NewsPage";
-import AboutPage from "./pages/about page/AboutPage";
+import { About } from "./pages/about page/About";
 import ContactPage from "./pages/contact page/ContactPage";
 import styles from "./App.module.scss";
 import "../css/Main.css";
-import "../css/ScrollBar.scss";
+import "../css/scrollBar.scss";
 
-// import image_5 from "../assets/photos/AG_5.jpg";
-// import image_6 from "../assets/photos/AG_6.jpg";
-// import image_7 from "../assets/photos/AG_7.jpg";
 import { Splider } from "./pages/containers/Splider";
 import Footer from "./footer/Footer";
 import { DisplayContainer } from "./pages/containers/DisplayContainer";
@@ -26,26 +22,30 @@ import {
   collectionItems,
 } from "./pages/content/data";
 import { CollectionsPage } from "./pages/collections/CollectionsPage";
-import { ItemGridProps } from "./pages/Item/ItemGrid";
+import { ItemGrid, ItemGridProps } from "./pages/Item/ItemGrid";
 import { ItemProps } from "./pages/Item/Item";
 import { ProductsPage } from "./pages/Item/ProductsPage";
+import { ScrollToTop } from "../helpers/ScrollToTop";
 
 const App = () => {
+  const ref = useRef<any>(null);
   const [modalOpen] = useAtom(modalData);
 
   const mainPage = () => {
     return (
-      <>
+      <div className={styles.homePage}>
         <Splider slides={homepageSpliderData} />
         <DisplayContainer {...displayData} />
-      </>
+        <ItemGrid {...collections} title="Collections" />
+      </div>
     );
   };
 
   const renderedLinks: React.ReactElement[] = collectionItems.map(
-    (collection) => {
+    (collection, key) => {
       return (
         <Route
+          key={key}
           path={collection.path}
           element={<CollectionPage collection={collection} />}
         />
@@ -77,10 +77,11 @@ const App = () => {
     commingSoon: true,
   };
   return (
-    <div className={styles.wholePage}>
+    <div className={styles.wholePage} ref={ref}>
       <Navbar />
       {modalOpen && <Modal {...modalOpen} />}
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           {renderedLinks}
           <Route path="/" element={mainPage()} />
@@ -92,7 +93,7 @@ const App = () => {
             path="/collections"
             element={<CollectionsPage collections={collections} />}
           />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>

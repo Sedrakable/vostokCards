@@ -1,14 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./components/App";
 import "./css/index.scss";
 import { ParallaxProvider } from "react-scroll-parallax";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(
   <React.StrictMode>
     <ParallaxProvider>
       <App />
     </ParallaxProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

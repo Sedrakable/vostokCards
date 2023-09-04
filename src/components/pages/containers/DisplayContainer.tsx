@@ -3,34 +3,48 @@ import styles from "./DisplayContainer.module.scss";
 import { Heading } from "../../reuse/Heading";
 import { Paragraph } from "../../reuse/Paragraph";
 import { Parallax } from "react-scroll-parallax";
-import { ImageProps } from "../content/data.types";
+import { Image, ImageProps } from "../../reuse/Image";
 
 export interface DisplayContainerProps {
   image: ImageProps;
-  title: string;
-  subtitle?: string;
+  content?: {
+    title: string;
+    subtitle?: string;
+  };
 }
 
 export const DisplayContainer: React.FC<DisplayContainerProps> = ({
   image,
-  title,
-  subtitle,
+  content,
 }) => {
+  const speed = -15;
+  const scale = (100 - speed) / 100;
   return (
     <div className={styles.wrapper}>
-      <Parallax speed={-15}>
-        <img src={image?.src} alt={image?.alt} />
+      <Parallax
+        speed={speed}
+        scale={[scale, scale]}
+        className={styles.parallax}
+      >
+        <Image {...image} />
       </Parallax>
-      <div className={styles.text}>
-        <Heading as="h1" level="1" color="gold-grad" textAlign="center">
-          {title}
-        </Heading>
-        {subtitle && (
-          <Paragraph level="1" color="white" weight="regular">
-            {subtitle}
-          </Paragraph>
-        )}
-      </div>
+      {content && (
+        <div className={styles.text}>
+          <Heading as="h1" level="1" color="gold-grad" textAlign="center">
+            {content.title}
+          </Heading>
+          {content.subtitle && (
+            <Paragraph
+              level="1"
+              color="white"
+              weight="regular"
+              textAlign="center"
+            >
+              {content.subtitle}
+            </Paragraph>
+          )}
+        </div>
+      )}
     </div>
   );
 };
